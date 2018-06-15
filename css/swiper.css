@@ -1,0 +1,55 @@
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+/* TEAM */
+.swiper-container-team {
+    height: 100%;
+    width: calc(100% - 50px);
+    margin: auto;
+    overflow: hidden;
+}
+
+.swiper-container-team .swiper-slide {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 10px;
+}
+
+.swiper-container-team .swiper-slide a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    background: #292929;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 10px;
+    height: 16px;
+    margin-top: -8px;
+    background-size: 100%;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next {
+    right: 0;
+}

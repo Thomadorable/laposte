@@ -1,0 +1,59 @@
+.menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: 10;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .fab,
+.menu .fas {
+    display: block;
+    margin: auto;
+    margin-bottom: 3px;
+    font-size: 2rem;
+}
+
+.menu li {
+    text-align: center;
+}
+
+.menu a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.menu .active a {
+    color: blue;
+}
+
+.box-menu {
+    font-size: 0;
+}
+
+.box-menu a {
+    background: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.box-menu .fas {
+    font-size: 1.8rem;
+    line-height: 28px;
+}
+
+.menu a {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
