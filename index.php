@@ -80,7 +80,14 @@
                         <div class="swiper-wrapper">
                             <?php
                                 foreach ($pages as $page) {
-                                    $active = ($_GET['page'] === $page) ? 'swiper-tabs-active' : 'swiper-desktop-hide';
+                                    $active = 'swiper-desktop-hide';
+                                    if(isset($_GET['page']) && in_array($_GET['page'], $pages)) {
+                                        if ($_GET['page'] === $page) {
+                                            $active = 'swiper-tabs-active';
+                                        }
+                                    } else if($page === 'home') {
+                                        $active = 'swiper-tabs-active';
+                                    }
                                 ?>
                                     <div class="swiper-slide <?=$active?>">
                                         <?php
@@ -124,12 +131,17 @@
                             <h1><a href="">PAAPER</a></h1>
                             <ul class="header-menu">
                                 <li><a href="?page=home">Home</a></li>
+                                <li><a href="?page=login">Login</a></li>
                             </ul>
                         </div>
                     </header>
                     <section class="page-content boxed-wrapper visitor">
                         <?php
-                           include ('assets/login.php');
+                            $page = (isset($_GET['page'])) ? $_GET['page'] : 'landing';
+                            if ($page === 'home') {
+                                $page = 'landing';
+                            }
+                            include ('assets/' . $page . '.php');
                         ?>
                     </section>
                 <?php

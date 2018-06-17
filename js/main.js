@@ -13,13 +13,19 @@ $(function(){
         if (applicationTabs.activeIndex !== (tab - 1)) {
             $('.page-content').fadeOut(200);
 
+            closeChat();
+
             setTimeout(function(){
                 applicationTabs.slideTo(tab - 1, 0);
                 $('.page-content').fadeIn(200);
-                // initActions();
             }, 200);
         }
     });
+    
+    function closeChat() {
+        $('.js-open-chat').removeClass('active');
+        $('.chat-message').removeClass('visible');
+    }
 
     function initActions() {
         new Swiper('.swiper-container-team', {
@@ -31,31 +37,6 @@ $(function(){
             freeMode: true
         });
 
-        $('.js-open-chat').click(function(){
-            $(this).toggleClass('active');
-
-            if($(this).hasClass('active')) {
-                let time = 0;
-                $('.chat-message').each(function(){
-                    time += 250;
-                    setTimeout(() => {
-                        $(this).addClass('visible');
-                    }, time);
-                });
-
-                setTimeout(() => {
-                    $('.team-form').addClass('visible');
-                },($('.chat-message').length + 1) * 250);
-            } else {
-                $('.chat-message').removeClass('visible');
-            }
-        });
-
-        $('.chat-close').click(function(){
-            $('.js-open-chat').removeClass('active');
-            $('.chat-message').removeClass('visible');
-        });
-
         $('.team-form').submit(function(event){
             event.preventDefault();
             var message = $('.chat-text').val();
@@ -64,7 +45,6 @@ $(function(){
             $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 ); // Go
 			return false;
         });
-
 
         $('.js-ajax-page').click(function(event){
             event.preventDefault();
@@ -98,6 +78,30 @@ $(function(){
             currentPos = scrollTop;
         }
     }
+
+    $('.js-open-chat').click(function(){
+        $(this).toggleClass('active');
+
+        if($(this).hasClass('active')) {
+            let time = 0;
+            $('.chat-message').each(function(){
+                time += 250;
+                setTimeout(() => {
+                    $(this).addClass('visible');
+                }, time);
+            });
+
+            setTimeout(() => {
+                $('.team-form').addClass('visible');
+            },($('.chat-message').length + 1) * 250);
+        } else {
+            $('.chat-message').removeClass('visible');
+        }
+    });
+
+    $('.chat-close').click(function(){
+        closeChat();
+    });
 
     $('.swiper-slide').scroll(function(){
         checkTopBar();
