@@ -15,6 +15,34 @@ blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 
+@font-face {
+    font-family: "Gabriel";
+    src: url("../webfonts/gabriel-sans-medium.ttf") format("truetype"),
+        url("../webfonts/gabriel-sans-medium.woff") format("woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gabriel";
+    src: url("../webfonts/gabriel-sans-bold.ttf") format("truetype"),
+        url("../webfonts/gabriel-sans-bold.woff") format("woff");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Gabriel";
+    src: url("../webfonts/gabriel-sans-black.ttf") format("truetype"),
+        url("../webfonts/gabriel-sans-black.woff") format("woff");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Gabriel";
+    src: url("../webfonts/gabriel-sans-light.ttf") format("truetype"),
+        url("../webfonts/gabriel-sans-light.woff") format("woff");
+    font-weight: 300;
+}
+
 html {
     font-size: 10px;
 }
@@ -26,16 +54,21 @@ body {
 
 body {
     font-size: 1.5rem;
-    font-family: Metropolis, Arial, sans-serif;
-}
-
-.page-content {
-    padding: 20px;
-    padding-bottom: calc(58px + 20px)
+    font-family: 'Gabriel', Arial, sans-serif;
+    background: #FFFCFA;
+    color: #373737;
 }
 
 .relative {
     position: relative;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
 }
 
 .grid {
@@ -55,14 +88,267 @@ body {
     background: cyan;
 }
 
- p + p {
-     margin-top: 30px;
- }
+p + p {
+    margin-top: 30px;
+}
 
- h1 {
-     font-weight: 300;
-     font-size: 3rem;
-     text-align: center;
-     color: #292929;
-     margin-bottom: 20px;
- }
+.page-title {
+    font-weight: 300;
+    font-size: 3rem;
+    text-align: center;
+    color: #292929;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half {
+    width: calc(50% - 20px);
+    font-size: 1.5rem;
+}
+
+.boxed-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.options-label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.options-label .required {
+    color: #c50a0a;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.options-input,
+.options-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #E6E6E6;
+    margin-bottom: 25px;
+}
+
+.options-textarea {
+    height: 80px;
+}
+
+
+/* PAGE PROFIL */
+
+.js-open-chat {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #E6A587;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    transition: all ease 0.8s, font-size linear 0s 0.8s;
+    outline: none;
+    z-index: 10;
+}
+
+.js-open-chat.active {
+    transform: scale(40);
+    font-size: 0;
+    opacity: 0.90;
+    transition: all ease 0.8s, font-size linear 0s;
+}
+
+.modal-chat {
+    display: none;
+    z-index: 11;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 80px - 58px);
+    padding: 0 20px 20px;
+    animation: appear-chat ease 0.5s;
+}
+
+.chat-messages {
+    height: calc(100% - 220px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chat-message {
+    opacity: 0;
+    position: relative;
+    top: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: white;
+    padding: 15px;
+    transition: all ease 0.8s;
+    width: calc(100% - 30px);
+}
+
+.chat-message.me {
+    margin-left: 30px;
+}
+
+.team-form {
+    opacity: 0;
+    position: absolute;
+    bottom: -10px;
+    width: calc(100% - 40px);
+}
+
+.chat-message.visible {
+    opacity: 1;
+    top: 0;
+    transition: all ease 0.7s;
+}
+
+.team-form.visible {
+    opacity: 1;
+    bottom: 20px;
+    transition: all ease 0.8s;
+}
+
+.js-open-chat.active + .modal-chat {
+    display: block;
+}
+
+.chat-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.profile-header {
+    position: relative;
+    left: -20px;
+    width: calc(100% + 40px);
+    font-size: 0;
+    margin-top: -20px;
+}
+
+.profile-header:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #373737;
+    opacity: 0.7;
+}
+
+.profile-header img {
+    width: 100%;
+}
+
+.profile-header h1 {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.avatar {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: -75px auto 20px;
+    z-index: 2;
+}
+
+.edit-profile {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+    z-index: 2;
+}
+
+@keyframes appear-chat {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@media screen and (max-width:640px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .half {
+        width: 100%;
+    }
+
+    .half + .half {
+        margin-top: 30px;
+    }
+
+    .page-content {
+        /* padding: 20px; */
+        padding-bottom: 58px;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .swiper-container-tabs {
+        z-index: 0;
+    }
+
+    .swiper-container-tabs > .swiper-wrapper > .swiper-slide {
+        overflow-y: auto;
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+        padding: 20px;
+        padding-top: calc(55px + 20px); /* sticky menu */
+    }
+}
+
+/* ONLY DESKTOP */
+@media screen and (min-width:641px) {
+    .menu {
+        display: none;
+    }    
+
+    .swiper-container-tabs > .swiper-wrapper > .swiper-slide,
+    .visitor {
+        padding-top: calc(55px + 20px); /* sticky menu */
+    }
+
+    .swiper-desktop-hide {
+        display: none;
+    }
+}

@@ -1,0 +1,11 @@
+.home-title {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.actu {
+    background: #DFDFDF;
+    border-radius: 0 5px 0 5px;
+    padding: 10px;
+    margin-bottom: 30px;
+}

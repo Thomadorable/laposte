@@ -1,4 +1,8 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     $members = [
         [
             'id' => 1,
@@ -88,7 +92,7 @@
     ]
 ?>
 
-<h1>Team roquette</h1>
+<h1 class="page-title">Team roquette</h1>
 
 <div class="relative">
     <div class="swiper-container swiper-container-team">

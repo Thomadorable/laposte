@@ -5,7 +5,6 @@
 .swiper-slide {
     width: 100%;
     height: auto;
-    text-align: center;
     font-size: 18px;
 }
 
@@ -24,6 +23,7 @@
     height: 70px;
     line-height: 70px;
     margin: 0 10px;
+    text-align: center;
 }
 
 .swiper-container-team .swiper-slide a {
