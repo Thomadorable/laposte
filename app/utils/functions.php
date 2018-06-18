@@ -101,13 +101,14 @@
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
         
         $login = htmlspecialchars(trim($_POST['login']));
+        $password = htmlspecialchars($_POST['password']);
         $currentUser = getUserByMail($login);
-       
 
-        $hashed_password = '$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1';
+        $hash = hash('sha256', $password);
+
         $_SESSION['flash'] = [];
 
-        if ($currentUser && hash_equals($hashed_password, crypt($_POST['password'], $hashed_password)))  {
+        if ($currentUser && hash_equals($hash, $currentUser->password))  {
             $_SESSION['flash']['message'] = "Mot de passe correct !";
             $_SESSION['name'] = $currentUser->name;
             $_SESSION['id'] = $currentUser->id;

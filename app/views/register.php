@@ -8,19 +8,24 @@
         exit();
     }
 ?>
-<h1>Connexion</h1>
+<h1>Inscription</h1>
 
 <?php
     echoMessage();
 ?>
 
 <form action="" method="POST">
+
+    <label class="options-label" for=""><strong class="required">*</strong> Prénom</label>
+    <input class="options-input" type="text" name="name" value="">
+    
+    <label class="options-label" for=""><strong class="required">*</strong> Nom</label>
+    <input class="options-input" type="text" name="lastname" value="">
+
     <label class="options-label" for=""><strong class="required">*</strong> Mail</label>
     <input class="options-input" type="text" name="login" value="">
 
     <label class="options-label" for=""><strong class="required">*</strong> Mot de passe</label>
     <input class="options-input" type="password" name="password">
-
-    <button type="submit">Login</button> | <a href="?page=register">Se connecter</a>
+    <button type="submit">S'inscrire</button> | <a href="?page=login">Se connecter</a>
 </form>
-
