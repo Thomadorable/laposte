@@ -31,6 +31,7 @@
     height: 100px;
     opacity: 0.85;
     background-image: linear-gradient(to bottom, rgba(255, 252, 250, 0), #fffcfa);
+    pointer-events: none;
 }
 
 .home-pattern:before {
@@ -52,7 +53,7 @@
 }
 
 .actu {
-    background: rgba(223, 223, 223, 0.6);
+    background: rgba(223, 223, 223, 0.5);
     border-radius: 10px;
     margin-bottom: 30px;
     overflow: hidden;
@@ -135,7 +136,19 @@
         padding: 0;
     }
 
-    .actu-title {
+    .actu-title span {
+        display: none;
+    }
+
+    .actu-content .typo2 {
+        font-size: 16px;
+    }
+
+    .button2 {
+        padding: 19px 22px;
+    }
+
+    .scrolling.fadeOut:after {
         display: none;
     }
 }

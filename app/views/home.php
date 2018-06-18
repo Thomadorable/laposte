@@ -1,3 +1,9 @@
+<header class="topbar sticky topbar2">
+    <div class="boxed-wrapper flex padding-20">
+        <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
+    </div>
+</header>
+
 <?php
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -27,7 +33,7 @@
         <div class="scrolling fadeOut">
             <div class="actu">
                 <header>
-                    <p class="actu-title">© Nouvel ami Facebook</p>
+                    <p class="actu-title">© <span>Nouvel ami Facebook</span></p>
                     <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
                 </header>
                 <div class="actu-content">
@@ -42,7 +48,7 @@
 
             <div class="actu green">
                 <header>
-                    <p class="actu-title">© Nouvel ami Facebook</p>
+                    <p class="actu-title">© <span>Nouvel ami Facebook</span></p>
                     <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a></p>
                 </header>
                 <div class="actu-content">
@@ -56,7 +62,7 @@
 
             <div class="actu">
                 <header>
-                    <p class="actu-title">© Nouvel ami Facebook</p>
+                    <p class="actu-title">© <span>Nouvel ami Facebook</span></p>
                     <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a></p>
                 </header>
                 <div class="actu-content">
@@ -71,7 +77,7 @@
 
             <div class="actu">
                 <header>
-                    <p class="actu-title">© Nouvel ami Facebook</p>
+                    <p class="actu-title">© <span>Nouvel ami Facebook</span></p>
                     <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a></p>
                 </header>
                 <div class="actu-content">
@@ -86,7 +92,7 @@
 
             <div class="actu">
                 <header>
-                    <p class="actu-title">© Nouvel ami Facebook</p>
+                    <p class="actu-title">© <span>Nouvel ami Facebook</span></p>
                     <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a></p>
                 </header>
                 <div class="actu-content">
