@@ -54,7 +54,8 @@
         return getBdd()->teams;
     }
 
-    function getTeamByUserID ($idUser) {
+    function getTeamByUserID () {
+        $idUser = $_SESSION['id'];
         $teams = getTeams();
         $idTeam = getUserByID($idUser)->idTeam;
 
@@ -69,21 +70,31 @@
 
         $members = [];
         foreach($users as $user){
-            if($user->idTeam === $idTeam) $members[] = $user;
+            if($user->idTeam == $idTeam) $members[] = $user;
         }
 
         return $members;
     }
 
-    function updateTeam($idUser, $idTeam = 0){
+    function updateTeam($idTeam = 0){
+        $idUser = $_SESSION['id'];
         $bdd = getBdd();
-        $bdd->users->$idUser->idTeam = $idTeam;
+        $teams = getTeams();
 
-        $file = 'app/utils/bdd.json';
-        $bdd = json_encode($bdd);
-        file_put_contents($file, $bdd);
+        if (is_numeric($idTeam)) {
+            if ($idTeam == 0) {
+                $bdd->users->$idUser->idTeam = (integer) $idTeam;
+            } else if ($bdd->users->$idUser->idTeam == 0 && $idTeam > 0 && property_exists($teams, $idTeam)){
+                $bdd->users->$idUser->idTeam = (integer) $idTeam;
+            } else return false;
+            
+            $file = 'app/utils/bdd.json';
+            $bdd = json_encode($bdd);
+            file_put_contents($file, $bdd);
+            return true;
+        }
 
-        return true;
+        return false;
     }
 
 
