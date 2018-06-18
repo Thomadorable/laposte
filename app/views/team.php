@@ -3,10 +3,12 @@
         session_start();
     }
 
+    updateTeam($_SESSION['id'], 1);
+
     $team = getTeamByUserID($_SESSION['id']);
     $members = getMemberByTeam($team->id);
+
     
-    leaveTeam($_SESSION['id']);
 ?>
 
 <h1 class="page-title">Team <?= $team->name ?></h1>
