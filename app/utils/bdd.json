@@ -6,7 +6,7 @@
             "lastname": "Blue",
             "mail": "simon.blue@hotmail.fr",
             "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
-            "avatar": "",
+            "avatar": "vanessa.jpg",
             "idTeam": 1
         },
         "2": {
@@ -15,7 +15,7 @@
             "lastname": "Ladefruit",
             "mail": "v.ladefruit@gmail.com",
             "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
-            "avatar": "",
+            "avatar": "vanessa.jpg",
             "idTeam": 0
         },
         "3": {
@@ -24,7 +24,7 @@
             "lastname": "Deroua",
             "mail": "thomas.deroua@hotmail.com",
             "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
-            "avatar": "",
+            "avatar": "vanessa.jpg",
             "idTeam": 0
         },
         "4": {
@@ -33,7 +33,7 @@
             "lastname": "Bodo",
             "mail": "violaine.bodolec@gmail.com",
             "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
-            "avatar": "",
+            "avatar": "vanessa.jpg",
             "idTeam": 1
         }
     },
