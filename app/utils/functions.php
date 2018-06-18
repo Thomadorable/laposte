@@ -1,5 +1,6 @@
 <?php
-    define('base', 'http://localhost/laposte/');
+   // define('base', 'http://localhost/laposte/');
+    define('base', 'http://localhost/GIT/laposte/');
 
     if (empty($_SERVER['HTTPS']) && $_SERVER['REMOTE_ADDR'] !== '::1') {
         header('Location: https://paaper.fr/index.php');
@@ -46,6 +47,14 @@
         $currentUser = $users->$id;
 
         return $currentUser;
+    }
+
+    function getUserTeam($idUser) {
+        $bdd = getBdd();
+        $team = null;
+
+        $user = getUserByID($idUser);
+        return $user;
     }
 
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
