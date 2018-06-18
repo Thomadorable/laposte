@@ -1,26 +1,5 @@
 $(function(){
     var applicationTabs;
-
-    $(document).on('click', '.js-get-page', function(event){
-        event.preventDefault();
-
-        var tab = $(this).data('tab');
-        var ajaxPage = $(this).data('page');
-
-        $('.item-menu').removeClass('active');
-        $('.item-menu:nth-of-type(' + tab + ')').addClass('active');
-
-        if (applicationTabs.activeIndex !== (tab - 1)) {
-            $('.page-content').fadeOut(200);
-
-            closeChat();
-
-            setTimeout(function(){
-                applicationTabs.slideTo(tab - 1, 0);
-                $('.page-content').fadeIn(200);
-            }, 200);
-        }
-    });
     
     function closeChat() {
         $('.js-open-chat').removeClass('active');
@@ -83,6 +62,11 @@ $(function(){
                     }, 500);
                 }
             });
+        });
+
+        $('.close-actu').click(function(event){
+            event.preventDefault();
+            $(this).closest('.actu').slideUp();
         });
     }
 
@@ -157,6 +141,28 @@ $(function(){
             },
             slideActiveClass: 'swiper-tabs-active'
         });
+
+        $(document).on('click', '.js-get-page', function(event){
+            event.preventDefault();
+    
+            var tab = $(this).data('tab');
+    
+            $('.item-menu').removeClass('active');
+            $('.item-menu:nth-of-type(' + tab + ')').addClass('active');
+    
+            if (applicationTabs.activeIndex !== (tab - 1)) {
+                $('.page-content').fadeOut(200);
+    
+                closeChat();
+    
+                setTimeout(function(){
+                    applicationTabs.slideTo(tab - 1, 0);
+                    $('.page-content').fadeIn(200);
+                }, 200);
+            }
+        });
+    } else {
+        initActions();
     }
 });
 
