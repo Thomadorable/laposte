@@ -1,41 +1,7 @@
 <?php
     session_start();
 
-    if (empty($_SERVER['HTTPS']) && $_SERVER['REMOTE_ADDR'] !== '::1') {
-        header('Location: https://paaper.fr/index.php');
-        exit();
-    }
-
-    if (isset($_GET['logout'])) {
-        session_destroy();
-        header('Location: index.php');
-        exit();
-    }
-
-    function echoMessage() {
-        if (!empty($_SESSION['flash']) && !empty($_SESSION['flash']['message'])) {
-            $type = !empty($_SESSION['flash']['type']) ? $_SESSION['flash']['type'] : 'success';
-            echo '<p class="' . $type . '">' . $_SESSION['flash']['message'] . '</p>';
-            $_SESSION['flash'] = [];
-        }
-    }
-
-    if (!empty($_POST['login']) && !empty($_POST['password'])) {
-        $hashed_password = '$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1';
-        $_SESSION['flash'] = [];
-
-        if (hash_equals($hashed_password, crypt($_POST['password'], $hashed_password))) {
-            $_SESSION['flash']['message'] = "Mot de passe correct !";
-            $_SESSION['name'] = htmlspecialchars($_POST['login']);
-
-            header('Location: index.php');
-            exit();
-        } else {
-            $_SESSION['flash']['message'] = 'Les identifiants sont incorrects.';
-            $_SESSION['flash']['type'] = 'error';
-        }
-    } 
-
+    require_once('assets/functions.php');
 ?>
 
 <!DOCTYPE html>

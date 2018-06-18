@@ -1,0 +1,28 @@
+{
+    "users": {
+        "1": {
+            "id": 1,
+            "name": "Simon",
+            "lastname": "Blue",
+            "mail": "simon.blue@hotmail.fr",
+            "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
+            "avatar":""
+        },
+        "2": {
+            "id": 2,
+            "name": "Vanessa",
+            "lastname": "Ladefruit",
+            "mail": "v.ladefruit@gmail.com",
+            "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
+            "avatar": ""
+        },
+        "3": {
+            "id": 3,
+            "name": "Thomas",
+            "lastname": "Deroua",
+            "mail": "thomas",
+            "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
+            "avatar": ""
+        }
+    }
+}

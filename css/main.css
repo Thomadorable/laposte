@@ -152,6 +152,7 @@ h2 {
     border: none;
     border-bottom: 1px solid #E6E6E6;
     margin-bottom: 25px;
+    outline: none;
 }
 
 .options-textarea {

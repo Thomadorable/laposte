@@ -15,8 +15,8 @@
 ?>
 
 <form action="" method="POST">
-    <label class="options-label" for=""><strong class="required">*</strong> Identifiant</label>
-    <input class="options-input" type="text" name="login" value=" ">
+    <label class="options-label" for=""><strong class="required">*</strong> Mail</label>
+    <input class="options-input" type="text" name="login" value="">
 
     <label class="options-label" for=""><strong class="required">*</strong> Mot de passe</label>
     <input class="options-input" type="password" name="password">

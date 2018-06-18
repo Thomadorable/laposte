@@ -83,6 +83,7 @@ $(function(){
         $(this).toggleClass('active');
 
         if($(this).hasClass('active')) {
+            $('.chat-messages').stop().animate( { scrollTop: 0 }, 0 );
             let time = 0;
             $('.chat-message').each(function(){
                 time += 250;
