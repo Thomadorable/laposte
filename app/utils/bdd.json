@@ -46,5 +46,13 @@
             "id": 2,
             "name": "Chaussette"
         }
+    },
+    "messages": {
+        "1": {
+            "idUser": 3,
+            "idTeam": 1,
+            "date": "fezoioj",
+            "message": "lorem"
+        }
     }
 }
