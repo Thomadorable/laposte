@@ -35,7 +35,7 @@
                  if ($i === 2 ) { ?>
                     <div class="actu green">
                         <header>
-                            <p class="actu-title"><?php include('./images/user-plus.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
+                            <p class="actu-title"><?php include('./images/package.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
                         </header>
                         <div class="actu-content">
@@ -49,7 +49,7 @@
                 <?php } else { ?>
                     <div class="actu">
                         <header>
-                            <p class="actu-title">© Nouvel ami Facebook</p>
+                            <p class="actu-title"><?php include('./images/user-plus.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
                         </header>
                         <div class="actu-content">

@@ -103,15 +103,19 @@
 }
 
 .button1 .arrow {
-
     fill: #fff;
     width: 2rem;
     display: inline-block;
     margin-left: 10px;
     vertical-align: middle;
-
 }
-
+.actu svg{
+    fill: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.2rem;
+    margin-right: 10px;
+}
 /* ONLY MOBILE */
 @media screen and (max-width:640px){
     .swiper-slide.home .v-center {
