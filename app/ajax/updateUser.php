@@ -32,5 +32,9 @@
         $bdd->users->$id->password = $password;
     }
 
+    $file = '../utils/bdd.json';
+    $bdd = json_encode($bdd);
+    file_put_contents($file, $bdd);
+
     echo 202;
 ?>
