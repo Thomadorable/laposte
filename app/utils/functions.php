@@ -44,14 +44,18 @@
     function getUserByID($id) {
         $bdd = getBdd();
         $users = $bdd->users;
-        if(property_exists($users, $id)) $currentUser = $users->$id;
+        if (property_exists($users, $id)) $currentUser = $users->$id;
         else $currentUser = null;
 
         return $currentUser;
     }
 
+    function getTeams () {
+        return getBdd()->teams;
+    }
+
     function getTeamByUserID ($idUser) {
-        $teams = getBdd()->teams;
+        $teams = getTeams();
         $idTeam = getUserByID($idUser)->idTeam;
 
         if (is_numeric($idTeam) && property_exists($teams, $idTeam))$team = $teams->$idTeam;
@@ -62,7 +66,7 @@
 
     function getMemberByTeam ($idTeam) {
         $users = getBdd()->users;
-        
+
         $members = [];
         foreach($users as $user){
             if($user->idTeam === $idTeam) $members[] = $user;
@@ -70,6 +74,29 @@
 
         return $members;
     }
+
+    function leaveTeam($idUser){
+        $bdd = getBdd();
+        $bdd->users->$idUser->idTeam = 0;
+
+        $file = 'app/utils/bdd.json';
+        $bdd = json_encode($bdd);
+        file_put_contents($file, $bdd);
+
+        return true;
+    }
+
+    function joinTeam($idUser, $idTeam){
+        $bdd = getBdd();
+        $bdd->users->$idUser->idTeam = $idTeam;
+
+        $file = 'app/utils/bdd.json';
+        $bdd = json_encode($bdd);
+        file_put_contents($file, $bdd);
+
+        return true;
+    }
+
 
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
         
