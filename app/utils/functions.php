@@ -75,18 +75,7 @@
         return $members;
     }
 
-    function leaveTeam($idUser){
-        $bdd = getBdd();
-        $bdd->users->$idUser->idTeam = 0;
-
-        $file = 'app/utils/bdd.json';
-        $bdd = json_encode($bdd);
-        file_put_contents($file, $bdd);
-
-        return true;
-    }
-
-    function joinTeam($idUser, $idTeam){
+    function updateTeam($idUser, $idTeam = 0){
         $bdd = getBdd();
         $bdd->users->$idUser->idTeam = $idTeam;
 
