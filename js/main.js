@@ -121,6 +121,7 @@ $(function(){
     checkTopBar();
     
     if (screen.width <= 640) {
+        console.log('plop')
         applicationTabs = new Swiper('.swiper-container-tabs', {
             slidesPerView: 1,
             speed: 500,
@@ -175,6 +176,7 @@ $(function(){
         });
     } else {
         initActions();
+        console.log('coucou')
     }
 });
 
