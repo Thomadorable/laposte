@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Titre</title>
+        <title>Paaper</title>
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/swiper.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -35,7 +35,7 @@
                             <h1><a href="index.php" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
                             <ul class="header-menu">
                                 <li><a class="typo3" href="?page=gift">Le partenaire du mois</a></li>
-                                <li><a class="typo3" href="?page=box">Mon calendrier</a></li>
+                                <li><a class="typo3" href="?page=box">Ma boîte aux lettres</a></li>
                                 <li><a class="typo3" href="?page=team">Mon équipe</a></li>
                             </ul>
 

@@ -36,7 +36,7 @@
 
     $models = ['security', 'teams', 'users', 'messages'];
     foreach ($models as $model ) {
-        require_once('./models/'.$model.'Model.php');
+        require_once('./app/utils/models/'.$model.'Model.php');
     }
 
 ?>

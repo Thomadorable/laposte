@@ -101,6 +101,16 @@
     color: #a5c8b4;
 }
 
+.button1 .arrow {
+
+    fill: #fff;
+    width: 2rem;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+
+}
+
 /* ONLY MOBILE */
 @media screen and (max-width:640px){
     .swiper-slide.home .v-center {
