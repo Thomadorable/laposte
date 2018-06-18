@@ -66,9 +66,7 @@
                         </div>
                     </section>
 
-                    <?php
-                        include('app/views/chaat.php');
-                    ?>
+                    <?php if (getTeamByUserID()) include('./app/views/chaat.php'); ?>
 
                     <nav class="menu">
                             <ul>
