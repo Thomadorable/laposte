@@ -2,6 +2,10 @@
     session_start();
 
     require_once('app/utils/functions.php');
+
+    if (!empty($_POST['login']) && !empty($_POST['password'])) login($_POST['login'], $_POST['password']);
+
+    register();
 ?>
 
 <!DOCTYPE html>
@@ -74,9 +78,7 @@
                         </div>
                     </section>
 
-                    <?php
-                        include('app/views/chaat.php');
-                    ?>
+                    <?php if (getTeamByUserID()) include('./app/views/chaat.php'); ?>
 
                     <nav class="menu">
                             <ul>
