@@ -6,7 +6,8 @@
             "lastname": "Blue",
             "mail": "simon.blue@hotmail.fr",
             "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
-            "avatar":""
+            "avatar":"",
+            "idTeam": 1
         },
         "2": {
             "id": 2,
@@ -14,7 +15,8 @@
             "lastname": "Ladefruit",
             "mail": "v.ladefruit@gmail.com",
             "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
-            "avatar": ""
+            "avatar": "",
+            "idTeam": 0
         },
         "3": {
             "id": 3,
@@ -22,7 +24,14 @@
             "lastname": "Deroua",
             "mail": "thomas",
             "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
-            "avatar": ""
+            "avatar": "",
+            "idTeam": 0
+        }
+    },
+    "teams": {
+        "1":{
+            "id": 1,
+            "name": "Roquette"
         }
     }
 }
