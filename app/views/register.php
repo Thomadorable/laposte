@@ -7,6 +7,8 @@
         echo '<p class="error">Tu es déjà connecté.</p>';
         exit();
     }
+
+    register();
 ?>
 <h1>Inscription</h1>
 

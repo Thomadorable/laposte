@@ -26,11 +26,18 @@
         return json_decode($bdd);
     }
 
+    function setBdd($bdd){
+        $file = 'app/utils/bdd.json';
+        $bdd = json_encode($bdd);
+        file_put_contents($file, $bdd);
+
+        return true;
+    }
+
     function getUserByMail($login) {
         $bdd = getBdd();
         $users = $bdd->users;
         $currentUser = null;
-
         foreach ($users as $user) {
             if ($user->mail === $login) {
                 $currentUser = $user;
@@ -88,28 +95,24 @@
                 $bdd->users->$idUser->idTeam = (integer) $idTeam;
             } else return false;
             
-            $file = 'app/utils/bdd.json';
-            $bdd = json_encode($bdd);
-            file_put_contents($file, $bdd);
+            setBdd($bdd);
             return true;
         }
 
         return false;
     }
 
-
-    if (!empty($_POST['login']) && !empty($_POST['password'])) {
-        
-        $login = htmlspecialchars(trim($_POST['login']));
-        $password = htmlspecialchars($_POST['password']);
+    function login ($login, $password) {
+        $login = htmlspecialchars(trim($login));
+        $password = htmlspecialchars($password);
         $currentUser = getUserByMail($login);
+
 
         $hash = hash('sha256', $password);
 
         $_SESSION['flash'] = [];
 
-        if ($currentUser && hash_equals($hash, $currentUser->password))  {
-            $_SESSION['flash']['message'] = "Mot de passe correct !";
+        if ($currentUser && $hash === $currentUser->password)  {
             $_SESSION['name'] = $currentUser->name;
             $_SESSION['id'] = $currentUser->id;
 
@@ -119,5 +122,62 @@
             $_SESSION['flash']['message'] = 'Les identifiants sont incorrects.';
             $_SESSION['flash']['type'] = 'error';
         }
-    } 
+    }
+
+    function randId(){
+        $rand = rand(0, 999999999);
+        if (getUserByID($rand)) randId();
+        else return $rand;
+    }
+
+    function register () {
+        if (!empty($_POST['login']) && !empty($_POST['password'])) {
+
+            $_SESSION['flash'] = [];
+
+            $login = htmlspecialchars(trim($_POST['login']));
+            $currentUser = getUserByMail($login);
+
+            if($currentUser) {
+                $_SESSION['flash']['message'] = "Cet email est déjà utilisé";
+                return false;
+            }
+
+            $bdd = getBdd();
+            $user = [
+                "id" => randId(),
+                "name" => htmlspecialchars(trim($_POST['name'])),
+                "lastname" => htmlspecialchars(trim($_POST['lastname'])),
+                "mail" => htmlspecialchars(trim($_POST['login'])),
+                "password" => hash('sha256', htmlspecialchars(trim($_POST['password']))),
+                "avatar" => "",
+                "idTeam" => 0
+            ];
+
+            $bdd->users->{$user['id']} = $user;
+
+            setBdd($bdd);
+            login($user['mail'], $_POST['password']);
+
+
+            // $name = htmlspecialchars(trim($_POST['name']));
+            // $lastname = htmlspecialchars(trim($_POST['lastname']));
+            // $password = htmlspecialchars($_POST['password']);
+            // $hash = hash('sha256', $password);
+
+
+    
+            // if ($currentUser && hash_equals($hash, $currentUser->password))  {
+            //     $_SESSION['flash']['message'] = "Mot de passe correct !";
+            //     $_SESSION['name'] = $currentUser->name;
+            //     $_SESSION['id'] = $currentUser->id;
+    
+            //     header('Location: index.php');
+            //     exit();
+            // } else {
+            //     $_SESSION['flash']['message'] = 'Les identifiants sont incorrects.';
+            //     $_SESSION['flash']['type'] = 'error';
+            // }
+        } 
+    }
 ?>

@@ -7,6 +7,7 @@
         echo '<p class="error">Tu es déjà connecté.</p>';
         exit();
     }
+    if (!empty($_POST['login']) && !empty($_POST['password'])) login($_POST['login'], $_POST['password']);
 ?>
 <h1>Connexion</h1>
 
@@ -21,6 +22,6 @@
     <label class="options-label" for=""><strong class="required">*</strong> Mot de passe</label>
     <input class="options-input" type="password" name="password">
 
-    <button type="submit">Login</button> | <a href="?page=register">Se connecter</a>
+    <button type="submit">Login</button> | <a href="?page=register">S'inscrire</a>
 </form>
 
