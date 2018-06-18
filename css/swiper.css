@@ -16,6 +16,8 @@
     /* width: calc(100% + 40px); */
     margin: auto;
     overflow: hidden;
+    padding: 10px;
+    border-radius: 50px;
 }
 
 .swiper-container-team .swiper-slide {
@@ -36,10 +38,13 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-    width: 10px;
-    height: 16px;
-    margin-top: -8px;
+    width: 14px;
+    height: 24px;
+    margin-top: -12px;
+    background-image: url(../images/chevron-left.svg);
+    filter: invert(1);
     background-size: 100%;
+    outline: none;
 }
 
 .swiper-button-prev {
@@ -48,4 +53,5 @@
 
 .swiper-button-next {
     right: -20px;
+    transform: rotate(180deg);
 }

@@ -4,6 +4,8 @@
     </div>
 </header>
 
+<div class="pattern no-desktop"></div>
+
 <?php
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -39,9 +41,10 @@
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
                         </header>
                         <div class="actu-content">
-                            <p class="typo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit impedit laboriosam expedita ullam, minima placeat cumque perferendis quia aut natus veniam at culpa fugit suscipit repellendus voluptate adipisci quibusdam explicabo?</p>
+                            <p class="typo2 z-index-2">L’été approche à grand pas et pour l’occasion, notre partenaire du mois a plein de bons plans 
+à vous offrir…</p>
 
-                            <div class="flex">
+                            <div class="flex z-index-2">
                                 <a href="" class="button2" data-page="box" data-tab="1">Découvrir</a>
                             </div>
                         </div>
@@ -53,9 +56,9 @@
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
                         </header>
                         <div class="actu-content">
-                            <p class="typo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit impedit laboriosam expedita ullam, minima placeat cumque perferendis quia aut natus veniam at culpa fugit suscipit repellendus voluptate adipisci quibusdam explicabo?</p>
+                            <p class="typo2 z-index-2">Votre ami(e) Facebook Estelle Burnichon vient de rejoindre l’aventure, souhaitez-vous l’inviter à rejoindre votre team ?</p>
 
-                            <div class="flex">
+                            <div class="flex z-index-2">
                                 <a href="" class="button2">Inviter</a>
                                 <a href="" class="button2 close-actu">Non, merci</a>
                             </div>

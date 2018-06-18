@@ -65,6 +65,11 @@ body {
     position: relative;
 }
 
+.z-index-2 {
+    position: relative;
+    z-index: 2;
+}
+
 .v-center {
     position: absolute;
     top: 50%;
@@ -141,6 +146,10 @@ iframe {
 
 p + p {
     margin-top: 20px;
+}
+
+.center {
+    text-align: center;
 }
 
 .page-title {
@@ -487,6 +496,11 @@ strong {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.14);
 }
 
+.no-team-img {
+    width: 150px;
+    margin: 40px auto 20px;
+}
+
 @keyframes appear-chat {
     0% {opacity: 0;}
     50% {opacity: 0;}
@@ -571,6 +585,10 @@ strong {
     .button2 {
         margin-top: 15px;
     }
+
+    .no-mobile {
+        display: none;
+    }
 }
 
 .page-content.visitor {
@@ -579,6 +597,10 @@ strong {
 
 /* ONLY DESKTOP */
 @media screen and (min-width:641px) {
+    .no-desktop {
+        display: none;
+    }
+
     .menu {
         display: none;
     }    

@@ -14,7 +14,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="">
-                        <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Profil image">    
+                        <img src="images/mailbox.svg" alt="Ajouter un membre">    
                     </a>
                 </div>
                 <?php
@@ -22,7 +22,7 @@
                         ?>
                             <div class="swiper-slide">
                                 <a href="">
-                                    <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Profil image">    
+                                    <img src="images/avatars/<?=$member->avatar?>" alt="Profil de <?=$member->name?>">    
                                 </a>
                             </div>
                         <?php
@@ -37,4 +37,4 @@
     </div>
 </header>
 
-<a href="?page=team&team=0">Quitter la team</a>
+<a href="?page=team&team=0" class="button1">Quitter la team</a>

@@ -14,7 +14,9 @@ $(function(){
             },
             slidesPerView: 3,
             spaceBetween: 28,
-            loop: true
+            slidesPerGroup: 2,
+            freeMode: true,
+            freeModeSticky: true
         });
 
         $('.team-form').submit(function(event){
