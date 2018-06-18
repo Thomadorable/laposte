@@ -58,12 +58,20 @@
                         if ($currentSlide === false) {
                             $currentSlide = 'false';
                         }
+
+                        if(isset($_GET['team']) && is_numeric($_GET['team'])) {
+                            updateTeam($_GET['team']);
+                        }
+                        
+                        $loggedUser = getUserByID($_SESSION['id']);
+                        $team = getTeamByUserID();
+
+                        $teamIn = ($team) ? 'in' : 'out' ;
                     ?>
                     <div class="loader" id="loader"></div>
                     <section class="page-content boxed-wrapper swiper-container-tabs full-height" data-current="<?=$currentSlide?>">
                         <div class="swiper-wrapper">
                             <?php
-                                $loggedUser = getUserByID($_SESSION['id']);
                                 foreach ($pages as $page) {
                                     $active = 'swiper-desktop-hide';
                                     if(isset($_GET['page']) && in_array($_GET['page'], $pages)) {
@@ -74,7 +82,7 @@
                                         $active = 'swiper-tabs-active';
                                     }
                                 ?>
-                                    <div class="swiper-slide <?=$active?> <?=$page?>">
+                                    <div class="swiper-slide <?=$active?> <?=$page?> team<?=$teamIn?>">
                                         <?php
                                             include ('app/views/' . $page . '.php');
                                         ?>

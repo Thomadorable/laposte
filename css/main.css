@@ -538,7 +538,7 @@ strong {
     }
 
     .swiper-container-tabs > .swiper-wrapper > .swiper-slide.home,
-    .swiper-container-tabs > .swiper-wrapper > .swiper-slide.team,
+    .swiper-container-tabs > .swiper-wrapper > .swiper-slide.teamout,
     .page-content.visitor {
         padding-top: 65px; /* sticky menu */
     }
@@ -607,5 +607,9 @@ strong {
     .actu.green .button2:hover {
         background: #a5c8b4;
         color: white;
+    }
+
+    #loader {
+        display: none;
     }
 }
