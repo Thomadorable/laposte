@@ -66,10 +66,23 @@ $(function(){
             event.preventDefault();
             var datas = $(this).serialize();
 
+            $('.swiper-tabs-active').html('<div class="loader"></div>');
+
             $.post('app/ajax/updateUser.php', datas, function(data){
-                console.log(data);
+                if (data === '202') {
+                    setTimeout(function(){
+                        $('.swiper-tabs-active').fadeOut(200);
+                        $.get('app/views/profile.php', function(data){
+                            setTimeout(function(){
+                                $('.swiper-tabs-active').html(data);
+                                $('.swiper-tabs-active').fadeIn(200);
+                                initActions();
+                                checkTopBar();
+                            }, 200);
+                        });
+                    }, 500);
+                }
             });
-            console.log(datas);
         });
     }
 
