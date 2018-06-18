@@ -26,6 +26,12 @@
         <?php
             if (isset($_SESSION['name'])) {
 
+                function isMenuActive($page) {
+                    if (isset($_GET['page']) && $_GET['page'] === $page) {
+                        echo 'active';
+                    }
+                }
+
                 if(!isset($_GET['page']) || $_GET['page'] === 'home') {
                     echo '<div class="pattern"></div>';
                 }
@@ -34,9 +40,9 @@
                     <div class="boxed-wrapper flex padding-20">
                             <h1><a href="index.php" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
                             <ul class="header-menu">
-                                <li><a class="typo3" href="?page=gift">Le partenaire du mois</a></li>
-                                <li><a class="typo3" href="?page=box">Ma boîte aux lettres</a></li>
-                                <li><a class="typo3" href="?page=team">Mon équipe</a></li>
+                                <li><a class="typo3 <?php isMenuActive('gift')?>" href="?page=gift">Le partenaire du mois</a></li>
+                                <li><a class="typo3 <?php isMenuActive('box')?>" href="?page=box">Mon calendrier</a></li>
+                                <li><a class="typo3 <?php isMenuActive('team')?>" href="?page=team">Mon équipe</a></li>
                             </ul>
 
                             <ul class="header-menu">
@@ -53,6 +59,7 @@
                             $currentSlide = 'false';
                         }
                     ?>
+                    <div class="loader" id="loader"></div>
                     <section class="page-content boxed-wrapper swiper-container-tabs full-height" data-current="<?=$currentSlide?>">
                         <div class="swiper-wrapper">
                             <?php
@@ -89,7 +96,9 @@
                                     <a href=""><?php include('images/package.svg'); ?> Partenaire</a>
                                 </li>
                                 <li class="item-menu js-get-page box-menu" data-page="box" data-tab="3"><span>
-                                    <a href=""><img src="images/mailbox.svg" class="fas" alt=""></a></span>
+                                    <a href="">
+                                        <img src="images/mailbox.gif" class="box-icon box-icon-inactive" alt="">
+                                    </a></span>
                                 </li>
                                 <li class="item-menu js-get-page" data-page="team" data-tab="4">
                                     <a href=""><?php include('images/award.svg'); ?> Équipe</a>

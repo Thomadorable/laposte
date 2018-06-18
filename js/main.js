@@ -12,8 +12,9 @@ $(function(){
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             },
-            slidesPerView: 'auto',
-            freeMode: true
+            slidesPerView: 3,
+            spaceBetween: 28,
+            loop: true
         });
 
         $('.team-form').submit(function(event){
@@ -77,10 +78,10 @@ $(function(){
             var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
 
             if (scrollTop < currentPos) {
-                $('.topbar').addClass('sticky');
-            } else if (scrollTop > 10) {
-                $('.topbar').removeClass('sticky');
-            }
+                $('.topbar2').addClass('sticky');
+            } else if (scrollTop > 50) {
+                $('.topbar2').removeClass('sticky');
+            } 
 
             currentPos = scrollTop;
         }
@@ -125,7 +126,8 @@ $(function(){
                 slideChange: function() {
                     $('.item-menu').removeClass('active').eq(this.activeIndex).addClass('active');
                     setTimeout(function(){
-                        checkTopBar();
+                        // checkTopBar();
+                        $('.topbar2').addClass('sticky');
                     }, 200);
                 },
                 init: function() {
@@ -133,10 +135,11 @@ $(function(){
                     
                     if (current === false) {
                         current = 2;
-                        console.log('2 !');
                     }
                     this.slideTo(current, 0);	
                     initActions();
+                    $('.swiper-container-tabs').css('opacity', 1);
+                    $('#loader').fadeOut();
                 }
             },
             slideActiveClass: 'swiper-tabs-active'
@@ -151,6 +154,13 @@ $(function(){
             $('.item-menu:nth-of-type(' + tab + ')').addClass('active');
     
             if (applicationTabs.activeIndex !== (tab - 1)) {
+
+                if (tab === 3) {
+                    $('.box-icon').addClass('boxed').attr('src', 'images/mailbox1.gif');
+                } else if($('.box-icon').hasClass('boxed')) {
+                    $('.box-icon').removeClass('boxed').attr('src', 'images/mailbox2.gif');
+                }
+
                 $('.page-content').fadeOut(200);
     
                 closeChat();

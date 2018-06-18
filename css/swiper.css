@@ -13,29 +13,25 @@
 /* TEAM */
 .swiper-container-team {
     height: 100%;
-    width: calc(100% - 50px);
+    /* width: calc(100% + 40px); */
     margin: auto;
     overflow: hidden;
 }
 
 .swiper-container-team .swiper-slide {
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    margin: 0 10px;
     text-align: center;
 }
 
 .swiper-container-team .swiper-slide a {
-    width: 100%;
-    height: 100%;
     display: inline-block;
     vertical-align: top;
-    border-radius: 50%;
-    background: #292929;
-    color: white;
     text-decoration: none;
-    font-size: 1rem;
+}
+
+.swiper-container-team .swiper-slide a img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.14);
 }
 
 .swiper-button-prev,
@@ -47,9 +43,9 @@
 }
 
 .swiper-button-prev {
-    left: 0;
+    left: -20px;
 }
 
 .swiper-button-next {
-    right: 0;
+    right: -20px;
 }

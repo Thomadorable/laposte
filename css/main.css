@@ -81,9 +81,9 @@ body {
 
 .logo {
     position: absolute;
-    top: 20px;
+    top: 18px;
     left: 0;
-    width: 100px;
+    width: 120px;
 }
 
 .logo img {
@@ -140,7 +140,7 @@ iframe {
 }
 
 p + p {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .page-title {
@@ -201,6 +201,17 @@ h2 {
     font-weight: normal;
 }
 
+.typo4 {
+    font-family: Gabriel;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 0.84;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #fffcfa;
+    margin-bottom: 35px;
+}
+
 .button1 {
     display: inline-block;
     padding: 15px 22px;
@@ -235,11 +246,6 @@ h2 {
     width: 100%;
     text-align: center;
 }
-
-.button2 + .button2 {
-    margin-left: 10px;
-}
-
 
 .underlink {
     position: relative;
@@ -410,10 +416,9 @@ strong {
 
 .profile-header {
     position: relative;
-    left: -20px;
-    width: calc(100% + 40px);
+    left: -40px;
+    width: calc(100% + 80px);
     font-size: 0;
-    margin-top: -20px;
 }
 
 .profile-header:before {
@@ -464,6 +469,24 @@ strong {
     padding-top: 74px; /* sticky menu */
 }
 
+
+/* TEAM  */
+.team-header {
+    background: #A5C8B4;
+    width: calc(100% + 80px);
+    position: relative;
+    left: -40px;
+    padding: 40px;
+}
+
+.team-header .page-title span {
+    opacity: 0.5;
+}
+
+.team-header {
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.14);
+}
+
 @keyframes appear-chat {
     0% {opacity: 0;}
     50% {opacity: 0;}
@@ -503,16 +526,19 @@ strong {
 
     .swiper-container-tabs {
         z-index: 0;
+        opacity: 0;
+        transition: opacity ease 0.3s;
     }
 
     .swiper-container-tabs > .swiper-wrapper > .swiper-slide {
         overflow-y: auto;
         height: 100%;
         -webkit-overflow-scrolling: touch;
-        padding: 40px;
+        padding: 0 40px 40px;
     }
 
-    .swiper-container-tabs > .swiper-wrapper > .swiper-slide,
+    .swiper-container-tabs > .swiper-wrapper > .swiper-slide.home,
+    .swiper-container-tabs > .swiper-wrapper > .swiper-slide.team,
     .page-content.visitor {
         padding-top: 65px; /* sticky menu */
     }
@@ -541,6 +567,10 @@ strong {
         opacity: 1;
         bottom: -1px;
     }
+
+    .button2 {
+        margin-top: 15px;
+    }
 }
 
 .page-content.visitor {
@@ -559,5 +589,23 @@ strong {
 
     .boxed-wrapper {
         width: calc(100% - 80px); 
+    }
+
+    .button2 + .button2 {
+        margin-left: 20px;
+    }
+
+    .button2 {
+        transition: all ease 0.3s;
+    }
+
+    .button2:hover {
+        background: #e6a587;
+        color: white;
+    }
+
+    .actu.green .button2:hover {
+        background: #a5c8b4;
+        color: white;
     }
 }
