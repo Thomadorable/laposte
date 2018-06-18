@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('assets/functions.php');
+    require_once('app/utils/functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
                                 ?>
                                     <div class="swiper-slide <?=$active?>">
                                         <?php
-                                            include ('assets/' . $page . '.php');
+                                            include ('app/views/' . $page . '.php');
                                         ?>
                                     </div>
                                 <?php
@@ -67,7 +67,7 @@
                     </section>
 
                     <?php
-                        include('assets/chaat.php');
+                        include('app/views/chaat.php');
                     ?>
 
                     <nav class="menu">

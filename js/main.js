@@ -52,7 +52,7 @@ $(function(){
             var ajaxPage = $(this).data('page');
             $('.swiper-tabs-active').fadeOut(200);
     
-            $.get('assets/' + ajaxPage + '.php', function(data){
+            $.get('app/ajax/' + ajaxPage + '.php', function(data){
                 setTimeout(function(){
                     $('.swiper-tabs-active').html(data);
                     $('.swiper-tabs-active').fadeIn(200);
@@ -60,6 +60,16 @@ $(function(){
                     checkTopBar();
                 }, 200);
             });
+        });
+
+        $('.profile-form').submit(function(event){
+            event.preventDefault();
+            var datas = $(this).serialize();
+
+            $.post('app/ajax/updateUser.php', datas, function(data){
+                console.log(data);
+            });
+            console.log(datas);
         });
     }
 
