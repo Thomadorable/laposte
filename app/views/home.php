@@ -8,7 +8,7 @@
     <div class="half home-half home-left">
         <div class="v-center">
         <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Avatar" class="home-avatar">
-        <p class="typo1">Re-bonjour Vanessa ! 👋</p>
+        <p class="typo1">Re-bonjour <?= $loggedUser->name ?> ! 👋</p>
 
         <p class="typo2">
             Depuis que tu nous as rejoints, c’est <strong class="underlink">13&nbsp;653 boîtes</strong> qui ont
