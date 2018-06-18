@@ -137,7 +137,7 @@
                     </header>
                     <section class="page-content boxed-wrapper visitor">
                         <?php
-                            $allowedPages = ['landing', 'login'];
+                            $allowedPages = ['landing', 'login', 'register'];
                             $page = (isset($_GET['page']) && in_array($_GET['page'], $allowedPages)) ? $_GET['page'] : 'landing';
                             if ($page === 'home') {
                                 $page = 'landing';
