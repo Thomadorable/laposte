@@ -34,13 +34,17 @@
             "mail": "violaine.bodolec@gmail.com",
             "password": "$1$dZO84ftm$vQ7GNGnn.gmYy36YyfuF/1",
             "avatar": "",
-            "idTeam": 0
+            "idTeam": 1
         }
     },
     "teams": {
         "1":{
             "id": 1,
             "name": "Roquette"
+        },
+        "2":{
+            "id": 1,
+            "name": "Chaussette"
         }
     }
 }

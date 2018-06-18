@@ -107,7 +107,7 @@
                             if ($page === 'home') {
                                 $page = 'landing';
                             }
-                            include ('assets/' . $page . '.php');
+                            include ('app/views/' . $page . '.php');
                         ?>
                     </section>
                 <?php

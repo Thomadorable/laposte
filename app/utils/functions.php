@@ -44,17 +44,31 @@
     function getUserByID($id) {
         $bdd = getBdd();
         $users = $bdd->users;
-        $currentUser = $users->$id;
+        if(property_exists($users, $id)) $currentUser = $users->$id;
+        else $currentUser = null;
 
         return $currentUser;
     }
 
-    function getUserTeam($idUser) {
-        $bdd = getBdd();
-        $team = null;
+    function getTeamByUserID ($idUser) {
+        $teams = getBdd()->teams;
+        $idTeam = getUserByID($idUser)->idTeam;
 
-        $user = getUserByID($idUser);
-        return $user;
+        if (is_numeric($idTeam) && property_exists($teams, $idTeam))$team = $teams->$idTeam;
+        else $team = null;
+
+        return $team;
+    }
+
+    function getMemberByTeam ($idTeam) {
+        $users = getBdd()->users;
+        
+        $members = [];
+        foreach($users as $user){
+            if($user->idTeam === $idTeam) $members[] = $user;
+        }
+
+        return $members;
     }
 
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
