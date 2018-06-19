@@ -8,7 +8,7 @@
     require_once($path . 'app/utils/functions.php');
 ?>
 
-<header class="topbar topbar2 sticky">
+<header class="topbar topbar2 sticky no-desktop">
     <div class="boxed-wrapper flex padding-20">
         <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
     </div>
