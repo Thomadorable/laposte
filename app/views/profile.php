@@ -17,7 +17,7 @@
         </p>
     </div>
     <button class="edit-profile js-ajax-page" data-page="options">
-        <?php include('./images/edit-profil.svg') ?>
+        <?php include($path . 'images/edit-profil.svg') ?>
     </button>
 </header>
 
