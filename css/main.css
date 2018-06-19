@@ -1,20 +1,141 @@
 /* Reset CSS */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
-big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time,
-mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline; box-sizing: border-box;}
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
 
 /* Reset pour les vieux navigateurs */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {display: block;}
-body {line-height: 1;}
-ol, ul {list-style: none;}
-blockquote, q {quotes: none;}
-blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
-table {border-collapse: collapse;border-spacing: 0;}
 
+<<<<<<< HEAD
+=======
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+>>>>>>> c591f1d74cbe0ae3b9adb9b2896effa258fb7fb7
 @font-face {
     font-family: "Gabriel";
     src: url("../webfonts/gabriel-sans-medium.ttf") format("truetype"), url("../webfonts/gabriel-sans-medium.woff") format("woff");
@@ -75,6 +196,10 @@ body {
 .z-index-2 {
     position: relative;
     z-index: 2;
+}
+
+.opac50 {
+    opacity: .5;
 }
 
 .v-center {
@@ -349,6 +474,35 @@ strong {
 
 /* PAGE PROFIL */
 
+.profile .avatar {
+    margin: 0;
+    display: inline-block;
+    width: 8rem;
+    height: 8rem;
+    vertical-align: middle
+}
+
+.team-header.profile {
+    padding: 2rem;
+    color: #fffcfa
+}
+
+.profile .text {
+    display: inline-block;
+    width: calc(100% - 8rem);
+    vertical-align: middle;
+    padding-left: 2rem;
+}
+
+.profile .typo4 {
+    text-align: left;
+    margin-bottom: .5rem;
+}
+
+.profile br {
+    margin-bottom: 1.5rem;
+}
+
 .js-open-chat {
     width: 100px;
     background: none;
@@ -483,12 +637,21 @@ strong {
 
 .edit-profile {
     position: absolute;
-    right: 20px;
-    top: 20px;
-    padding: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1.8rem;
     border: none;
     background: none;
     z-index: 2;
+    height: 6rem;
+    width: 6rem;
+    background-color: rgba(255, 252, 250, .3);
+    border-radius: 1rem 0 0 1rem;
+    cursor: pointer
+}
+.edit-profile .svg{
+    fill: #fffcfa
 }
 
 .content-page {
@@ -620,6 +783,11 @@ strong {
     background: #e6a587;
 }
 
+
+.green .puce.active, .green .puce.half-puce:before {
+    background: #a5c8b4;
+}
+
 .puce.half-puce:before {
     content: "";
     position: absolute;
@@ -672,12 +840,14 @@ strong {
 .progress.orange {
     background-color: #e6e6e6;
 }
-
 .progress.orange:before {
     background-image: linear-gradient(to right, #f4d1bc, #e6a587);
 }
+.progress.green:before {
+    background-image: linear-gradient(to right, #cae4d5, #a5c8b4);;
+}
 
-.progress.orange:after {
+.progress.orange:after, .progress.green:after {
     border-color: rgba(55, 55, 55, 0.11);
 }
 
