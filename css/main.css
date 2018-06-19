@@ -15,46 +15,39 @@ blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 
-
 @font-face {
     font-family: "Gabriel";
-    src: url("../webfonts/gabriel-sans-medium.ttf") format("truetype"),
-        url("../webfonts/gabriel-sans-medium.woff") format("woff");
+    src: url("../webfonts/gabriel-sans-medium.ttf") format("truetype"), url("../webfonts/gabriel-sans-medium.woff") format("woff");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Gabriel";
-    src: url("../webfonts/gabriel-sans-bold.ttf") format("truetype"),
-        url("../webfonts/gabriel-sans-bold.woff") format("woff");
+    src: url("../webfonts/gabriel-sans-bold.ttf") format("truetype"), url("../webfonts/gabriel-sans-bold.woff") format("woff");
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Gabriel";
-    src: url("../webfonts/gabriel-sans-black.ttf") format("truetype"),
-        url("../webfonts/gabriel-sans-black.woff") format("woff");
+    src: url("../webfonts/gabriel-sans-black.ttf") format("truetype"), url("../webfonts/gabriel-sans-black.woff") format("woff");
     font-weight: 800;
 }
 
 @font-face {
     font-family: "Gabriel";
-    src: url("../webfonts/gabriel-sans-light.ttf") format("truetype"),
-        url("../webfonts/gabriel-sans-light.woff") format("woff");
+    src: url("../webfonts/gabriel-sans-light.ttf") format("truetype"), url("../webfonts/gabriel-sans-light.woff") format("woff");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Karmilla";
-    src: url("../webfonts/karmilla.ttf") format("truetype"),
-        url("../webfonts/karmilla.woff") format("woff");
+    src: url("../webfonts/karmilla.ttf") format("truetype"), url("../webfonts/karmilla.woff") format("woff");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Karmilla";
-    src: url("../webfonts/karmilla-bold.ttf") format("truetype"),
-        url("../webfonts/karmilla-bold.woff") format("woff");
+    src: url("../webfonts/karmilla-bold.ttf") format("truetype"), url("../webfonts/karmilla-bold.woff") format("woff");
     font-weight: bold;
 }
 
@@ -91,11 +84,11 @@ body {
 }
 
 .margin-top-10 {
-    margin-top:10px
+    margin-top: 10px
 }
 
 .margin-top-20 {
-    margin-top:20px
+    margin-top: 20px
 }
 
 .error {
@@ -118,30 +111,38 @@ body {
 }
 
 .loader {
-    position:absolute;
+    position: absolute;
     top: calc(50% - 20px);
     left: calc(50% - 20px);
     display: block;
     border: 4px solid #eae7e7;
     border-radius: 50%;
-    border-top-color:#f99c02;
+    border-top-color: #f99c02;
     width: 40px;
     height: 40px;
     -webkit-animation: spin 0.8s linear infinite;
     animation: spin 0.8s linear infinite;
     background: whitesmoke;
-    z-index:3;
+    z-index: 3;
     margin: auto;
 }
 
 @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .grid {
@@ -166,7 +167,7 @@ iframe {
     margin-top: 30px;
 }
 
-p + p {
+p+p {
     margin-top: 20px;
 }
 
@@ -188,7 +189,7 @@ h2 {
     margin-top: 30px;
 }
 
-.middle{
+.middle {
     display: inline-block;
     vertical-align: middle;
 }
@@ -214,7 +215,7 @@ h2 {
     font-weight: 600;
     letter-spacing: 0.1px;
     color: #373737;
-  }
+}
 
 .typo2 {
     font-family: Karmilla;
@@ -256,7 +257,6 @@ h2 {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0.2px;
-
     margin-top: 30px;
 }
 
@@ -272,7 +272,6 @@ h2 {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0.2px;
-
     margin-top: 30px;
     width: 100%;
     text-align: center;
@@ -293,13 +292,11 @@ h2 {
     height: 3px;
     background: #373737;
     opacity: 0.15;
-    
 }
 
 strong {
     font-weight: bold;
 }
-
 
 .flex {
     display: flex;
@@ -318,7 +315,6 @@ strong {
     max-width: 1300px;
     margin: auto;
 }
-
 
 .options-label {
     display: block;
@@ -350,7 +346,6 @@ strong {
 .options-textarea {
     height: 80px;
 }
-
 
 /* PAGE PROFIL */
 
@@ -431,7 +426,7 @@ strong {
     transition: all ease 0.8s;
 }
 
-.js-open-chat.active + .modal-chat {
+.js-open-chat.active+.modal-chat {
     display: block;
 }
 
@@ -497,11 +492,12 @@ strong {
 }
 
 .content-page {
-    padding-top: 74px; /* sticky menu */
+    padding-top: 74px;
+    /* sticky menu */
 }
 
-
 /* TEAM  */
+
 .team-header {
     background: #A5C8B4;
     width: calc(100% + 80px);
@@ -542,7 +538,7 @@ strong {
     height: 100%;
     border-radius: 50px;
     background-image: linear-gradient(to right, #fffcfa, #e6e6e6);
-} 
+}
 
 .progress:after {
     content: "";
@@ -579,7 +575,7 @@ strong {
 .progress.anim90 .progress-legend,
 .progress.anim60 .progress-legend {
     animation: fade-in ease 0.5s 0.4s;
-    animation-fill-mode: forwards;  
+    animation-fill-mode: forwards;
 }
 
 .niveau-text {
@@ -635,24 +631,42 @@ strong {
 }
 
 @keyframes progress80 {
-    0% {width: 30px;}
-    100% {width: 80%;}
+    0% {
+        width: 30px;
+    }
+    100% {
+        width: 80%;
+    }
 }
 
 @keyframes progress60 {
-    0% {width: 30px;}
-    100% {width: 60%;}
+    0% {
+        width: 30px;
+    }
+    100% {
+        width: 60%;
+    }
 }
 
 @keyframes progress90 {
-    0% {width: 30px;}
-    100% {width: 90%;}
+    0% {
+        width: 30px;
+    }
+    100% {
+        width: 90%;
+    }
 }
 
 @keyframes fade-in {
-    0% {opacity: 0;}
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .progress.orange {
@@ -688,136 +702,121 @@ strong {
 }
 
 @keyframes appear-chat {
-    0% {opacity: 0;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width:640px) {
     .flex {
         flex-direction: column;
     }
-
     .flex-row {
         flex-direction: row;
     }
-
     .half {
         width: 100%;
     }
-
-    .half + .half {
+    .half+.half {
         margin-top: 30px;
     }
-
     .logo {
         position: static;
         display: inline-block;
         padding: 12px 0;
         width: auto;
     }
-
     .logo img {
         height: 38px;
         width: auto;
     }
-
     .application {
         z-index: 0;
         opacity: 0;
         transition: opacity ease 0.3s;
     }
-
     .content-page {
         padding: 0 40px calc(60px + 60px);
     }
-
     .padding-top-menu {
-        padding-top: 65px; /* sticky menu */
+        padding-top: 65px;
+        /* sticky menu */
     }
-
     .typo1 {
         font-size: 32px;
         line-height: 40px;
     }
-
     .typo2 {
         font-size: 16px;
         line-height: 1.69;
     }
-
-    p + p {
+    p+p {
         margin-top: 20px;
     }
-
     .button1 {
         width: 100%;
         text-align: center;
     }
-
     .underlink:before {
         height: 1px;
         opacity: 1;
         bottom: -1px;
     }
-
     .button2 {
         margin-top: 15px;
     }
-
     .no-mobile {
         display: none;
     }
-
     .actu:last-of-type {
         margin-bottom: 60px;
     }
-
     .content-page.no-padding-bottom {
         padding-bottom: 60px;
+    }
+    .loader {
+        position: fixed;
     }
 }
 
 /* ONLY DESKTOP */
+
 @media screen and (min-width:641px) {
     .no-desktop {
         display: none;
     }
-
     .menu {
         display: none;
-    }    
-
+    }
     .swiper-desktop-hide {
         display: none;
     }
-
     .boxed-wrapper {
-        width: calc(100% - 80px); 
+        width: calc(100% - 80px);
     }
-
-    .button2 + .button2 {
+    .button2+.button2 {
         margin-left: 20px;
     }
-
     .button2 {
         transition: all ease 0.3s;
     }
-
     .button2:hover {
         background: #e6a587;
         color: white;
     }
-
     .actu.green .button2:hover {
         background: #a5c8b4;
         color: white;
     }
-
     #loader {
         display: none;
     }
-
     .swiper-slide.content-page {
         height: 100vh;
     }
