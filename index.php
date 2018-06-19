@@ -33,7 +33,7 @@
                 }
 
                 if(!isset($_GET['page']) || $_GET['page'] === 'home') {
-                    echo '<div class="pattern"></div>';
+                    echo '<div class="pattern no-mobile"></div>';
                 }
                 ?>
                     <header class="topbar sticky">
@@ -82,7 +82,7 @@
                                         $active = 'swiper-tabs-active';
                                     }
                                 ?>
-                                    <div class="swiper-slide <?=$active?> <?=$page?> team<?=$teamIn?>">
+                                    <div class="swiper-slide <?=$active?> <?=$page?> <?=$page?><?=$teamIn?>">
                                         <?php
                                             include ('app/views/' . $page . '.php');
                                         ?>

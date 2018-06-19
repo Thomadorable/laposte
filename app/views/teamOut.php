@@ -12,7 +12,18 @@
     </div>
 </header>
 
-<h1 class="page-title">Rejoignez une team</h1>
+<div class="center">
+    <img src="images/box.svg" alt="Icone de la team" class="no-team-img">
+    <h1 class="typo1">Pas de team ?</h1>
+
+    <p class="typo2" style="margin-top:10px">Paaper, c’est encore mieux avec tes amis ! Débloque de nouveaux objectifs avec l’aide de ta team et gagnez ensemble des surprises inédites.</p>
+</div>
+
+<a href="" class="button1">Créer une team</a>
+<a href="" class="button1">Rejoindre une team</a>
+
+
+
 <?php foreach ($teams as $team) { ?>
     <div class="team">
         <h2><?= $team->name ?></h2>

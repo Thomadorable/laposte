@@ -64,9 +64,11 @@
 }
 
 .actu header {
+    position: relative;
     background: #e6a587;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .actu header p {
@@ -79,6 +81,30 @@
     position: relative;
     padding: 20px;
 }
+
+/* .actu-content:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/gridbg.png') fixed 0 0;
+    background-size: 500px;
+    filter: blur(2px);
+    transform: translateZ(0);
+}
+
+.actu-content:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #373737;
+    opacity: 0.15;
+} */
 
 .actu-content .typo2 {
     font-size: 18px;
@@ -113,6 +139,17 @@
     margin-left: 10px;
     vertical-align: middle;
 }
+
+.pattern:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: url('../images/gridbg.png') fixed 0 0;
+    background-size: 500px;
+}
+
 .actu svg{
     fill: #fff;
     display: inline-block;
@@ -169,22 +206,37 @@
     .scrolling.fadeOut:after {
         display: none;
     }
+
+    .pattern:before {
+        width: 100%;
+        left: 0;
+        height: 200px;
+    }
+
+    .pattern:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 115px;
+        height: 150px;
+        background-image: linear-gradient(to bottom, rgba(255, 252, 250, 0), #fffcfa);
+    }
+
+    .home-pattern {
+        width: calc(100% + 80px);
+        position: relative;
+        left: -40px;
+        padding: 0 40px;
+        background: url('../images/gridbg.png') repeat;
+        background-size: 500px;
+        background-position: left -29px;
+    }
 }
 
 /* ONLY DESKTOP */
 @media screen and (min-width:641px) {
-    .pattern:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        width: 50%;
-        height: 100%;
-        background: url('../images/gridbg.png') repeat;
-        background-size: 500px;
-    }
-
     .home-left .typo2:nth-of-type(2) {
         width: 85%;
     }
-    
 }
