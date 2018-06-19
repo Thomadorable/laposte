@@ -46,7 +46,7 @@
                             </ul>
 
                             <ul class="header-menu">
-                                <li><a class="typo3" href="?page=profile">Bonjour, <strong><?php echo $_SESSION['name']?></strong></a></li>
+                                <li><a class="typo3" href="?page=profile">Bonjour, <strong><?= $_SESSION['name']?></strong><span class="round-btn"><?php include('./images/chevron-down.svg') ?></span></a></li>
                             </ul>
                         </div>
                     </header>

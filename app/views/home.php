@@ -36,7 +36,7 @@
                     <div class="actu green">
                         <header>
                             <p class="actu-title"><?php include('./images/package.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
-                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
+                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include('./images/x.svg') ?></a></p>
                         </header>
                         <div class="actu-content">
                             <p class="typo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit impedit laboriosam expedita ullam, minima placeat cumque perferendis quia aut natus veniam at culpa fugit suscipit repellendus voluptate adipisci quibusdam explicabo?</p>
@@ -50,7 +50,7 @@
                     <div class="actu">
                         <header>
                             <p class="actu-title"><?php include('./images/user-plus.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
-                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
+                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include('./images/x.svg') ?></a> </p>
                         </header>
                         <div class="actu-content">
                             <p class="typo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit impedit laboriosam expedita ullam, minima placeat cumque perferendis quia aut natus veniam at culpa fugit suscipit repellendus voluptate adipisci quibusdam explicabo?</p>
