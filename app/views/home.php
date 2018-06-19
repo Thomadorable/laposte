@@ -38,7 +38,7 @@
                     <div class="actu green">
                         <header>
                             <p class="actu-title"><?php include('./images/package.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
-                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
+                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include('./images/x.svg') ?></a></p>
                         </header>
                         <div class="actu-content">
                             <p class="typo2 z-index-2">L’été approche à grand pas et pour l’occasion, notre partenaire du mois a plein de bons plans 
@@ -53,7 +53,7 @@
                     <div class="actu">
                         <header>
                             <p class="actu-title"><?php include('./images/user-plus.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
-                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu">x</a> </p>
+                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include('./images/x.svg') ?></a> </p>
                         </header>
                         <div class="actu-content">
                             <p class="typo2 z-index-2">Votre ami(e) Facebook Estelle Burnichon vient de rejoindre l’aventure, souhaitez-vous l’inviter à rejoindre votre team ?</p>

@@ -51,6 +51,10 @@
 .swiper-slide.home .v-center {
     width: calc(100% - 70px);
 }
+.close.svg {
+    height: 0.6rem;
+    margin: 0;
+}
 
 .actu {
     background: rgba(223, 223, 223, 0.5);
