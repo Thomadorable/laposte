@@ -43,16 +43,16 @@ $(function(){
             $.post('app/views/updateUser.php', datas, function(data){
                 if (data === '202') {
                     setTimeout(function(){
-                        // $('.content-page').fadeOut(200);
-                        // $.get('app/views/profile.php', function(data){
-                        //     console.log(data);
-                        //     setTimeout(function(){
-                        //         $('.content-page').html(data);
-                        //         $('.content-page').fadeIn(200);
-                        //         initActions();
-                        //         checkTopBar();
-                        //     }, 200);
-                        // });
+                        $('.content-page').fadeOut(200);
+                        $.get('app/views/profile.php', function(data){
+                            console.log(data);
+                            setTimeout(function(){
+                                $('.content-page').html(data);
+                                $('.content-page').fadeIn(200);
+                                initActions();
+                                checkTopBar();
+                            }, 200);
+                        });
                     }, 500);
                 }
             });

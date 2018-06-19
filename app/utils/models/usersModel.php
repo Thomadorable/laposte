@@ -16,6 +16,7 @@ function getUserByMail($login) {
 
 function getUserByID($id) {
     $bdd = getBdd();
+    
     $users = $bdd->users;
     if (property_exists($users, $id)) $currentUser = $users->$id;
     else $currentUser = null;

@@ -1,5 +1,4 @@
 <?php
-
     $base = 'http://localhost/GIT/laposte/';
     $baseInclude = '';
 
@@ -9,7 +8,7 @@
             exit();
         }
 
-        $base = '';
+        $base = '://paaper.fr/';
     }
 
     define('base', $base);
@@ -60,6 +59,7 @@
 
     if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
         $loggedUser = getUserByID($_SESSION['id']);
+
         $team = getTeamByUserID();
     }
 ?>
