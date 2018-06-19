@@ -384,9 +384,12 @@ strong {
     text-align: left;
     margin-bottom: .5rem;
 }
+.profile .min{
+    font-size: 1.6rem
+}
 
-.profile br {
-    margin-bottom: 1.5rem;
+.profile p + p{
+    margin-top: 1rem
 }
 
 .js-open-chat {
