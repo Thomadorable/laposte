@@ -14,6 +14,7 @@
         <meta charset="utf-8">
         <title>Paaper</title>
         <link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/fakelist.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/home.css">
@@ -128,6 +129,7 @@
         ?>
     <script src="js/jquery.min.js"></script>
     <script src="js/swiper.min.js"></script>
+    <script src="js/fakelist.js"></script>
     <script src="js/main.js"></script>
 
     </body>
