@@ -28,6 +28,7 @@
     display: inline-block;
     vertical-align: top;
     text-decoration: none;
+    width: 100%;
 }
 
 .swiper-container-team .swiper-slide a img {

@@ -8,7 +8,7 @@
             exit();
         }
 
-        $base = '://paaper.fr/';
+        $base = 'http://paaper.fr/';
     }
 
     define('base', $base);
@@ -29,6 +29,7 @@
 
     function getBdd() {
         $bdd = file_get_contents(base . 'app/utils/bdd.json');
+
         return json_decode($bdd);
     }
 

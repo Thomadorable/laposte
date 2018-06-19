@@ -48,7 +48,7 @@
     padding: 0;
 }
 
-.swiper-slide.home .v-center {
+.v-center-home {
     width: calc(100% - 70px);
 }
 .close.svg {
@@ -159,7 +159,7 @@
 }
 /* ONLY MOBILE */
 @media screen and (max-width:640px){
-    .swiper-slide.home .v-center {
+    .v-center-home {
         position: static;
         transform: none;
         font-size: 0;

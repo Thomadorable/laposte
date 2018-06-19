@@ -18,7 +18,7 @@
 
 <article class="flex full-height padding-top-menu">
     <div class="half home-half home-left">
-        <div class="v-center">
+        <div class="v-center-home">
         <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Avatar" class="home-avatar">
         <p class="typo1">Re-bonjour <?= $loggedUser->name ?> ! 👋🏆🍕🥓🎉📦</p>
 

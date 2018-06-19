@@ -38,21 +38,15 @@ $(function(){
             event.preventDefault();
             var datas = $(this).serialize();
 
-            $('.content-page').html('<div class="loader"></div>');
+            $('.content-page').html('');
+
+            $('.loader').addClass('visible');
+
 
             $.post('app/views/updateUser.php', datas, function(data){
                 if (data === '202') {
                     setTimeout(function(){
-                        $('.content-page').fadeOut(200);
-                        $.get('app/views/profile.php', function(data){
-                            console.log(data);
-                            setTimeout(function(){
-                                $('.content-page').html(data);
-                                $('.content-page').fadeIn(200);
-                                initActions();
-                                checkTopBar();
-                            }, 200);
-                        });
+                        appAjax('profile', 5);
                     }, 500);
                 }
             });
@@ -101,7 +95,7 @@ $(function(){
         }
     });
 
-    function changeTab(tab) {
+    function changeTab() {
         $('.progress').each(function(time){
             setTimeout(() => {
                 $(this).addClass('anim' + $(this).data('level'));
@@ -117,6 +111,7 @@ $(function(){
         checkTopBar();
     });
 
+    // PARAMETERS : PAGE + ID PAGE (active onglet)
     function appAjax(page, tab) {
         if (typeof tab !== 'undefined') {
             var wantedTab = $('.item-menu:nth-of-type(' + tab + ')');
@@ -133,9 +128,7 @@ $(function(){
         $('.application').css('opacity', 0);
         closeChat();
 
-        $('#loader').fadeIn(500);
-
-        console.log(page);
+        $('#loader').addClass('visible');
 
         if (tab === 1) {
             $('.content-page').addClass('no-padding-bottom');
@@ -144,7 +137,7 @@ $(function(){
         }
 
         $.get('app/views/' + page + '.php', function(data){
-            $('#loader').hide();
+            $('#loader').removeClass('visible');
 
             setTimeout(function(){
                 $('.content-page').html(data);
@@ -153,9 +146,7 @@ $(function(){
                 initActions();
                 checkTopBar();
 
-                if (typeof tab !== 'undefined') {
-                    changeTab(tab); // anim
-                }
+                changeTab(); // anim
             }, 200);
         });
     }
@@ -165,7 +156,7 @@ $(function(){
     if (screen.width <= 640) {
         initActions();
         $('.application').css('opacity', 1);
-        $('#loader').fadeOut();
+        $('#loader').removeClass('visible');
         changeTab();
 
         $(document).on('click', '.js-get-page', function(event){

@@ -53,7 +53,7 @@
 
                         $ishome = ($page === 'home') ? 'no-padding-bottom' : '';
                     ?>
-                    <div class="loader" id="loader"></div>
+                    <div class="loader visible" id="loader"></div>
                     <section class="boxed-wrapper application" >
                         <div class="swiper-slide content-page <?=$page?> <?=$ishome?>">
                             <?php
