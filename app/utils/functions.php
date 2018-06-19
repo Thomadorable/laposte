@@ -1,11 +1,21 @@
 <?php
-   // define('base', 'http://localhost/laposte/');
-    define('base', 'http://localhost/GIT/laposte/');
 
-    if (empty($_SERVER['HTTPS']) && $_SERVER['REMOTE_ADDR'] !== '::1') {
-        header('Location: https://paaper.fr/index.php');
-        exit();
+    $base = 'http://localhost/GIT/laposte/';
+    $baseInclude = '';
+
+    if ($_SERVER['REMOTE_ADDR'] !== '::1') {
+        if (empty($_SERVER['HTTPS'])) {
+            header('Location: https://paaper.fr/index.php');
+            exit();
+        }
+
+        $base = '';
     }
+
+    define('base', $base);
+
+
+    
 
     if (isset($_GET['logout'])) {
         session_destroy();
@@ -34,9 +44,15 @@
         return true;
     }
 
+    $path = '';
+    $pattern = '/ajax/';
+    if (preg_match($pattern, $_SERVER['PHP_SELF'])) {
+        $path = '../../';
+    }
+
     $models = ['security', 'teams', 'users', 'messages'];
-    foreach ($models as $model ) {
-        require_once('./app/utils/models/'.$model.'Model.php');
+    foreach ($models as $model) {
+        require_once($path . 'app/utils/models/'.$model.'Model.php');
     }
 
 ?>

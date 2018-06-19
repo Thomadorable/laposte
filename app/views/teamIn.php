@@ -35,6 +35,8 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+
+    <div class="progress"></div>
 </header>
 
 <a href="?page=team&team=0" class="button1">Quitter la team</a>
