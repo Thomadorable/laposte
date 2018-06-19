@@ -8,7 +8,7 @@
     require_once($path . 'app/utils/functions.php');
 ?>
 
-<header class="topbar sticky topbar2">
+<header class="topbar topbar2 sticky">
     <div class="boxed-wrapper flex padding-20">
         <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
     </div>
@@ -16,7 +16,7 @@
 
 <div class="pattern no-desktop"></div>
 
-<article class="flex full-height">
+<article class="flex full-height padding-top-menu">
     <div class="half home-half home-left">
         <div class="v-center">
         <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Avatar" class="home-avatar">

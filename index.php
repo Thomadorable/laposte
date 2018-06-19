@@ -13,7 +13,6 @@
     <head>
         <meta charset="utf-8">
         <title>Paaper</title>
-        <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/swiper.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/menu.css">
@@ -51,11 +50,10 @@
                     </header>
                     <?php
                         $page = (isset($_GET['page'])) ? $_GET['page'] : 'home';
-                        $teamIn = ($team) ? 'in' : 'out' ;
                     ?>
                     <div class="loader" id="loader"></div>
-                    <section class="page-content boxed-wrapper swiper-container-tabs" >
-                        <div class="swiper-slide content-page <?=$page?> <?=$page?><?=$teamIn?>">
+                    <section class="boxed-wrapper application" >
+                        <div class="swiper-slide content-page <?=$page?>">
                             <?php
                                 include ('app/views/' . $page . '.php');
                             ?>
@@ -112,7 +110,7 @@
                             </ul>
                         </div>
                     </header>
-                    <section class="page-content boxed-wrapper visitor">
+                    <section class="boxed-wrapper visitor">
                         <?php
                             $allowedPages = ['landing', 'login', 'register'];
                             $page = (isset($_GET['page']) && in_array($_GET['page'], $allowedPages)) ? $_GET['page'] : 'landing';

@@ -38,20 +38,21 @@ $(function(){
             event.preventDefault();
             var datas = $(this).serialize();
 
-            $('.swiper-tabs-active').html('<div class="loader"></div>');
+            $('.content-page').html('<div class="loader"></div>');
 
-            $.post('app/ajax/updateUser.php', datas, function(data){
+            $.post('app/views/updateUser.php', datas, function(data){
                 if (data === '202') {
                     setTimeout(function(){
-                        $('.swiper-tabs-active').fadeOut(200);
-                        $.get('app/ajax/profile.php', function(data){
-                            setTimeout(function(){
-                                $('.swiper-tabs-active').html(data);
-                                $('.swiper-tabs-active').fadeIn(200);
-                                initActions();
-                                checkTopBar();
-                            }, 200);
-                        });
+                        // $('.content-page').fadeOut(200);
+                        // $.get('app/views/profile.php', function(data){
+                        //     console.log(data);
+                        //     setTimeout(function(){
+                        //         $('.content-page').html(data);
+                        //         $('.content-page').fadeIn(200);
+                        //         initActions();
+                        //         checkTopBar();
+                        //     }, 200);
+                        // });
                     }, 500);
                 }
             });
@@ -67,15 +68,15 @@ $(function(){
 
     function checkTopBar() {
         if (screen.width <= 640) {
-            // var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
+            var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
 
-            // if (scrollTop < currentPos) {
-            //     $('.topbar2').addClass('sticky');
-            // } else if (scrollTop > 50) {
-            //     $('.topbar2').removeClass('sticky');
-            // } 
+            if (scrollTop < currentPos) {
+                $('.topbar2').addClass('sticky');
+            } else if (scrollTop > 50) {
+                $('.topbar2').removeClass('sticky');
+            } 
 
-            // currentPos = scrollTop;
+            currentPos = scrollTop;
         }
     }
 
@@ -114,7 +115,7 @@ $(function(){
         closeChat();
     });
 
-    $('.swiper-slide').scroll(function(){
+    $(document).scroll(function(){
         checkTopBar();
     });
 
@@ -131,13 +132,18 @@ $(function(){
             }  
         } 
 
-        $('.swiper-container-tabs').css('opacity', 0);
+        $('.application').css('opacity', 0);
         closeChat();
 
+        $('#loader').fadeIn(500);
+
         $.get('app/views/' + page + '.php', function(data){
+            $('#loader').hide();
+
             setTimeout(function(){
                 $('.content-page').html(data);
-                $('.swiper-container-tabs').css('opacity', 1);
+                $('html, body').stop().animate( { scrollTop: 0 }, 0 );
+                $('.application').css('opacity', 1);
                 initActions();
                 checkTopBar();
 
@@ -151,11 +157,8 @@ $(function(){
     checkTopBar();
     
     if (screen.width <= 640) {
-        $('.topbar2').addClass('sticky');
-
         initActions();
-        // chargement terminé
-        $('.swiper-container-tabs').css('opacity', 1);
+        $('.application').css('opacity', 1);
         $('#loader').fadeOut();
 
         $(document).on('click', '.js-get-page', function(event){

@@ -1,9 +1,11 @@
 <?php
+    $path = './';
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
+        $path = '../../';
     }
 
-    require_once('../utils/functions.php');
+    require_once($path . 'app/utils/functions.php');
 
     $user = getUserByID($_SESSION['id']);
 
