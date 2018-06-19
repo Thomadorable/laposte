@@ -20,7 +20,6 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/swiper.css">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
     </head>
     <body>
         <?php
@@ -62,9 +61,6 @@
                         if(isset($_GET['team']) && is_numeric($_GET['team'])) {
                             updateTeam($_GET['team']);
                         }
-                        
-                        $loggedUser = getUserByID($_SESSION['id']);
-                        $team = getTeamByUserID();
 
                         $teamIn = ($team) ? 'in' : 'out' ;
                     ?>

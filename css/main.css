@@ -44,6 +44,20 @@ table {border-collapse: collapse;border-spacing: 0;}
     font-weight: 300;
 }
 
+@font-face {
+    font-family: "Karmilla";
+    src: url("../webfonts/karmilla.ttf") format("truetype"),
+        url("../webfonts/karmilla.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Karmilla";
+    src: url("../webfonts/karmilla-bold.ttf") format("truetype"),
+        url("../webfonts/karmilla-bold.woff") format("woff");
+    font-weight: bold;
+}
+
 html {
     font-size: 10px;
 }
@@ -74,6 +88,14 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.margin-top-10 {
+    margin-top:10px
+}
+
+.margin-top-20 {
+    margin-top:20px
 }
 
 .error {
@@ -195,7 +217,7 @@ h2 {
   }
 
 .typo2 {
-    font-family: Karla;
+    font-family: Karmilla;
     font-size: 20px;
     font-weight: normal;
     line-height: 1.9;
@@ -204,7 +226,7 @@ h2 {
 }
 
 .typo3 {
-    font-family: Karla;
+    font-family: Karmilla;
     font-size: 1.8rem;
     letter-spacing: 0.1px;
     font-weight: normal;
@@ -230,7 +252,7 @@ h2 {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: Karla;
+    font-family: Karmilla;
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 0.2px;
@@ -246,7 +268,7 @@ h2 {
     color: #e6a587;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: Karla;
+    font-family: Karmilla;
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 0.2px;
@@ -333,12 +355,9 @@ strong {
 /* PAGE PROFIL */
 
 .js-open-chat {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    background: #E6A587;
+    width: 80px;
+    background: none;
     border: none;
-    border-radius: 50%;
     color: white;
     position: fixed;
     bottom: 80px;
@@ -346,6 +365,10 @@ strong {
     transition: all ease 0.8s, font-size linear 0s 0.8s;
     outline: none;
     z-index: 10;
+}
+
+.js-open-chat img {
+    width: 100%;
 }
 
 .js-open-chat.active {
@@ -501,47 +524,163 @@ strong {
     margin: 40px auto 20px;
 }
 
-/* .progress-container {
-    
-    padding: 2px 3px;
-    border-radius: 8px;
-    width: 50%;
-} */
-
-/* .progress {
-    
-    
-}
-*/
-
 .progress {
     position: relative;
     width: 100%;
-    height: 10px;
-    border-radius: 5px;
+    height: 30px;
+    border-radius: 30px;
     background-color: rgba(255, 252, 250, 0.25);
 }
 
 .progress:before {
     content: "";
     position: absolute;
-    width: 80%;
+    width: 30px;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 50px;
     background-image: linear-gradient(to right, #fffcfa, #e6e6e6);
 } 
 
 .progress:after {
     content: "";
     position: absolute;
-    width: 80%;
+    width: 30px;
     height: 100%;
-    border-radius: 8px;
-    border: 1px solid #fffcfa;
-    padding: 3px 4px;
-    padding-right: 3px;
+    border-radius: 70px;
+    border: solid 2px rgba(255, 252, 250, 0.5);
+    padding: 2px 4px;
+    padding-right: 2px;
     top: -4px;
-    left: -4px;
+    left: -5px;
+}
+
+.progress.anim80:before,
+.progress.anim80:after {
+    width: 80%;
+    animation: progress80 ease-in-out 0.6s;
+}
+
+.progress.anim60:before,
+.progress.anim60:after {
+    width: 60%;
+    animation: progress60 ease-in-out 0.6s;
+}
+
+.progress.anim90:before,
+.progress.anim90:after {
+    width: 90%;
+    animation: progress90 ease-in-out 0.6s;
+}
+
+.progress.anim80 .progress-legend,
+.progress.anim90 .progress-legend,
+.progress.anim60 .progress-legend {
+    animation: fade-in ease 0.5s 0.4s;
+    animation-fill-mode: forwards;  
+}
+
+.niveau-text {
+    color: rgba(55, 55, 55, 0.5);
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    top: 1px;
+}
+
+.defi-text {
+    color: #fffcfa;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    top: 1px;
+}
+
+.progress-legend {
+    opacity: 0;
+}
+
+.team-star {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    width: 12px;
+}
+
+.puce {
+    position: relative;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 5px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.puce.active {
+    background: #e6a587;
+}
+
+.puce.half-puce:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #e6a587;
+}
+
+@keyframes progress80 {
+    0% {width: 30px;}
+    100% {width: 80%;}
+}
+
+@keyframes progress60 {
+    0% {width: 30px;}
+    100% {width: 60%;}
+}
+
+@keyframes progress90 {
+    0% {width: 30px;}
+    100% {width: 90%;}
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.progress.orange {
+    background-color: #e6e6e6;
+}
+
+.progress.orange:before {
+    background-image: linear-gradient(to right, #f4d1bc, #e6a587);
+}
+
+.progress.orange:after {
+    border-color: rgba(55, 55, 55, 0.11);
+}
+
+.text-progress {
+    color: #8c8b8b;
+    font-size: 14px;
+}
+
+.title-progress {
+    letter-spacing: 0.2px;
+    font-weight: bold;
+}
+
+.separator {
+    position: relative;
+    left: -40px;
+    height: 1px;
+    width: calc(100% + 80px);
+    background: #e6e6e6;
+    margin-top: 30px;
 }
 
 @keyframes appear-chat {
@@ -553,6 +692,10 @@ strong {
 @media screen and (max-width:640px) {
     .flex {
         flex-direction: column;
+    }
+
+    .flex-row {
+        flex-direction: row;
     }
 
     .half {

@@ -1,4 +1,4 @@
-<button class="js-open-chat">Chaat</button>
+<button class="js-open-chat"><img src="images/chat.svg"></button>
 <div class="modal-chat">
     <button class="chat-close">Close</button>
     <h2>Mur de la team</h2>

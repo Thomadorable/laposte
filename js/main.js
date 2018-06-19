@@ -54,7 +54,7 @@ $(function(){
                 if (data === '202') {
                     setTimeout(function(){
                         $('.swiper-tabs-active').fadeOut(200);
-                        $.get('app/views/profile.php', function(data){
+                        $.get('app/ajax/profile.php', function(data){
                             setTimeout(function(){
                                 $('.swiper-tabs-active').html(data);
                                 $('.swiper-tabs-active').fadeIn(200);
@@ -77,15 +77,15 @@ $(function(){
 
     function checkTopBar() {
         if (screen.width <= 640) {
-            var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
+            // var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
 
-            if (scrollTop < currentPos) {
-                $('.topbar2').addClass('sticky');
-            } else if (scrollTop > 50) {
-                $('.topbar2').removeClass('sticky');
-            } 
+            // if (scrollTop < currentPos) {
+            //     $('.topbar2').addClass('sticky');
+            // } else if (scrollTop > 50) {
+            //     $('.topbar2').removeClass('sticky');
+            // } 
 
-            currentPos = scrollTop;
+            // currentPos = scrollTop;
         }
     }
 
@@ -110,6 +110,16 @@ $(function(){
         }
     });
 
+    function changeTab(tab) {
+        if (tab === 3) {
+            $('.progress').each(function(time){
+                setTimeout(() => {
+                    $(this).addClass('anim' + $(this).data('level'));
+                }, (time * 100))
+            });
+        }
+    }
+
     $('.chat-close').click(function(){
         closeChat();
     });
@@ -126,10 +136,11 @@ $(function(){
             speed: 500,
             on: {
                 slideChange: function() {
+                    $('.progress').removeClass('anim90').removeClass('anim80').removeClass('anim60');
                     $('.item-menu').removeClass('active').eq(this.activeIndex).addClass('active');
-                    setTimeout(function(){
-                        // checkTopBar();
+                    setTimeout(() => {
                         $('.topbar2').addClass('sticky');
+                        changeTab(this.activeIndex);
                     }, 200);
                 },
                 init: function() {
@@ -163,13 +174,13 @@ $(function(){
                     $('.box-icon').removeClass('boxed').attr('src', 'images/mailbox2.gif');
                 }
 
-                $('.page-content').fadeOut(200);
+                $('.swiper-container-tabs').css('opacity', 0);
     
-                closeChat();
+                // closeChat();
     
                 setTimeout(function(){
                     applicationTabs.slideTo(tab - 1, 0);
-                    $('.page-content').fadeIn(200);
+                    $('.swiper-container-tabs').css('opacity', 1);
                 }, 200);
             }
         });

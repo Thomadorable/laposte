@@ -14,9 +14,6 @@
 
     define('base', $base);
 
-
-    
-
     if (isset($_GET['logout'])) {
         session_destroy();
         header('Location: index.php');
@@ -55,4 +52,7 @@
         require_once($path . 'app/utils/models/'.$model.'Model.php');
     }
 
+
+    $loggedUser = getUserByID($_SESSION['id']);
+    $team = getTeamByUserID();
 ?>

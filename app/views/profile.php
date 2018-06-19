@@ -2,11 +2,11 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-?>
+?>  
 
 <header class="profile-header">
     <img src="images/cover.jpg" alt="">
-    <h1 class="page-title"><?php echo $_SESSION['name']?></h1>
+    <h1 class="page-title"><?=$loggedUser->name?></h1>
     <button class="edit-profile js-ajax-page" data-page="options">
         <img src="images/validator.svg" alt="">
     </button>
