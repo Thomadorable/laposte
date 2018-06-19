@@ -137,6 +137,14 @@ $(function(){
 
         $('#loader').fadeIn(500);
 
+        console.log(page);
+
+        if (tab === 1) {
+            $('.content-page').addClass('no-padding-bottom');
+        } else {
+            $('.content-page').removeClass('no-padding-bottom');
+        }
+
         $.get('app/views/' + page + '.php', function(data){
             $('#loader').hide();
 

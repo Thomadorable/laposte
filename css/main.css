@@ -773,7 +773,7 @@ strong {
         margin-bottom: 60px;
     }
 
-    .content-page.home {
+    .content-page.no-padding-bottom {
         padding-bottom: 60px;
     }
 }

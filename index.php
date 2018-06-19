@@ -49,11 +49,13 @@
                         </div>
                     </header>
                     <?php
-                        $page = (isset($_GET['page'])) ? $_GET['page'] : 'home';
+                        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+                        $ishome = ($page === 'home') ? 'no-padding-bottom' : '';
                     ?>
                     <div class="loader" id="loader"></div>
                     <section class="boxed-wrapper application" >
-                        <div class="swiper-slide content-page <?=$page?>">
+                        <div class="swiper-slide content-page <?=$page?> <?=$ishome?>">
                             <?php
                                 include ('app/views/' . $page . '.php');
                             ?>
