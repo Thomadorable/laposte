@@ -52,6 +52,12 @@
         require_once($path . 'app/utils/models/'.$model.'Model.php');
     }
 
+    if(isset($_GET['team']) && is_numeric($_GET['team'])) {
+        updateTeam($_GET['team']);
+        header('Location: index.php?page=team');
+        exit();
+    }
+
 
     $loggedUser = getUserByID($_SESSION['id']);
     $team = getTeamByUserID();

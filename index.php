@@ -58,10 +58,6 @@
                             $currentSlide = 'false';
                         }
 
-                        if(isset($_GET['team']) && is_numeric($_GET['team'])) {
-                            updateTeam($_GET['team']);
-                        }
-
                         $teamIn = ($team) ? 'in' : 'out' ;
                     ?>
                     <div class="loader" id="loader"></div>
