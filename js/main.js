@@ -102,13 +102,11 @@ $(function(){
     });
 
     function changeTab(tab) {
-        if (tab === 4) {
-            $('.progress').each(function(time){
-                setTimeout(() => {
-                    $(this).addClass('anim' + $(this).data('level'));
-                }, (time * 100))
-            });
-        }
+        $('.progress').each(function(time){
+            setTimeout(() => {
+                $(this).addClass('anim' + $(this).data('level'));
+            }, (time * 100))
+        });
     }
 
     $('.chat-close').click(function(){
@@ -168,6 +166,7 @@ $(function(){
         initActions();
         $('.application').css('opacity', 1);
         $('#loader').fadeOut();
+        changeTab();
 
         $(document).on('click', '.js-get-page', function(event){
             event.preventDefault();

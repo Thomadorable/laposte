@@ -614,8 +614,15 @@ strong {
     animation: progress90 ease-in-out 0.6s;
 }
 
+.progress.anim30:before,
+.progress.anim30:after {
+    width: 30%;
+    animation: progress30 ease-in-out 0.6s;
+}
+
 .progress.anim80 .progress-legend,
 .progress.anim90 .progress-legend,
+.progress.anim30 .progress-legend,
 .progress.anim60 .progress-legend {
     animation: fade-in ease 0.5s 0.4s;
     animation-fill-mode: forwards;
@@ -702,6 +709,15 @@ strong {
     }
     100% {
         width: 90%;
+    }
+}
+
+@keyframes progress30 {
+    0% {
+        width: 30px;
+    }
+    100% {
+        width: 30%;
     }
 }
 
