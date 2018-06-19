@@ -50,37 +50,14 @@
                         </div>
                     </header>
                     <?php
-                        $pages = [0 => 'home', 1 => 'gift', 2 => 'box', 3 => 'team', 4 => 'profile'];
-
-                        $currentSlide = (isset($_GET['page'])) ? array_search($_GET['page'], $pages) : 'false';
-
-                        if ($currentSlide === false) {
-                            $currentSlide = 'false';
-                        }
-
+                        $page = (isset($_GET['page'])) ? $_GET['page'] : 'home';
                         $teamIn = ($team) ? 'in' : 'out' ;
                     ?>
                     <div class="loader" id="loader"></div>
-                    <section class="page-content boxed-wrapper swiper-container-tabs full-height" data-current="<?=$currentSlide?>">
-                        <div class="swiper-wrapper">
+                    <section class="page-content boxed-wrapper swiper-container-tabs" >
+                        <div class="swiper-slide content-page <?=$page?> <?=$page?><?=$teamIn?>">
                             <?php
-                                foreach ($pages as $page) {
-                                    $active = 'swiper-desktop-hide';
-                                    if(isset($_GET['page']) && in_array($_GET['page'], $pages)) {
-                                        if ($_GET['page'] === $page) {
-                                            $active = 'swiper-tabs-active';
-                                        }
-                                    } else if($page === 'home') {
-                                        $active = 'swiper-tabs-active';
-                                    }
-                                ?>
-                                    <div class="swiper-slide <?=$active?> <?=$page?> <?=$page?><?=$teamIn?>">
-                                        <?php
-                                            include ('app/views/' . $page . '.php');
-                                        ?>
-                                    </div>
-                                <?php
-                                }
+                                include ('app/views/' . $page . '.php');
                             ?>
                         </div>
                     </section>

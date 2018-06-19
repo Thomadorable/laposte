@@ -1,8 +1,12 @@
 <?php
+    $path = './';
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
+        $path = '../../';
     }
-?>  
+
+    require_once($path . 'app/utils/functions.php');
+?>
 
 <header class="profile-header">
     <img src="images/cover.jpg" alt="">

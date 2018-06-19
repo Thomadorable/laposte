@@ -1,3 +1,13 @@
+<?php
+    $path = './';
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+        $path = '../../';
+    }
+
+    require_once($path . 'app/utils/functions.php');
+?>
+
 <header class="topbar sticky topbar2">
     <div class="boxed-wrapper flex padding-20">
         <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
@@ -5,12 +15,6 @@
 </header>
 
 <div class="pattern no-desktop"></div>
-
-<?php
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-?>
 
 <article class="flex full-height">
     <div class="half home-half home-left">
@@ -27,7 +31,7 @@
             Après <strong class="underlink">9 mois</strong> sans manquer un seul de nos rendez-vous, tu fais aussi partie de notre élite Paaperienne puisque c’est mieux que <strong class="underlink">85%</strong> de nos membres. Merci pour ta fidélité ! ✉️
         </p>
 
-        <a href="?page=box" class="js-get-page button1" data-page="box" data-tab="1"><span class="middle"> Ma boîte aux lettres</span> <?php include('./images/arrow.svg') ?></a>
+        <a href="?page=box" class="js-get-page button1" data-page="box" data-tab="1"><span class="middle"> Ma boîte aux lettres</span> <?php include($path . 'images/arrow.svg') ?></a>
         </div>
     </div>
 
@@ -37,8 +41,8 @@
                  if ($i === 2 ) { ?>
                     <div class="actu green">
                         <header>
-                            <p class="actu-title"><?php include('./images/package.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
-                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include('./images/x.svg') ?></a></p>
+                            <p class="actu-title"><?php include($path . 'images/package.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
+                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a></p>
                         </header>
                         <div class="actu-content">
                             <p class="typo2 z-index-2">L’été approche à grand pas et pour l’occasion, notre partenaire du mois a plein de bons plans 
@@ -52,8 +56,8 @@
                 <?php } else { ?>
                     <div class="actu">
                         <header>
-                            <p class="actu-title"><?php include('./images/user-plus.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
-                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include('./images/x.svg') ?></a> </p>
+                            <p class="actu-title"><?php include($path . 'images/user-plus.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
+                            <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a> </p>
                         </header>
                         <div class="actu-content">
                             <p class="typo2 z-index-2">Votre ami(e) Facebook Estelle Burnichon vient de rejoindre l’aventure, souhaitez-vous l’inviter à rejoindre votre team ?</p>

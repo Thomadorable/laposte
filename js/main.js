@@ -1,6 +1,4 @@
 $(function(){
-    var applicationTabs;
-    
     function closeChat() {
         $('.js-open-chat').removeClass('active');
         $('.chat-message').removeClass('visible');
@@ -31,17 +29,9 @@ $(function(){
         $('.js-ajax-page').click(function(event){
             event.preventDefault();
     
-            var ajaxPage = $(this).data('page');
-            $('.swiper-tabs-active').fadeOut(200);
-    
-            $.get('app/ajax/' + ajaxPage + '.php', function(data){
-                setTimeout(function(){
-                    $('.swiper-tabs-active').html(data);
-                    $('.swiper-tabs-active').fadeIn(200);
-                    initActions();
-                    checkTopBar();
-                }, 200);
-            });
+            var tab = $(this).data('tab');
+            var page = $(this).data('page');
+            appAjax(page, tab);
         });
 
         $('.profile-form').submit(function(event){
@@ -111,7 +101,7 @@ $(function(){
     });
 
     function changeTab(tab) {
-        if (tab === 3) {
+        if (tab === 4) {
             $('.progress').each(function(time){
                 setTimeout(() => {
                     $(this).addClass('anim' + $(this).data('level'));
@@ -128,61 +118,52 @@ $(function(){
         checkTopBar();
     });
 
+    function appAjax(page, tab) {
+        if (typeof tab !== 'undefined') {
+            var wantedTab = $('.item-menu:nth-of-type(' + tab + ')');
+            $('.item-menu').removeClass('active');
+            wantedTab.addClass('active');
+
+            if (tab === 3) {
+                $('.box-icon').addClass('boxed').attr('src', 'images/mailbox1.gif');
+            } else if($('.box-icon').hasClass('boxed')) {
+                $('.box-icon').removeClass('boxed').attr('src', 'images/mailbox2.gif');
+            }  
+        } 
+
+        $('.swiper-container-tabs').css('opacity', 0);
+        closeChat();
+
+        $.get('app/views/' + page + '.php', function(data){
+            setTimeout(function(){
+                $('.content-page').html(data);
+                $('.swiper-container-tabs').css('opacity', 1);
+                initActions();
+                checkTopBar();
+
+                if (typeof tab !== 'undefined') {
+                    changeTab(tab); // anim
+                }
+            }, 200);
+        });
+    }
+
     checkTopBar();
     
     if (screen.width <= 640) {
-        applicationTabs = new Swiper('.swiper-container-tabs', {
-            slidesPerView: 1,
-            speed: 500,
-            on: {
-                slideChange: function() {
-                    $('.progress').removeClass('anim90').removeClass('anim80').removeClass('anim60');
-                    $('.item-menu').removeClass('active').eq(this.activeIndex).addClass('active');
-                    setTimeout(() => {
-                        $('.topbar2').addClass('sticky');
-                        changeTab(this.activeIndex);
-                    }, 200);
-                },
-                init: function() {
-                    var current = $('.swiper-container-tabs').data('current');
-                    
-                    if (current === false) {
-                        current = 2;
-                    }
-                    this.slideTo(current, 0);	
-                    initActions();
-                    $('.swiper-container-tabs').css('opacity', 1);
-                    $('#loader').fadeOut();
-                }
-            },
-            slideActiveClass: 'swiper-tabs-active'
-        });
+        $('.topbar2').addClass('sticky');
+
+        initActions();
+        // chargement terminé
+        $('.swiper-container-tabs').css('opacity', 1);
+        $('#loader').fadeOut();
 
         $(document).on('click', '.js-get-page', function(event){
             event.preventDefault();
     
             var tab = $(this).data('tab');
-    
-            $('.item-menu').removeClass('active');
-            $('.item-menu:nth-of-type(' + tab + ')').addClass('active');
-    
-            if (applicationTabs.activeIndex !== (tab - 1)) {
-
-                if (tab === 3) {
-                    $('.box-icon').addClass('boxed').attr('src', 'images/mailbox1.gif');
-                } else if($('.box-icon').hasClass('boxed')) {
-                    $('.box-icon').removeClass('boxed').attr('src', 'images/mailbox2.gif');
-                }
-
-                $('.swiper-container-tabs').css('opacity', 0);
-    
-                // closeChat();
-    
-                setTimeout(function(){
-                    applicationTabs.slideTo(tab - 1, 0);
-                    $('.swiper-container-tabs').css('opacity', 1);
-                }, 200);
-            }
+            var page = $(this).data('page');
+            appAjax(page, tab);    
         });
     } else {
         initActions();
