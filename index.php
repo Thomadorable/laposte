@@ -13,7 +13,6 @@
     <head>
         <meta charset="utf-8">
         <title>Paaper</title>
-        <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/swiper.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/menu.css">
@@ -50,37 +49,15 @@
                         </div>
                     </header>
                     <?php
-                        $pages = [0 => 'home', 1 => 'gift', 2 => 'box', 3 => 'team', 4 => 'profile'];
+                        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-                        $currentSlide = (isset($_GET['page'])) ? array_search($_GET['page'], $pages) : 'false';
-
-                        if ($currentSlide === false) {
-                            $currentSlide = 'false';
-                        }
-
-                        $teamIn = ($team) ? 'in' : 'out' ;
+                        $ishome = ($page === 'home') ? 'no-padding-bottom' : '';
                     ?>
                     <div class="loader" id="loader"></div>
-                    <section class="page-content boxed-wrapper swiper-container-tabs full-height" data-current="<?=$currentSlide?>">
-                        <div class="swiper-wrapper">
+                    <section class="boxed-wrapper application" >
+                        <div class="swiper-slide content-page <?=$page?> <?=$ishome?>">
                             <?php
-                                foreach ($pages as $page) {
-                                    $active = 'swiper-desktop-hide';
-                                    if(isset($_GET['page']) && in_array($_GET['page'], $pages)) {
-                                        if ($_GET['page'] === $page) {
-                                            $active = 'swiper-tabs-active';
-                                        }
-                                    } else if($page === 'home') {
-                                        $active = 'swiper-tabs-active';
-                                    }
-                                ?>
-                                    <div class="swiper-slide <?=$active?> <?=$page?> <?=$page?><?=$teamIn?>">
-                                        <?php
-                                            include ('app/views/' . $page . '.php');
-                                        ?>
-                                    </div>
-                                <?php
-                                }
+                                include ('app/views/' . $page . '.php');
                             ?>
                         </div>
                     </section>
@@ -135,7 +112,7 @@
                             </ul>
                         </div>
                     </header>
-                    <section class="page-content boxed-wrapper visitor">
+                    <section class="boxed-wrapper visitor">
                         <?php
                             $allowedPages = ['landing', 'login', 'register'];
                             $page = (isset($_GET['page']) && in_array($_GET['page'], $allowedPages)) ? $_GET['page'] : 'landing';

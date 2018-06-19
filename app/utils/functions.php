@@ -42,7 +42,7 @@
     }
 
     $path = '';
-    $pattern = '/ajax/';
+    $pattern = '/views/';
     if (preg_match($pattern, $_SERVER['PHP_SELF'])) {
         $path = '../../';
     }

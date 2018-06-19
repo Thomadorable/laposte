@@ -6,7 +6,7 @@
     $teams = getTeams();
 ?>
 
-<header class="topbar sticky topbar2">
+<header class="topbar topbar2 sticky">
     <div class="boxed-wrapper flex padding-20">
         <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
     </div>

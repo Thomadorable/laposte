@@ -377,7 +377,7 @@ h2 {
     text-transform: uppercase;
     font-family: Karmilla;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     letter-spacing: 0.2px;
     margin-top: 30px;
 }
@@ -392,7 +392,7 @@ h2 {
     text-transform: uppercase;
     font-family: Karmilla;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     letter-spacing: 0.2px;
     margin-top: 30px;
     width: 100%;
@@ -501,7 +501,7 @@ strong {
 }
 
 .js-open-chat {
-    width: 80px;
+    width: 100px;
     background: none;
     border: none;
     color: white;
@@ -651,10 +651,8 @@ strong {
     fill: #fffcfa
 }
 
-.swiper-container-tabs>.swiper-wrapper>.swiper-slide,
-.page-content.visitor {
-    padding-top: 74px;
-    /* sticky menu */
+.content-page {
+    padding-top: 74px; /* sticky menu */
 }
 
 /* TEAM  */
@@ -664,7 +662,7 @@ strong {
     width: calc(100% + 80px);
     position: relative;
     left: -40px;
-    padding: 40px;
+    padding: 25px 40px 30px;
 }
 
 .team-header .page-title span {
@@ -673,6 +671,10 @@ strong {
 
 .team-header {
     box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.14);
+}
+
+.team-header .page-title {
+    margin-bottom: 25px;
 }
 
 .no-team-img {
@@ -740,7 +742,7 @@ strong {
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    top: 1px;
+    top: 2px;
 }
 
 .defi-text {
@@ -748,7 +750,7 @@ strong {
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    top: 1px;
+    top: 2px;
 }
 
 .progress-legend {
@@ -851,6 +853,7 @@ strong {
 }
 
 .title-progress {
+    margin-top: 40px;
     letter-spacing: 0.2px;
     font-weight: bold;
 }
@@ -861,7 +864,7 @@ strong {
     height: 1px;
     width: calc(100% + 80px);
     background: #e6e6e6;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 @keyframes appear-chat {
@@ -899,27 +902,19 @@ strong {
         height: 38px;
         width: auto;
     }
-    .page-content {
-        padding-bottom: 58px;
-        overflow: hidden;
-        height: 100%;
-    }
-    .swiper-container-tabs {
+
+    .application {
         z-index: 0;
         opacity: 0;
         transition: opacity ease 0.3s;
     }
-    .swiper-container-tabs>.swiper-wrapper>.swiper-slide {
-        overflow-y: auto;
-        height: 100%;
-        -webkit-overflow-scrolling: touch;
-        padding: 0 40px 40px;
+
+    .content-page {
+        padding: 0 40px calc(60px + 60px);
     }
-    .swiper-container-tabs>.swiper-wrapper>.swiper-slide.home,
-    .swiper-container-tabs>.swiper-wrapper>.swiper-slide.teamout,
-    .page-content.visitor {
-        padding-top: 65px;
-        /* sticky menu */
+
+    .padding-top-menu {
+        padding-top: 65px; /* sticky menu */
     }
     .typo1 {
         font-size: 32px;
@@ -947,10 +942,14 @@ strong {
     .no-mobile {
         display: none;
     }
-}
 
-.page-content.visitor {
-    padding: 20px;
+    .actu:last-of-type {
+        margin-bottom: 60px;
+    }
+
+    .content-page.no-padding-bottom {
+        padding-bottom: 60px;
+    }
 }
 
 /* ONLY DESKTOP */
@@ -984,5 +983,9 @@ strong {
     }
     #loader {
         display: none;
+    }
+
+    .swiper-slide.content-page {
+        height: 100vh;
     }
 }
