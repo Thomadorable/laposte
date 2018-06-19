@@ -108,3 +108,44 @@
 .select-options li[rel="hide"] {
     display: none;
 }
+
+
+input[type="checkbox"]+label span {
+    position: relative;
+    padding-left: 25px
+}
+
+input[type="checkbox"]+label span::before {
+    position: absolute;
+    content: '';
+    transition: .3s;
+    width: 15px;
+    height: 15px;
+    background-color: #f5f5f5;
+    top: 0;
+    left: 0;
+    border-radius: 3px
+}
+
+input[type="checkbox"]+label span::after {
+    position: absolute;
+    content: '';
+    top: 2px;
+    left: 2px;
+    height: 10px;
+    width: 10px;
+    background-image: url('../svg/checked.svg');
+}
+
+input[type="checkbox"]:checked+label span::after {
+    color: #fff;
+    transition: .3s;
+}
+
+input[type="checkbox"]:checked+label span::before {
+    background-color: #edc97f;
+}
+
+input[type="checkbox"]:checked+label span {
+    color: #daba55;
+}
