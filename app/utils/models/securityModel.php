@@ -29,13 +29,12 @@ function randId(){
 }
 
 function register () {
-    if (!empty($_POST['login']) && !empty($_POST['password'])) {
-
+    if (!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['lastname']) && !empty($_POST['name'])) {
         $_SESSION['flash'] = [];
-
+        
         $login = htmlspecialchars(trim($_POST['login']));
         $currentUser = getUserByMail($login);
-
+    
         if($currentUser) {
             $_SESSION['flash']['message'] = "Cet email est déjà utilisé";
             return false;
