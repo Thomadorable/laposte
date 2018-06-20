@@ -48,7 +48,6 @@ $(function(){
 
             $('.loader').addClass('visible');
 
-
             $.post('app/views/updateUser.php', datas, function(data){
                 if (data === '202') {
                     setTimeout(function(){
