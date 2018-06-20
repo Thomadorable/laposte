@@ -69,21 +69,21 @@
 
                     <nav class="menu">
                             <ul>
-                                <li class="item-menu js-get-page active" data-page="home" data-tab="1">
+                                <li class="item-menu js-get-page <?php if ($page === 'home') echo 'active'; ?>" data-page="home" data-tab="1">
                                     <a href=""><?php include('images/home.svg'); ?> Accueil</a>
                                 </li>
-                                <li class="item-menu js-get-page"  data-page="gift" data-tab="2">
+                                <li class="item-menu js-get-page <?php if ($page === 'gift') echo 'active'; ?>"  data-page="gift" data-tab="2">
                                     <a href=""><?php include('images/package.svg'); ?> Partenaire</a>
                                 </li>
-                                <li class="item-menu js-get-page box-menu" data-page="box" data-tab="3"><span>
+                                <li class="item-menu js-get-page box-menu <?php if ($page === 'box') echo 'active'; ?>" data-page="box" data-tab="3"><span>
                                     <a href="">
                                         <img src="images/mailbox.gif" class="box-icon box-icon-inactive" alt="">
                                     </a></span>
                                 </li>
-                                <li class="item-menu js-get-page" data-page="team" data-tab="4">
+                                <li class="item-menu js-get-page <?php if ($page === 'team') echo 'active'; ?>" data-page="team" data-tab="4">
                                     <a href=""><?php include('images/award.svg'); ?> Équipe</a>
                                 </li>
-                                <li class="item-menu js-get-page" data-page="profile" data-tab="5">
+                                <li class="item-menu js-get-page <?php if ($page === 'profile') echo 'active'; ?>" data-page="profile" data-tab="5">
                                     <a href=""><?php include('images/profile.svg'); ?> Profil</a>
                                 </li>
                             </ul>

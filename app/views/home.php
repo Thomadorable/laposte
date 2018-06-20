@@ -31,7 +31,7 @@
             Après <strong class="underlink"><span class="animate-number">9</span> mois</strong> sans manquer un seul de nos rendez-vous, vous faites aussi partie de notre élite Paaperienne puisque c’est mieux que <strong class="underlink"><span class="animate-number">85</span>%</strong> de nos membres. Merci pour votre fidélité ! ✉️
         </p>
 
-        <a href="?page=box" class="js-get-page button1" data-page="box" data-tab="1"><span class="middle"> Ma boîte aux lettres</span> <?php include($path . 'images/arrow.svg') ?></a>
+        <a href="?page=box" class="js-get-page button1" data-page="box" data-tab="3"><span class="middle"> Ma boîte aux lettres</span> <?php include($path . 'images/arrow.svg') ?></a>
         </div>
     </div>
 

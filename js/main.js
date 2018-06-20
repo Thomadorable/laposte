@@ -168,6 +168,10 @@ $(function(){
         }
     });
 
+    if ($('.content-page').hasClass('team')) {
+        $('.js-open-chat').show();
+    }
+
     // PARAMETERS : PAGE + ID PAGE (active onglet)
     function appAjax(page, tab) {
         if (typeof tab !== 'undefined') {
@@ -228,6 +232,7 @@ $(function(){
     
             var tab = $(this).data('tab');
             var page = $(this).data('page');
+
             appAjax(page, tab);    
         });
     } else {
