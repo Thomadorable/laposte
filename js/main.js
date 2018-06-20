@@ -67,6 +67,16 @@ $(function(){
             $('.video').fadeIn();
             $('.video')[0].play();
         });
+
+        $('.this-month').click(function(event){
+            event.preventDefault();
+            $('.timeline').removeClass('step1').addClass('step2');
+        });
+       
+        $('.boxready').click(function(event){
+            event.preventDefault();
+            $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
+        });
     }
 
     var currentPos = 0;
@@ -115,6 +125,19 @@ $(function(){
 
     $(document).scroll(function(){
         checkTopBar();
+
+        var timeline = $('.timeline-month');
+        if (timeline.length > 0) {
+            var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
+            
+            var parallax = scrollTop / 1.5 + 30;
+            if (parallax > 200) {
+                parallax = 200;
+            }
+            $('.timeline-month').css('margin-top', - parallax);
+            console.log(parallax);
+
+        }
     });
 
     // PARAMETERS : PAGE + ID PAGE (active onglet)

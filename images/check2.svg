@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile---Ma-boîte-aux-lettres" transform="translate(-20.000000, -398.000000)">
+            <g id="Group-3" transform="translate(20.000000, 398.000000)">
+                <circle id="Oval-4-Copy" fill="#A5C8B4" cx="12.5" cy="12.5" r="12.5"></circle>
+                <g id="Shape-Copy-3" transform="translate(7.000000, 9.000000)" fill="#FFFCFA" fill-rule="nonzero">
+                    <path d="M1.13807118,4.35661836 C0.877721657,4.08625538 0.455611671,4.08625538 0.195262145,4.35661836 C-0.0650873816,4.62698134 -0.0650873816,5.06532634 0.195262145,5.33568931 L3.52859547,8.79722777 C3.788945,9.06759074 4.21105499,9.06759074 4.47140451,8.79722777 L11.8047379,1.18184315 C12.0650874,0.911480182 12.0650874,0.473135197 11.8047379,0.202772227 C11.5443883,-0.0675907424 11.1222783,-0.0675907424 10.8619288,0.202772227 L3.99999999,7.32862134 L1.13807118,4.35661836 Z" id="path-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -685,6 +685,7 @@ form .dark{
 
 .team-header {
     background: #A5C8B4;
+    background-size: cover;
     width: calc(100% + 80px);
     position: relative;
     left: -40px;
@@ -859,6 +860,135 @@ form .dark{
     height: 100%;
     display: none;
     background: #000000;
+}
+
+
+/* TIMELINE / BOX */
+.timeline-month {
+    margin-top: -30px;
+    border-radius: 10px;
+    background: #fffcfa;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+}
+
+.timeline-month .typo1 {
+    margin-top: 0;
+}
+
+.timeline-month .button1 {
+    margin-top: 20px;
+}
+
+.event .typo2 {
+    margin-top: 5px;
+}
+
+.event .italic {
+    font-style: italic;
+    color: rgba(55, 55, 55, 0.4);
+}
+
+.event-icon {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    margin-right: 18px;
+    margin-top: 5px;
+}
+
+.event-icon  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.event {
+    position: relative;
+    margin-top: 35px;
+    left: -20px;
+    width: calc(100% + 20px);
+}
+
+.timeline-validate {
+    opacity: 0;
+}
+
+.event-1,
+.event-2,
+.event-3 {
+    opacity: 0.4;
+}
+
+.timeline.step2 .event-1,
+.timeline.step2 .event-1 .timeline-validate,
+.timeline.step2 .event-2,
+.timeline.step3 .event-1,
+.timeline.step3 .event-1 .timeline-validate,
+.timeline.step3 .event-2 {
+    opacity: 1;
+    transition: opacity ease 0.3s;
+}
+
+.timeline.step2 .event-1:after,
+.timeline.step3 .event-1:after,
+.timeline.step3 .event-2:after {
+    height: calc(100% - 30px);
+    transition: height ease-in-out 0.5s;
+}
+
+.timeline.step3 .event-2 .timeline-validate,
+.timeline.step3 .event-3 {
+    opacity: 1;
+}
+
+
+.timeline.step1 .event-4,
+.timeline.step2 .event-4 {
+    background: #373737;
+    opacity: 0.2;
+}
+
+.timeline.step2 .this-month,
+.timeline.step3 .this-month {
+    box-shadow: inset 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.event:before,
+.event:after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 12px;
+    height: calc(100% - 30px);
+    width: 1px;
+    background: #e6e6e6;
+}
+
+.event:after {
+    background: #A5C8B4;
+    height: 0;
+}
+
+.maboite {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.maboite .button2 {
+    margin-top: 0;
+}
+
+.maboite img {
+    width: 100%;
+}
+
+.flex-1 {
+    flex: 1;
 }
 
 @keyframes progress80 {
@@ -1044,6 +1174,10 @@ form .dark{
     .button2 {
         font-size: 16px;
         padding: 15px 15px;
+    }
+
+    .button1 + .button1 {
+        margin-top: 20px;
     }
 }
 
