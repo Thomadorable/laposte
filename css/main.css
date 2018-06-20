@@ -936,7 +936,7 @@ form .dark{
 .timeline.step3 .event-1:after,
 .timeline.step3 .event-2:after {
     height: calc(100% - 30px);
-    transition: height ease-in-out 0.5s;
+    transition: height ease-in-out 0.8s;
 }
 
 .timeline.step3 .event-2 .timeline-validate,
@@ -977,6 +977,33 @@ form .dark{
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    font-size: 0;
+}
+
+
+.time-wrapper {
+    width: 100%;
+    flex: 1;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    
+}
+
+.typo2.time-legend {
+    font-size: 14px
+}
+
+.time-wrapper + .time-wrapper {
+    margin-left: 13px;
+}
+
+.jours,
+.heures,
+.minutes,
+.secondes {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    padding: 20px 0;
+    border-radius: 5px;
 }
 
 .maboite .button2 {

@@ -57,6 +57,25 @@
         </div>
     </div>
 
+    <div class="flex flex-row center">
+        <div class="time-wrapper">
+            <p class="typo1 jours">04</p>
+            <p class="typo2 time-legend">Jours</p>
+        </div>
+        <div class="time-wrapper">
+            <p class="typo1 heures">20</p>
+            <p class="typo2 time-legend">Heures</p>
+        </div>
+        <div class="time-wrapper">
+            <p class="typo1 minutes">15</p>
+            <p class="typo2 time-legend">Minutes</p>
+        </div>
+        <div class="time-wrapper">
+            <p class="typo1 secondes">9</p>
+            <p class="typo2 time-legend">Secondes</p>
+        </div>
+    </div>
+
     <a href="" class="button1 event-4">J’ai bien reçu ma boîte</a>
     <a href="" class="button1 event-4">Je n’ai rien reçu…</a>
 </div>

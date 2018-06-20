@@ -76,6 +76,30 @@ $(function(){
         $('.boxready').click(function(event){
             event.preventDefault();
             $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
+
+            var timeline = $('.timeline-month');
+            if (timeline.length > 0) {
+
+                setInterval(function(){
+                    var sec = parseInt($('.secondes').text()) - 1;
+                    
+                    if(sec === -1) {
+                        sec = 59;
+
+                        var min = parseInt($('.minutes').text()) - 1;
+
+                        if(min === -1) {
+                            min = 59;
+                            var heures = parseInt($('.heures').text()) - 1;
+                            $('.heures').text(heures);
+                        }
+
+                        $('.minutes').text(min);
+                    }
+                    
+                    $('.secondes').text(sec);
+                }, 1000)
+            }
         });
     }
 
@@ -130,13 +154,11 @@ $(function(){
         if (timeline.length > 0) {
             var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
             
-            var parallax = scrollTop / 1.5 + 30;
+            var parallax = scrollTop / 3 + 30;
             if (parallax > 200) {
                 parallax = 200;
             }
             $('.timeline-month').css('margin-top', - parallax);
-            console.log(parallax);
-
         }
     });
 
