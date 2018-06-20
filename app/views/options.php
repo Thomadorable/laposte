@@ -8,6 +8,7 @@
     $user = getUserByID($_SESSION['id']);
     $giftTypes = getGiftTypes();
     $recurrences = getRecurrences();
+    $join = getJoinUserByID($_SESSION['id']);
 ?>
 <form action="" method="POST" class="profile-form">
 
@@ -60,21 +61,16 @@
     </div>
     <div class="dark">
         <p class="options-label typo2">Je reçois ma boite...</p>
-        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeTrue" value="true"><label for="atHomeTrue">chez moi</label>
-        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeFalse"><label for="atHomeFalse" value="false">dans un bureau de poste</label>
+        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeTrue" value="true" <?= ($user->atHome) ? 'checked':'' ?>><label for="atHomeTrue">chez moi</label>
+        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeFalse" value="false" <?= (!$user->atHome) ? 'checked':'' ?>><label for="atHomeFalse" >dans un bureau de poste</label>
 
-        <label class="options-label typo2" for="recurrence">Date de renvoi de ma boîte</label>
-        <select name="recurrence" id="recurrence">
-        <?php foreach ($recurrences as $date ) { ?>
-            <option value="<?= $date->id ?>"><?= $date->details ?></option>
-        <?php } ?>
-            <option value=""></option>
-        </select>
+        <p class="options-label typo2" for="recurrence">Date de renvoi de ma boîte</p>
+        <p class="label-select">Tous les 5 du mois <?php include($path . 'images/chevron-down.svg') ?></p>
 
         <p class="options-label typo2">Je souhaite recevoir...</p>
-
-        <?php foreach ($giftTypes as $type ) { ?>
-            <input class="options-input no-margin" type="checkbox" name="giftType" id="gift<?= $type->id ?>" value="true"><label for="gift<?= $type->id ?>">des surprises "<?= $type->name ?>"</label>
+        <?php foreach ($giftTypes as $type ) {
+            ?>
+            <input class="options-input no-margin" type="checkbox" name="giftType" id="gift<?= $type->id ?>" value="true" <?= (isset($join['giftTypes'][$type->id])) ? 'checked':'' ?>><label for="gift<?= $type->id ?>" >des surprises "<?= $type->name ?>"</label>
         <?php } ?>
     </div>
 </form>

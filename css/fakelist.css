@@ -112,18 +112,35 @@ input[type="radio"] {
 }
 
 label,
-input {
+input,
+.label-select {
     cursor: pointer;
 }
 
 input[type="radio"]+label,
-input[type="checkbox"]+label {
+input[type="checkbox"]+label,
+.label-select {
     position: relative;
     padding-left: 30px;
     display: block;
     margin: 1.7rem 0;
     font-family: 'Karmilla';
     font-size: 16px;
+}
+
+.label-select {
+    background-color: #fffcfa;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.label-select .chevron {
+    width: 1.4rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 input[type="radio"]+label::before,

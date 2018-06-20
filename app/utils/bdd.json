@@ -107,7 +107,7 @@
             "name": "Do It Yourself"
         }
     },
-    "userGift": {
+    "usersGifts": {
         "1": {
             "idUser": 4,
             "idGift": 1
