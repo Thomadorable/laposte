@@ -56,16 +56,14 @@
     //     // si !idType && isset(liaison) -> supprime
     // }
 
-    /**
-        'giftType' => 
-            array (size=2)
-            1 => string 'true' (length=4)
-            3 => string 'true' (length=4)
-     */
+    
+        // 'giftType' => 
+        //     array (size=2)
+        //     1 => string 'true' (length=4)
+        //     3 => string 'true' (length=4)
+     
 
    // var_dump($user);
-
-    die();
 
     $bdd->users->$id = $user;
     $file = '../utils/bdd.json';

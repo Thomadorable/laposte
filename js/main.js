@@ -48,7 +48,6 @@ $(function(){
 
             $('.loader').addClass('visible');
 
-
             $.post('app/views/updateUser.php', datas, function(data){
                 if (data === '202') {
                     setTimeout(function(){
@@ -145,6 +144,12 @@ $(function(){
                 $(this).addClass('anim' + $(this).data('level'));
             }, (time * 100))
         });
+
+        $('.animate-number').each(function(){
+            var number = $(this).text();
+            console.log(number);
+            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
+        });
     }
 
     $(document).scroll(function(){
@@ -161,6 +166,10 @@ $(function(){
             $('.timeline-month').css('margin-top', - parallax);
         }
     });
+
+    if ($('.content-page').hasClass('team')) {
+        $('.js-open-chat').show();
+    }
 
     // PARAMETERS : PAGE + ID PAGE (active onglet)
     function appAjax(page, tab) {
@@ -222,10 +231,17 @@ $(function(){
     
             var tab = $(this).data('tab');
             var page = $(this).data('page');
+
             appAjax(page, tab);    
         });
     } else {
         initActions();
+
+        $('.animate-number').each(function(){
+            var number = $(this).text();
+            console.log(number);
+            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
+        });
     }
 });
 
