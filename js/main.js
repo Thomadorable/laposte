@@ -141,7 +141,7 @@ $(function(){
         } else {
             $('.content-page').removeClass('no-padding-bottom');
         }
-
+        
         $.get('app/views/' + page + '.php', function(data){
             $('#loader').removeClass('visible');
 

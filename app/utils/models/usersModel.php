@@ -23,3 +23,11 @@ function getUserByID($id) {
 
     return $currentUser;
 }
+
+function getGiftTypes() {
+    return getBdd()->giftTypes;
+}
+
+function getRecurrences(){
+    return getBdd()->recurrences;
+}

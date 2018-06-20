@@ -1,1 +1,120 @@
-{"users":{"1":{"id":1,"name":"Simon","lastname":"Blue","mail":"simon.blue@hotmail.fr","password":"1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546","avatar":"simon.jpg","idTeam":1},"2":{"id":2,"name":"Vanessa","lastname":"Ladefruit","mail":"v.ladefruit@gmail.com","password":"1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546","avatar":"vanessa.jpg","idTeam":0},"3":{"id":3,"name":"Thomas","lastname":"Deroua","mail":"thomas.deroua@hotmail.com","password":"1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546","avatar":"thomas.jpg","idTeam":1},"4":{"id":4,"name":"Vio","lastname":"Bodo","mail":"violaine.bodolec@gmail.com","password":"1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546","avatar":"vanessa.jpg","idTeam":1}},"teams":{"1":{"id":1,"name":"Roquette"},"2":{"id":2,"name":"Chaussette"}}}
+{
+    "users": {
+        "1": {
+            "id": 1,
+            "name": "Simon",
+            "lastname": "Blue",
+            "mail": "simon.blue@hotmail.fr",
+            "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
+            "avatar": "simon.jpg",
+            "idTeam": 1,
+            "mobile": "07 61 30 32 18",
+            "adress": "84 Quai de la Loire",
+            "zipCode": "75019",
+            "city": "Paris",
+            "adressDetails": "Digicode \u00e0 l'entr\u00e9e : 1954",
+            "atHome": true,
+            "idRecurrence": 1
+        },
+        "2": {
+            "id": 2,
+            "name": "Vanessa",
+            "lastname": "Ladefruit",
+            "mail": "v.ladefruit@gmail.com",
+            "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
+            "avatar": "vanessa.jpg",
+            "idTeam": 0,
+            "mobile": "07 61 30 32 18",
+            "adress": "84 Quai de la Loire",
+            "zipCode": "75019",
+            "city": "Paris",
+            "adressDetails": "Digicode \u00e0 l'entr\u00e9e : 1954",
+            "atHome": true,
+            "idRecurrence": 1
+        },
+        "3": {
+            "id": 3,
+            "name": "Thomas",
+            "lastname": "Deroua",
+            "mail": "thomas.deroua@hotmail.com",
+            "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
+            "avatar": "thomas.jpg",
+            "idTeam": 1,
+            "mobile": "07 61 30 32 18",
+            "adress": "84 Quai de la Loire",
+            "zipCode": "75019",
+            "city": "Paris",
+            "adressDetails": "Digicode \u00e0 l'entr\u00e9e : 1954",
+            "atHome": true,
+            "idRecurrence": 1
+        },
+        "4": {
+            "id": 4,
+            "name": "Vio",
+            "lastname": "Bodo",
+            "mail": "violaine.bodolec@gmail.com",
+            "password": "1bb4d1708bfe80f51ed6b01b8b567d3e60d023f0561289079d05d8a9f2a05546",
+            "avatar": "vanessa.jpg",
+            "idTeam": 1,
+            "mobile": "07 61 30 32 18",
+            "adress": "84 Quai de la Loire",
+            "zipCode": "75019",
+            "city": "Paris",
+            "adressDetails": "Digicode \u00e0 l'entr\u00e9e : 1954",
+            "atHome": true,
+            "idRecurrence": 1
+        }
+    },
+    "teams": {
+        "1": {
+            "id": 1,
+            "name": "Roquette"
+        },
+        "2": {
+            "id": 2,
+            "name": "Chaussette"
+        }
+    },
+    "recurrences": {
+        "1": {
+            "id": 1,
+            "details": 5
+        },
+        "2": {
+            "id": 2,
+            "details": 10
+        },
+        "3": {
+            "id": 3,
+            "details": 15
+        },
+        "4": {
+            "id": 4,
+            "details": 20
+        }
+    },
+    "giftTypes": {
+        "1": {
+            "id": 1,
+            "name": "Exp\u00e9rience"
+        },
+        "2": {
+            "id": 2,
+            "name": "D\u00e9co"
+        },
+        "3": {
+            "id": 3,
+            "name": "Do It Yourself"
+        }
+    },
+    "userGift": {
+        "1": {
+            "idUser": 4,
+            "idGift": 1
+        },
+        "2": {
+            "idUser": 4,
+            "idGift": 3
+        }
+    }
+}
