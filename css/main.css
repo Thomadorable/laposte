@@ -327,31 +327,24 @@ strong {
     margin: auto;
 }
 
-.options-label {
+.options-label.typo2 {
     display: block;
-    text-transform: uppercase;
-    font-size: 1rem;
+    line-height: 1;
     font-weight: 600;
-}
-
-.options-label .required {
-    color: #c50a0a;
-    font-size: 1.3rem;
-    font-family: sans-serif;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 4px;
 }
 
 .options-input,
 .options-textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 10px 0;
     border: none;
     border-bottom: 1px solid #E6E6E6;
+    background: transparent;
     margin-bottom: 25px;
     outline: none;
+    font-family: 'Karmilla';
+    font-size: 16px;
 }
 
 .options-textarea {
@@ -404,7 +397,6 @@ strong {
     outline: none;
     z-index: 10;
 }
-
 .js-open-chat img {
     width: 100%;
 }
@@ -512,6 +504,34 @@ strong {
     left: 50%;
     transform: translateX(-50%);
     color: white;
+}
+
+.profile-form > div{
+    position: relative;
+    width: calc(100% + 8rem);
+    left: -4rem;
+    padding: 4rem
+}
+
+.no-margin{
+    margin-bottom: 0
+}
+
+.profile-form .half{
+    width: 50%;
+    display: inline-block;
+}
+
+
+.profile-form .half:nth-of-type(2n){
+    padding-left: 1rem;
+}
+.profile-form .half:nth-of-type(2n + 1){
+    padding-right: 1rem;
+}
+
+form .dark{
+    background-color: rgba(230, 230, 230, 0.3);
 }
 
 .avatar {
