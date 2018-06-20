@@ -29,21 +29,25 @@ function getUserByID($id) {
 function getJoinUserByID($id){
     $user = getUserByID($id);
     $recurrence = getRecurrences()->{$user->idRecurrence};
-    $usersGifts = getBdd()->usersGifts;
-    $giftTypes = getGiftTypes();
 
-    $userGifts = [];
-    foreach($usersGifts as $assoc) {
-        if( $assoc->idUser === $id)
-            $userGifts[$giftTypes->{$assoc->idGift}->id] = $giftTypes->{$assoc->idGift};
-
-    }
+    $userGifts = getUserGiftByUserID($id);
 
     $userJoin = [];
     $userJoin['reccurence'] = $recurrence;
     $userJoin['giftTypes'] = $userGifts;
 
     return $userJoin;
+}
+
+function getUserGiftByUserID($id){
+    $giftTypes = getGiftTypes();
+    $usersGifts = getBdd()->usersGifts;
+    $userGifts = [];
+    foreach($usersGifts as $assoc) {
+        if( $assoc->idUser === $id)
+            $userGifts[$giftTypes->{$assoc->idGift}->id] = $giftTypes->{$assoc->idGift};
+    }
+    return $userGifts;
 }
 
 function getGiftTypes() {

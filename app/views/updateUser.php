@@ -7,33 +7,67 @@
 
     require_once($path . 'app/utils/functions.php');
 
-    $user = getUserByID($_SESSION['id']);
-
+    //var_dump($_POST);
     $bdd = getBdd();
 
     $id = intval($_POST['id']);
+    $user = $bdd->users->$id;
 
-    $name = htmlspecialchars($_POST['name']);
-    $lastname = htmlspecialchars($_POST['lastname']);
-    $mail = htmlspecialchars($_POST['mail']);
+    // type text
+    $tab = ['name', 'lastname', 'mail', 'mobile', 'adress', 'zipCode', 'city', 'adressDetails', ];
+    foreach ($tab as $t) {
+        $data = htmlspecialchars($_POST[$t]);
+        if (!empty($data)) {
+            $user->$t = $data;
+        }
+    }
+    
+    // type bool
+    $tab = ['atHome'];
+    foreach ($tab as $t) {
+        $data = (bool) htmlspecialchars($_POST[$t]);
+        if ($data) {
+            $user->$t = $data;
+        }
+    }
+
+    // type password
     $password = htmlspecialchars($_POST['password']);
+    if(!empty($password))
+        $user->password = getHash($password);
 
-    if (!empty($name)) {
-        $bdd->users->$id->name = $name;
-    }
+    // giftType
+    // $giftBdd = $bdd->giftTypes;
+    // $giftUserBdd = getUserGiftByUserID($_SESSION['id']);
+    // foreach($giftBdd as $type) {
+    //     // si idType && !isset(liaison) -> créee
+    //     if (isset($_POST['giftType']) && isset($_POST['giftType'][$type->id]) && $_POST['giftType'][$type->id]){
+    //         foreach ($giftUserBdd as $gub){
+    //             $bool = false;
+    //             if ($gub->idUser === $id){
+    //                 $bool = true;
+    //                 break;
+    //             }
+    //         }
+    //         if (!$bool)
 
-    if (!empty($lastname)) {
-        $bdd->users->$id->lastname = $lastname;
-    }
+    //     }
+    //     var_dump($type->id);
+    //     // si !idType && isset(liaison) -> supprime
+    // }
 
-    if (!empty($mail)) {
-        $bdd->users->$id->mail = $mail;
-    }
+    /**
+        'giftType' => 
+            array (size=2)
+            1 => string 'true' (length=4)
+            3 => string 'true' (length=4)
+     */
 
-    if (!empty($password)) {
-        $bdd->users->$id->password = $password;
-    }
+   // var_dump($user);
 
+    die();
+
+    $bdd->users->$id = $user;
     $file = '../utils/bdd.json';
     $bdd = json_encode($bdd);
     file_put_contents($file, $bdd);
