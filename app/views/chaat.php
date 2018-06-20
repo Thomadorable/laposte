@@ -1,29 +1,55 @@
-<button class="js-open-chat"><img src="images/chat.svg"></button>
+<button class="js-open-chat"><img src="images/chat-laputaindesamere.svg"></button>
 <div class="modal-chat">
-    <button class="chat-close">Close</button>
-    <h2>Mur de la team</h2>
+    <button class="chat-close"><?php include($path . 'images/x.svg') ?></button>
     <div class="chat-messages">
-        <div class="chat-message">
-            <p>Salut, ça va ?</p>
-            <strong>- Paaper</strong>
+
+        <div class="flex flex-row chat-wrapper">
+            <div class="chavatar-wrapper">
+                <img class="chavatar" src="images/avatars/marie.svg" alt="Profil de Marie">   
+            </div>
+            <div class="chat-message">
+                <strong class="typo2">Marie</strong>
+                <p class="typo2">faut se chauffer pr le défi du mois !</p>
+            </div> 
         </div>
 
-        <div class="chat-message">
-            <p>Salut, ça va ?</p>
-            <strong>- Paaper</strong>
+        <div class="flex flex-row chat-wrapper">
+            <div class="chavatar-wrapper">
+                <img class="chavatar" src="images/avatars/marie.svg" alt="Profil de Marie">   
+            </div>
+             <div class="chat-message small">
+                <strong class="typo2">Marie</strong>
+                <p class="typo2">bientôt next level en plus</p>
+            </div> 
         </div>
 
-        <div class="chat-message">
-            <p>Salut, ça va ?</p>
-            <strong>- Paaper</strong>
+        <div class="flex flex-row chat-wrapper me">
+            <div class="chavatar-wrapper">
+                <img class="chavatar" src="images/avatars/simon.svg" alt="Profil de Simon">    
+            </div>
+            <div class="chat-message">
+                <strong class="typo2">Simon</strong>
+                <p class="typo2">Hello la team ! Prêts à relever le défi du mois ? Jsuis op </p>
+            </div> 
+        </div>
+
+        <div class="new-chat typo2"><span>Nouveaux messages</span></div>
+
+        <div class="flex flex-row chat-wrapper">
+            <div class="chavatar-wrapper">
+                <img class="chavatar" src="images/avatars/ariane.svg" alt="Profil de Ariane">    
+            </div>
+            <div class="chat-message">
+                <strong class="typo2">Ariane</strong>
+                <p class="typo2">Yessss, j’ai déposé ma boîte ce matin 📦</p>
+            </div> 
         </div>
     </div>
+    
 
     <form action="" class="team-form">
-        <label class="options-label" for=""><strong class="required">*</strong> Commentario</label>
-        <textarea class="options-textarea chat-text" name="" id="" placeholder="Explicamos brevemente como to podemos ayudar!"></textarea>
+        <textarea class="chat-text" name="" id="" placeholder="Que veux-tu dire à ta team ? 🙊"></textarea>
         <input type="hidden" class="chat-pseudo" value="<?=$_SESSION['name']?>">
-
-        <button type="submit">Envoyer</button>
+        <button type="submit" class="send-message"><img src="images/chat-send.svg"  src="envoyer"/></button>
     </form>
 </div>

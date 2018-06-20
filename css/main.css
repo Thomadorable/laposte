@@ -66,6 +66,7 @@ body {
     font-family: 'Gabriel', Arial, sans-serif;
     background: #FFFCFA;
     color: #373737;
+    overflow-x: hidden;
 }
 
 .relative {
@@ -131,6 +132,7 @@ body {
     z-index: 3;
     margin: auto;
     opacity: 0;
+    pointer-events: none;
 }
 
 .loader.visible {
@@ -237,6 +239,12 @@ h2 {
     color: #373737;
 }
 
+.typo2 a {
+    color: #373737;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .typo3 {
     font-family: Karmilla;
     font-size: 1.8rem;
@@ -269,6 +277,14 @@ h2 {
     font-weight: bold;
     letter-spacing: 0.2px;
     margin-top: 30px;
+}
+
+.button1 .arrow {
+    fill: #fff;
+    width: 2rem;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 .button2 {
@@ -305,7 +321,8 @@ h2 {
     opacity: 0.15;
 }
 
-strong {
+strong,
+strong.typo2 {
     font-weight: bold;
 }
 
@@ -390,8 +407,10 @@ strong {
 }
 
 .js-open-chat {
-    width: 100px;
-    background: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #A5C8B4;
     border: none;
     color: white;
     position: fixed;
@@ -400,58 +419,167 @@ strong {
     transition: all ease 0.8s, font-size linear 0s 0.8s;
     outline: none;
     z-index: 10;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    display: none;
 }
 
 .js-open-chat img {
-    width: 100%;
+    width: 35px;
+    margin-top: 5px;
+    transition: opacity 0s ease 0.8s;
 }
 
 .js-open-chat.active {
     transform: scale(40);
     font-size: 0;
-    opacity: 0.90;
-    transition: all ease 0.8s, font-size linear 0s;
+    background: #fffcfa;
+    transition: all ease 1.6s, font-size linear 0s;
+}
+
+.js-open-chat.active img {
+    opacity: 0;
+    transition: none;
 }
 
 .modal-chat {
     display: none;
     z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 58px);
+    animation: appear-chat ease 1.1s;
+}
+
+.new-chat {
+    text-align: center;
+    position: relative;
+    margin: 30px 0 15px;
+}
+
+.new-chat:before {
+    content: "";
     position: absolute;
-    top: 80px;
-    left: 20px;
-    width: calc(100% - 40px);
-    height: calc(100% - 80px - 58px);
-    padding: 0 20px 20px;
-    animation: appear-chat ease 0.5s;
+    left: 0;
+    top: 15px;
+    width: 100%;
+    height: 1px;
+    background: #373737;
+}
+
+.new-chat span {
+    display: inline-block;
+    background: #FFFCFA;
+    position: relative;
+    padding: 0 10px;
 }
 
 .chat-messages {
-    height: calc(100% - 220px);
+    padding: 20px 20px 0;
+    height: calc(100% - 100px);
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+}
+
+.chavatar {
+    width: 55px;
+}
+
+.chavatar-wrapper {
+    position: relative;
+}
+
+.chavatar-wrapper:before {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 7px;
+    height: 7px;
+    background: #a5c8b4;
+    border-radius: 50%;
+    border: 3px solid #fffcfa;
+}
+
+.chat-wrapper {
+    align-items: flex-end;
+    margin-bottom: 18px;
+}
+
+.chat-wrapper.me {
+    flex-direction: row-reverse;
+}
+
+.chat-wrapper.me  .chat-message {
+    margin-right: 14px;
+    margin-left: 30px;
+    border-radius: 20px 20px 0 20px;
+    background: #a5c8b4;
+}
+
+.chat-wrapper.me  .chat-message .typo2 {
+    color: white;
 }
 
 .chat-message {
     opacity: 0;
     position: relative;
     top: 30px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    background: white;
+    border-radius: 20px 20px 20px 0;
+    background: #e6e6e6;
     padding: 15px;
     transition: all ease 0.8s;
     width: calc(100% - 30px);
+    margin-left: 14px;
+    margin-right: 80px;
 }
 
-.chat-message.me {
-    margin-left: 30px;
+.chat-message.small {
+    margin-right: 140px;
 }
 
 .team-form {
-    opacity: 0;
     position: absolute;
-    bottom: -10px;
-    width: calc(100% - 40px);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    border-top: solid 1px #e6e6e6;
+}
+
+.chat-text {
+    position: absolute;
+    top: 15px;
+    height: calc(100% - 30px);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top: 0;
+    font-family: Karmilla;
+    font-size: 16px;
+    color: rgba(30, 30, 30, 1);
+    letter-spacing: 0.2px;
+    background: #fffcfa;
+    border: none;
+    line-height: 2.5rem;
+    outline: none;
+}
+
+.send-message {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    z-index: 999;
+    outline: none;
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.send-message img {
+    width: 55px;
 }
 
 .chat-message.visible {
@@ -460,55 +588,39 @@ strong {
     transition: all ease 0.7s;
 }
 
-.team-form.visible {
-    opacity: 1;
-    bottom: 20px;
-    transition: all ease 0.8s;
-}
-
 .js-open-chat.active+.modal-chat {
     display: block;
 }
 
 .chat-close {
     position: absolute;
-    right: 0;
-    top: 0;
-    background: white;
+    right: 16px;
+    top: 20px;
+    background: none;
     border: none;
     border-radius: 5px;
     line-height: 25px;
     font-weight: bold;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
 }
 
-.profile-header {
+.chat-close svg.close.svg {
+    height: 20px;
+    fill: #a5c8b4;
+}
+
+.remove-padding {
     position: relative;
     left: -40px;
     width: calc(100% + 80px);
     font-size: 0;
+    z-index: -1;
 }
 
-.profile-header:before {
-    content: "";
+.pattern {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #373737;
-    opacity: 0.7;
-}
-
-.profile-header img {
-    width: 100%;
-}
-
-.profile-header h1 {
-    position: absolute;
-    top: 45px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
 }
 
 .avatar {
@@ -692,6 +804,40 @@ strong {
     background: #e6a587;
 }
 
+
+/* PARTENAIRES */
+
+.header-gift img {
+    width: 100px;
+}
+
+.header-gift img.x-gift {
+    display: block;
+    filter: invert(1);
+    width: 10px;
+    margin: 2px auto 15px;
+}
+
+.header-gift img.logo-gift-paaper {
+    width: 120px;
+    margin-top: -5px;
+}
+
+.superboite {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: #000000;
+}
+
 @keyframes progress80 {
     0% {
         width: 30px;
@@ -817,6 +963,7 @@ strong {
         z-index: 0;
         opacity: 0;
         transition: opacity ease 0.3s;
+        overflow-x: hidden;
     }
     .content-page {
         padding: 0 40px calc(60px + 60px);
@@ -859,6 +1006,21 @@ strong {
     }
     .loader {
         position: fixed;
+    }
+
+    .button1 {
+        font-size: 16px;
+        padding: 20px 15px; 
+    }
+
+    .button1 .arrow {
+        margin-left: 5px;
+        width: 1.8rem;
+    }
+
+    .button2 {
+        font-size: 16px;
+        padding: 15px 15px;
     }
 }
 

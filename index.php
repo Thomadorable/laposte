@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/swiper.css">
         <meta name="viewport" content="width=device-width, user-scalable=no">
+
+        <link rel="icon" type="image/png" href="images/favicon.png" />
     </head>
     <body>
         <?php

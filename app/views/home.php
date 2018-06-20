@@ -14,21 +14,21 @@
     </div>
 </header>
 
-<div class="pattern no-desktop"></div>
+<div class="pattern no-desktop remove-padding"></div>
 
 <article class="flex full-height padding-top-menu">
     <div class="half home-half home-left">
         <div class="v-center-home">
         <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Avatar" class="home-avatar">
-        <p class="typo1">Re-bonjour <?= $loggedUser->name ?> ! 👋🏆🍕🥓🎉📦</p>
+        <p class="typo1">Re-bonjour <?= $loggedUser->name ?> ! 👋</p>
 
         <p class="typo2">
-            Depuis que tu nous as rejoints, c’est <strong class="underlink">13&nbsp;653 boîtes</strong> qui ont
+            Depuis que vous nous avez rejoints, c’est <strong class="underlink">13&nbsp;653 boîtes</strong> qui ont
             été envoyées par la communauté Paaper, dont <strong class="underlink">16</strong> juste grâce
-            à toi !
+            à vous !
         </p>
         <p class="typo2">
-            Après <strong class="underlink">9 mois</strong> sans manquer un seul de nos rendez-vous, tu fais aussi partie de notre élite Paaperienne puisque c’est mieux que <strong class="underlink">85%</strong> de nos membres. Merci pour ta fidélité ! ✉️
+            Après <strong class="underlink">9 mois</strong> sans manquer un seul de nos rendez-vous, vous faites aussi partie de notre élite Paaperienne puisque c’est mieux que <strong class="underlink">85%</strong> de nos membres. Merci pour votre fidélité ! ✉️
         </p>
 
         <a href="?page=box" class="js-get-page button1" data-page="box" data-tab="1"><span class="middle"> Ma boîte aux lettres</span> <?php include($path . 'images/arrow.svg') ?></a>
@@ -60,7 +60,7 @@
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a> </p>
                         </header>
                         <div class="actu-content">
-                            <p class="typo2 z-index-2">Votre ami(e) Facebook Estelle Burnichon vient de rejoindre l’aventure, souhaitez-vous l’inviter à rejoindre votre team ?</p>
+                            <p class="typo2 z-index-2">Votre ami(e) Facebook <strong>Estelle Burnichon</strong> vient de rejoindre l’aventure, souhaitez-vous l’inviter à rejoindre votre team ?</p>
 
                             <div class="flex z-index-2">
                                 <a href="" class="button2">Inviter</a>

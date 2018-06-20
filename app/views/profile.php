@@ -53,4 +53,4 @@
 <p class="margin-top-20 typo2 text-progress">Tu n’as pas encore de team, rejoins-en une pour compléter des défis et gagner des bonus. </p>
 
 
-<h2><a href="?logout" class="button1">Logout</a></h2>
+<h2><a href="?logout" class="button1">Déconnexion</a></h2>

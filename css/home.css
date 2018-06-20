@@ -132,14 +132,6 @@
     color: #a5c8b4;
 }
 
-.button1 .arrow {
-    fill: #fff;
-    width: 2rem;
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-
 .pattern:before {
     content: "";
     position: absolute;
@@ -174,6 +166,7 @@
     .home-pattern:before {
         display: none;
     }
+    
 
     .home-avatar {
         width: 80px;
@@ -222,6 +215,10 @@
         top: 115px;
         height: 150px;
         background-image: linear-gradient(to bottom, rgba(255, 252, 250, 0), #fffcfa);
+    }
+
+    .pattern.pattern-gift:after {
+        top: 65px;
     }
 
     .home-pattern {

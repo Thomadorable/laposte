@@ -1,7 +1,9 @@
 $(function(){
     function closeChat() {
+        $('.new-chat').fadeOut();
         $('.js-open-chat').removeClass('active');
         $('.chat-message').removeClass('visible');
+        $('body, .modal-chat').css('overflow', 'auto');
     }
 
     function initActions() {
@@ -19,11 +21,15 @@ $(function(){
 
         $('.team-form').submit(function(event){
             event.preventDefault();
+            $('.new-chat').fadeOut();
             var message = $('.chat-text').val();
-            var pseudo = $('.chat-pseudo').val();
-            $('.chat-messages').append('<div class="chat-message visible me"><p>' + message +  '</p><strong>- ' + pseudo + '</strong></div>');
-            $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 ); // Go
-			return false;
+            $('.chat-text').val('');
+
+            if (message.length > 0) {
+                $('.chat-messages').append('<div class="flex flex-row chat-wrapper me"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/simon.jpg" alt="Profil de Thomas"></div><div class="chat-message visible"><strong class="typo2">Simon</strong><p class="typo2">' + message + '</p></div></div>');
+                
+                $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
+            }
         });
 
         $('.js-ajax-page').click(function(event){
@@ -56,12 +62,18 @@ $(function(){
             event.preventDefault();
             $(this).closest('.actu').slideUp();
         });
+
+        $('.js-video').click(function(){
+            $('.video').fadeIn();
+            $('.video')[0].play();
+        });
     }
 
     var currentPos = 0;
 
     function checkTopBar() {
-        if (screen.width <= 640) {
+        var width = $(window).width();
+        if (width <= 640) {
             var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
 
             if (scrollTop < currentPos) {
@@ -76,23 +88,21 @@ $(function(){
 
     $('.js-open-chat').click(function(){
         $(this).toggleClass('active');
+        $('body, .modal-chat').css('overflow', 'hidden');
 
         if($(this).hasClass('active')) {
-            $('.chat-messages').stop().animate( { scrollTop: 0 }, 0 );
-            let time = 0;
-            $('.chat-message').each(function(){
-                time += 250;
-                setTimeout(() => {
-                    $(this).addClass('visible');
-                }, time);
-            });
+            $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages').height() }, 0 );
 
-            setTimeout(() => {
-                $('.team-form').addClass('visible');
-            },($('.chat-message').length + 1) * 250);
+            $('.chat-message').addClass('visible');
+            $('.team-form').addClass('visible');
+
         } else {
             $('.chat-message').removeClass('visible');
         }
+    });
+
+    $('.chat-close').click(function(){
+        closeChat();
     });
 
     function changeTab() {
@@ -102,10 +112,6 @@ $(function(){
             }, (time * 100))
         });
     }
-
-    $('.chat-close').click(function(){
-        closeChat();
-    });
 
     $(document).scroll(function(){
         checkTopBar();
@@ -139,6 +145,12 @@ $(function(){
         $.get('app/views/' + page + '.php', function(data){
             $('#loader').removeClass('visible');
 
+            if (page === 'team') {
+                $('.js-open-chat').show();
+            } else {
+                $('.js-open-chat').hide();
+            }
+
             setTimeout(function(){
                 $('.content-page').html(data);
                 $('html, body').stop().animate( { scrollTop: 0 }, 0 );
@@ -153,7 +165,8 @@ $(function(){
 
     checkTopBar();
     
-    if (screen.width <= 640) {
+    var width = $(window).width();
+    if (width <= 640) {
         initActions();
         $('.application').css('opacity', 1);
         $('#loader').removeClass('visible');
