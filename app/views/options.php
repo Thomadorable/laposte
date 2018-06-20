@@ -50,7 +50,7 @@
         
         <div class="half">
             <label class="options-label typo2" for="zipCode">Code postal</label>
-            <input class="options-input" type="text" placeholder="Code postal" value="<?= $user->zipCode?>" name="zipcode" id="zipCode">
+            <input class="options-input" type="text" placeholder="Code postal" value="<?= $user->zipCode?>" name="zipCode" id="zipCode">
         </div><div class="half">
             <label class="options-label typo2" for="city">Ville</label>
             <input class="options-input" type="text" placeholder="Ville" value="<?= $user->city ?>" name="city" id="city">
@@ -70,7 +70,7 @@
         <p class="options-label typo2">Je souhaite recevoir...</p>
         <?php foreach ($giftTypes as $type ) {
             ?>
-            <input class="options-input no-margin" type="checkbox" name="giftType" id="gift<?= $type->id ?>" value="true" <?= (isset($join['giftTypes'][$type->id])) ? 'checked':'' ?>><label for="gift<?= $type->id ?>" >des surprises "<?= $type->name ?>"</label>
+            <input class="options-input no-margin" type="checkbox" name="giftType[<?= $type->id ?>]" id="gift<?= $type->id ?>" value="true" <?= (isset($join['giftTypes'][$type->id])) ? 'checked':'' ?>><label for="gift<?= $type->id ?>" >des surprises "<?= $type->name ?>"</label>
         <?php } ?>
     </div>
 </form>

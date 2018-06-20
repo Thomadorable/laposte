@@ -6,7 +6,8 @@ function login ($login, $password) {
     $currentUser = getUserByMail($login);
 
 
-    $hash = hash('sha256', $password);
+    $hash = getHash($password);
+
 
     $_SESSION['flash'] = [];
 
@@ -28,6 +29,10 @@ function randId(){
     else return $rand;
 }
 
+function getHash($str) {
+    return hash('sha256', $str);
+}
+
 function register () {
     if (!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['lastname']) && !empty($_POST['name'])) {
         $_SESSION['flash'] = [];
@@ -46,7 +51,7 @@ function register () {
             "name" => htmlspecialchars(trim($_POST['name'])),
             "lastname" => htmlspecialchars(trim($_POST['lastname'])),
             "mail" => htmlspecialchars(trim($_POST['login'])),
-            "password" => hash('sha256', htmlspecialchars(trim($_POST['password']))),
+            "password" => getHash(htmlspecialchars($_POST['password'])),
             "avatar" => "",
             "idTeam" => 0
         ];
