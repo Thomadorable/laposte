@@ -130,6 +130,7 @@
             }
         ?>
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/fakelist.js"></script>
     <script src="js/main.js"></script>

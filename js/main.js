@@ -145,6 +145,12 @@ $(function(){
                 $(this).addClass('anim' + $(this).data('level'));
             }, (time * 100))
         });
+
+        $('.animate-number').each(function(){
+            var number = $(this).text();
+            console.log(number);
+            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
+        });
     }
 
     $(document).scroll(function(){
@@ -226,6 +232,12 @@ $(function(){
         });
     } else {
         initActions();
+
+        $('.animate-number').each(function(){
+            var number = $(this).text();
+            console.log(number);
+            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
+        });
     }
 });
 
