@@ -13,7 +13,7 @@
 </section>
 <section class="block02">
     <div class="maxWidth typo2">
-        <h2 class="typo1">
+        <h2 class="typo1 color-green">
             C'est super simple.
         </h2>
         <p class=" color-green">(promis 😉)</p>
