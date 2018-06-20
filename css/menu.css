@@ -140,7 +140,7 @@
     overflow: hidden;
 }
 
-.header-menu a:not(.round-btn) {
+.header-menu a:not(.no-hover) {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -150,7 +150,7 @@
     transition: all ease 0.3s;
 }
 
-.header-menu a:not(.round-btn):after {
+.header-menu a:not(.no-hover):after {
     content: "";
     position: absolute;
     bottom: -3px;
@@ -162,12 +162,12 @@
 }
 
 .header-menu a.active,
-.header-menu a:not(.round-btn):hover {
+.header-menu a:not(.no-hover):hover {
     background: rgba(255, 252, 250, 0.15);
 }
 
 .header-menu a.active:after,
-.header-menu a:not(.round-btn):hover:after {
+.header-menu a:not(.no-hover):hover:after {
     bottom: 0;
 }
 

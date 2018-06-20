@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/swiper.css">
+        <link rel="stylesheet" href="css/landing.css">
         <meta name="viewport" content="width=device-width, user-scalable=no">
 
         <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -37,7 +38,7 @@
                     echo '<div class="pattern no-mobile"></div>';
                 }
                 ?>
-                    <header class="topbar sticky">
+                <header class="topbar sticky">
                     <div class="boxed-wrapper flex padding-20">
                             <h1><a href="index.php" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
                             <ul class="header-menu">
@@ -47,7 +48,7 @@
                             </ul>
 
                             <ul class="header-menu">
-                                <li><a class="typo3" href="?page=profile">Bonjour, <strong><?= $_SESSION['name']?></strong><span class="round-btn"><?php include('./images/chevron-down.svg') ?></span></a></li>
+                                <li><a class="typo3" href="?page=profile">Bonjour, <strong><?= $_SESSION['name']?></strong><span class="round-btn no-hover"><?php include('./images/chevron-down.svg') ?></span></a></li>
                             </ul>
                         </div>
                     </header>
@@ -101,17 +102,15 @@
                 <?php
             } else {
                 ?>
-                    <header class="topbar sticky">
+                    <header class="topbar sticky visitor">
                         <div class="boxed-wrapper flex padding-20">
                             <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
-                            <ul class="header-menu">
-                                <li><a class="typo3" href="?page=home">Le partenaire du mois</a></li>
-                                <li><a class="typo3" href="?page=login">Mon calendrier</a></li>
-                                <li><a class="typo3" href="?page=login">Mon équipe</a></li>
-                            </ul>
 
                             <ul class="header-menu">
-                                <li><a class="typo3" href="?page=login">Bo</a></li>
+                                <li><a class="typo3" href="#">Accueil</a></li>
+                                <li><a class="typo3" href="#">Comment ça marche ?</a></li>
+                                <li><a class="typo3" href="#">Contact</a></li>
+                                <li><a class="typo3 button1 no-hover" href="?page=login">Connexion</a></li>
                             </ul>
                         </div>
                     </header>
