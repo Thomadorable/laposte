@@ -927,7 +927,9 @@ form .dark{
 .timeline.step2 .event-2,
 .timeline.step3 .event-1,
 .timeline.step3 .event-1 .timeline-validate,
-.timeline.step3 .event-2 {
+.timeline.step3 .event-2,
+.timeline.step3 .event-2 .timeline-validate,
+.timeline.step3 .event-3 {
     opacity: 1;
     transition: opacity ease 0.3s;
 }
@@ -938,12 +940,6 @@ form .dark{
     height: calc(100% - 30px);
     transition: height ease-in-out 0.8s;
 }
-
-.timeline.step3 .event-2 .timeline-validate,
-.timeline.step3 .event-3 {
-    opacity: 1;
-}
-
 
 .timeline.step1 .event-4,
 .timeline.step2 .event-4 {
