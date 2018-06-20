@@ -14,6 +14,7 @@ function getUserByMail($login) {
     return $currentUser;
 }
 
+
 function getUserByID($id) {
     $bdd = getBdd();
     
@@ -22,6 +23,27 @@ function getUserByID($id) {
     else $currentUser = null;
 
     return $currentUser;
+}
+
+
+function getJoinUserByID($id){
+    $user = getUserByID($id);
+    $recurrence = getRecurrences()->{$user->idRecurrence};
+    $usersGifts = getBdd()->usersGifts;
+    $giftTypes = getGiftTypes();
+
+    $userGifts = [];
+    foreach($usersGifts as $assoc) {
+        if( $assoc->idUser === $id)
+            $userGifts[$giftTypes->{$assoc->idGift}->id] = $giftTypes->{$assoc->idGift};
+
+    }
+
+    $userJoin = [];
+    $userJoin['reccurence'] = $recurrence;
+    $userJoin['giftTypes'] = $userGifts;
+
+    return $userJoin;
 }
 
 function getGiftTypes() {
