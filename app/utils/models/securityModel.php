@@ -65,7 +65,8 @@ function register () {
             "step" => "step0",
             "bars" => [0, 0, 0],
             "progress" => [0, 0, 0],
-            "levels" => [0, 0, 0]
+            "levels" => [0, 0, 0],
+            "age" => 30
         ];
 
         $bdd->users->{$user['id']} = $user;
