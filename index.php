@@ -134,10 +134,20 @@
                     </header>
                     <header class="topbar no-desktop visitor">
                         <h1><a href="index.php" class="logo"><img src="images/logovert.svg" alt="Logo Paaper"></a></h1>
-                        <a id="menu_toggle" class="">
+                        
+                    </header>
+                    <a id="menu_toggle" class="">
                             <span class="toggle"></span>
                         </a>
-                    </header>
+                    <nav id="nav_m">
+                        <span class="vmiddle"></span>
+                        <ul class="header-menu">
+                            <li><a class="typo3" href="#">Accueil</a></li>
+                            <li><a class="typo3" href="#">Comment ça marche ?</a></li>
+                            <li><a class="typo3" href="#">Contact</a></li>
+                            <li><a class="typo3 button1 landing-login no-hover" href="?page=login">Connexion</a></li>
+                        </ul>
+                    </nav>
                     <section class="boxed-wrapper visitor">
                         <?php
                             $allowedPages = ['landing', 'login', 'register'];
