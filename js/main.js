@@ -1,4 +1,20 @@
 $(function(){
+
+    function animateScroll(position){
+		
+		$('html, body').animate({
+			scrollTop: position
+		}, 'slow');
+		return false; 
+	}
+
+	$('a[href^="#"]').click(function () {
+		var the_id = $(this).attr("href");
+		if( the_id != '#'){
+			animateScroll( $(the_id).offset().top)
+			return false;
+		}
+	});
     function closeChat() {
         if ($('.js-open-chat').hasClass('active')) {
             $('.new-chat').fadeOut();
