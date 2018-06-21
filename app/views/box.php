@@ -16,7 +16,7 @@
     <p class="typo2">« Voilà l’été, voilà l’été » </p>
     <p class="typo1">Juin 2018</p>
 
-    <p class="typo2 first-box">Vous allez recevoir votre boîte dans moins de 5 jours !</p>
+    <p class="typo2 first-box">Vous allez recevoir votre boîte dans moins de 5 jours pour commencer l'aventure 🏆</p>
 
     <a href="" class="button1 this-month">Je participe ce mois-ci</a>
     </div>
