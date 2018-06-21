@@ -12,7 +12,7 @@
 
 <div class="center padding-top-menu">
     <img src="images/box.svg" alt="Icone de la team" class="no-team-img">
-    <h1 class="typo1">Pas de équipe ?</h1>
+    <h1 class="typo1">Pas d'équipe ?</h1>
 
     <p class="typo2 margin-top-10">Paaper, c’est encore mieux entre amis ! Débloquez de nouveaux objectifs avec l’aide de votre équipe et gagnez ensemble des surprises inédites.</p>
 </div>

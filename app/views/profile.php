@@ -12,7 +12,7 @@
     <img class="avatar" src="images/avatars/<?=$loggedUser->avatar?>" alt=""><div class="text">
         <h1 class="typo4"><?=$loggedUser->name?></h1>
         <p class="typo3">
-            31 ans, <?=$loggedUser->city?>
+            <?=$loggedUser->age?> ans, <?=$loggedUser->city?>
             </p>
         <p class="opac50 min typo3">
             <?php
