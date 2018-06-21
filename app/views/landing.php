@@ -90,7 +90,7 @@ A vos marques, prêts… recyclez ! </p>
             ],
             [
                 "name" => "Panafrica",
-                "logo" => "Capture d’écran 2018-06-21 à 10.57.06.png",
+                "logo" => "panafrica.png",
                 "site" => "https://www.panafrica-store.com/fr",
             ],
             [

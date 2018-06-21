@@ -58,7 +58,7 @@
     
 
     <form action="" class="team-form">
-        <textarea class="chat-text" name="" id="" placeholder="Un message pour votre team ? 🙊"></textarea>
+        <textarea class="chat-text" name="" id="" placeholder="Un message pour votre équipe ? 🙊"></textarea>
         <input type="hidden" class="chat-pseudo" value="<?=$loggedUser->name?>">
         <input type="hidden" class="chat-avatar" value="<?=$loggedUser->avatar?>">
         <button type="submit" class="send-message"><img src="images/chat-send.svg"  src="envoyer"/></button>

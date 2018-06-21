@@ -110,7 +110,7 @@ $(function () {
         $('.boxready').click(function (event) {
             event.preventDefault();
             $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
-            $('html, body').stop().animate({ scrollTop: 450 }, 500);
+            $('html, body').stop().animate( { scrollTop: 600 }, 500 );
 
 
             var idUser = $(this).data('id');
@@ -264,13 +264,17 @@ $(function () {
 
     var width = $(window).width();
 
-    if (width <= 640) {
-        initActions();
-        $('.application').css('opacity', 1);
-        $('#loader').removeClass('visible');
-        changeTab();
+    initActions();
+    $('.application').css('opacity', 1);
+    $('#loader').removeClass('visible');
+    changeTab();
 
+<<<<<<< HEAD
         $(document).on('click', '.js-get-page', function (event) {
+=======
+    if (width <= 640) {
+        $(document).on('click', '.js-get-page', function(event){
+>>>>>>> c7afad57db48a770c557ab324321ea9720d25fed
             event.preventDefault();
 
             var tab = $(this).data('tab');
@@ -280,11 +284,14 @@ $(function () {
         });
     } else {
         initActions();
+<<<<<<< HEAD
 
         $('.animate-number').each(function () {
             var number = $(this).text();
             $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
         });
+=======
+>>>>>>> c7afad57db48a770c557ab324321ea9720d25fed
     }
 
     document.addEventListener('touchmove', function (event) {
