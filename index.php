@@ -63,7 +63,7 @@
                         $ishome = ($page === 'home' || $page === 'teams' || $page === 'options') ? 'no-padding-bottom' : '';
                     ?>
                     <div class="loader visible" id="loader"></div>
-                    <section class="boxed-wrapper application" >
+                    <section class="boxed-wrapper application <?=$page?>" >
                         <div class="swiper-slide content-page <?=$page?> <?=$ishome?>">
                             <?php
                                 include ('app/views/' . $page . '.php');

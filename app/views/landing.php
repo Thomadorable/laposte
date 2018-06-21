@@ -7,7 +7,7 @@
             <p class="typo2">
                 Paaper, c'est la boîte mensuelle qui s'en va remplie de papier recyclé et qui revient pleine de surprises et de bons plans partenaires.
             </p>
-            <a href="#" class="button2">Découvrir</a>
+            <a href="?page=login" class="button2">Découvrir</a>
         </div>
     </div>
 </section>
