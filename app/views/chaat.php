@@ -1,6 +1,6 @@
 <button class="js-open-chat"><img src="images/chat-laputaindesamere.svg"></button>
 <div class="modal-chat">
-    <button class="chat-close"><?php include($path . 'images/x.svg') ?></button>
+    <button class="chat-close"><img src="images/close-chat.svg"></button>
     <div class="chat-messages">
 
         <div class="flex flex-row chat-wrapper">
@@ -23,13 +23,23 @@
             </div> 
         </div>
 
-        <div class="flex flex-row chat-wrapper me">
+        <div class="flex flex-row chat-wrapper">
             <div class="chavatar-wrapper">
-                <img class="chavatar" src="images/avatars/<?=$loggedUser->avatar?>" alt="Profil de <?=$loggedUser->name?>">    
+                <img class="chavatar" src="images/avatars/lucas.svg" alt="Profil de Lucas">    
             </div>
             <div class="chat-message">
-                <strong class="typo2"><?=$loggedUser->name?></strong>
+                <strong class="typo2">Lucas</strong>
                 <p class="typo2">Hello la team ! Prêts à relever le défi du mois ? Jsuis op </p>
+            </div> 
+        </div>
+
+        <div class="flex flex-row chat-wrapper">
+            <div class="chavatar-wrapper">
+                <img class="chavatar" src="images/avatars/ariane.svg" alt="Profil de Ariane">    
+            </div>
+            <div class="chat-message big">
+                <strong class="typo2">Ariane</strong>
+                <p class="typo2">Yessss, j’ai déposé ma boîte ce matin 📦</p>
             </div> 
         </div>
 
@@ -37,11 +47,11 @@
 
         <div class="flex flex-row chat-wrapper">
             <div class="chavatar-wrapper">
-                <img class="chavatar" src="images/avatars/ariane.svg" alt="Profil de Ariane">    
+                <img class="chavatar" src="images/avatars/marie.svg" alt="Profil de Marie">    
             </div>
             <div class="chat-message">
-                <strong class="typo2">Ariane</strong>
-                <p class="typo2">Yessss, j’ai déposé ma boîte ce matin 📦</p>
+                <strong class="typo2">Marie</strong>
+                <p class="typo2">J'ai ajouté Simon dans la team 😁</p>
             </div> 
         </div>
     </div>

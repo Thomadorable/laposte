@@ -13,7 +13,7 @@
         <div class="swiper-container swiper-container-team">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a href="">
+                    <a href="javascript:void(0);">
                         <img src="images/add-friend.svg" alt="Ajouter un membre">    
                     </a>
                 </div>
@@ -21,7 +21,7 @@
                     foreach($members as $member) {
                         ?>
                             <div class="swiper-slide">
-                                <a href="">
+                                <a href="javascript:void(0);">
                                     <img src="images/avatars/<?=$member->avatar?>" alt="Profil de <?=$member->name?>">    
                                 </a>
                             </div>
@@ -63,4 +63,4 @@
 <p class="margin-top-20 typo2 text-progress">Ça en fait des kilos portés jusqu’aux boîtes aux lettres, bande d’athlètes 💪</p>
 
 
-<a href="?page=team&team=0" class="button1">Quitter la team</a>
+<a href="?page=team&team=0" class="button1">Quitter l'équipe</a>

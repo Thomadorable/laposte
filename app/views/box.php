@@ -7,7 +7,7 @@
 
     require_once($path . 'app/utils/functions.php');
 ?>
-<div class="timeline step1" >
+<div class="timeline <?=$loggedUser->step?>" >
     <img src="images/illu.gif" alt="" class="remove-padding">
 
     <div class="pattern no-desktop remove-padding"></div>
@@ -41,7 +41,7 @@
 
             <div class="maboite">
                 <img src="images/maboite.png" alt="" >
-                <a href="" class="button2 boxready">Ma boîte est prête !</a>
+                <a href="" class="button2 boxready" data-id="<?=$loggedUser->id?>">Ma boîte est prête !</a>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row center">
+    <div class="flex flex-row center timing">
         <div class="time-wrapper">
             <p class="typo1 jours">04</p>
             <p class="typo2 time-legend">Jours</p>

@@ -23,10 +23,10 @@
     ?>
 
     <label class="options-label typo2 margin-top-20" for=""><strong class="required">*</strong> Mail</label>
-    <input class="options-input" type="text" name="login" value="">
+    <input class="options-input" type="text" name="login" value="vanessa@gmail.com">
 
     <label class="options-label typo2" for=""><strong class="required">*</strong> Mot de passe</label>
-    <input class="options-input" type="password" name="password">
+    <input class="options-input" type="password" name="password" value="piscine">
 
     <button type="submit" class="button1">Se connecter</button>
     <a href="?page=register" class="button1">S'inscrire</a>

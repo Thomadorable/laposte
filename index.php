@@ -20,11 +20,18 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/swiper.css">
         <link rel="stylesheet" href="css/landing.css">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         <link rel="icon" type="image/png" href="images/favicon.png" />
     </head>
-    <body>
+    <?php
+        $classTeam = '';
+
+        if (isset($_SESSION['name']) && getTeamByUserID()) {
+            $classTeam = 'item-menu-team';
+        } 
+    ?>
+    <body class="<?=$classTeam?>">
         <?php
             if (isset($_SESSION['name'])) {
 
@@ -73,11 +80,9 @@
 
                     <?php 
 
-                    $classTeam = '';
                     
                     if (getTeamByUserID()) {
                         include('./app/views/chaat.php');
-                        $classTeam = 'item-menu-team';
                     } 
                     
                     ?>
