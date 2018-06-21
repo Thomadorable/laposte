@@ -26,7 +26,7 @@ $(function(){
             $('.chat-text').val('');
 
             if (message.length > 0) {
-                $('.chat-messages').append('<div class="flex flex-row chat-wrapper me"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/simon.jpg" alt="Profil de Thomas"></div><div class="chat-message visible"><strong class="typo2">Simon</strong><p class="typo2">' + message + '</p></div></div>');
+                $('.chat-messages').append('<div class="flex flex-row chat-wrapper me"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/simon.svg" alt="Profil de Thomas"></div><div class="chat-message visible"><strong class="typo2">Simon</strong><p class="typo2">' + message + '</p></div></div>');
                 
                 $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
             }
@@ -75,30 +75,6 @@ $(function(){
         $('.boxready').click(function(event){
             event.preventDefault();
             $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
-
-            var timeline = $('.timeline-month');
-            if (timeline.length > 0) {
-
-                setInterval(function(){
-                    var sec = parseInt($('.secondes').text()) - 1;
-                    
-                    if(sec === -1) {
-                        sec = 59;
-
-                        var min = parseInt($('.minutes').text()) - 1;
-
-                        if(min === -1) {
-                            min = 59;
-                            var heures = parseInt($('.heures').text()) - 1;
-                            $('.heures').text(heures);
-                        }
-
-                        $('.minutes').text(min);
-                    }
-                    
-                    $('.secondes').text(sec);
-                }, 1000)
-            }
         });
     }
 
@@ -147,9 +123,32 @@ $(function(){
 
         $('.animate-number').each(function(){
             var number = $(this).text();
-            console.log(number);
             $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
         });
+
+        var timeline = $('.timeline-month');
+        if (timeline.length > 0) {
+
+            setInterval(function(){
+                var sec = parseInt($('.secondes').text()) - 1;
+                
+                if(sec === -1) {
+                    sec = 59;
+
+                    var min = parseInt($('.minutes').text()) - 1;
+
+                    if(min === -1) {
+                        min = 59;
+                        var heures = parseInt($('.heures').text()) - 1;
+                        $('.heures').text(heures);
+                    }
+
+                    $('.minutes').text(min);
+                }
+                
+                $('.secondes').text(sec);
+            }, 1000)
+        }
     }
 
     $(document).scroll(function(){
@@ -239,7 +238,6 @@ $(function(){
 
         $('.animate-number').each(function(){
             var number = $(this).text();
-            console.log(number);
             $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
         });
     }
