@@ -406,6 +406,7 @@ section.visitor {
         z-index: 100;
         display: none;
         opacity: 0;
+        background-color: #fffcfa;
     }
 #nav_m .header-menu{
     display: flex;
