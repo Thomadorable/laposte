@@ -281,11 +281,6 @@ $(function(){
         });
     } else {
         initActions();
-
-        $('.animate-number').each(function(){
-            var number = $(this).text();
-            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
-        });
     }
 
     document.addEventListener('touchmove', function(event) {

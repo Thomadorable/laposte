@@ -62,7 +62,10 @@ function register () {
             "adressDetails" => "Digicode \u00e0 l'entr\u00e9e : 1954",
             "atHome" => true,
             "idRecurrence" => 1,
-            "step" => "step0"
+            "step" => "step0",
+            "bars" => [0, 0, 0],
+            "progress" => [0, 0, 0],
+            "levels" => [0, 0, 0]
         ];
 
         $bdd->users->{$user['id']} = $user;

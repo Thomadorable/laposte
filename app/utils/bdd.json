@@ -10,9 +10,9 @@
             "idTeam": 1,
             "mobile": "07 61 30 32 18",
             "adress": "84 Quai de la Loire",
-            "zipCode": "75019",
-            "city": "Paris",
-            "adressDetails": "Digicode \u00e0 l'entr\u00e9e : 1954",
+            "zipCode": "77184",
+            "city": "Emerainville",
+            "adressDetails": "",
             "atHome": true,
             "idRecurrence": 1,
             "step": "step1",
@@ -33,7 +33,7 @@
             "zipCode": "75019",
             "city": "Paris",
             "adressDetails": "Digicode \u00e0 l'entr\u00e9e : 1954",
-            "atHome": true,
+            "atHome": false,
             "idRecurrence": 1,
             "step": "step2",
             "bars": [16, 80, 0],
@@ -204,15 +204,15 @@
     "teams": {
         "1": {
             "id": 1,
-            "name": "La team Roquette"
+            "name": "laTeamRoquette"
         },
         "2": {
             "id": 2,
-            "name": "Chaussette"
+            "name": "chaussette"
         },
         "3": {
             "id": 3,
-            "name": "La team Possible"
+            "name": "laTeamPossible"
         }
     },
     "recurrences": {
