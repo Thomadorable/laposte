@@ -269,12 +269,8 @@ $(function () {
     $('#loader').removeClass('visible');
     changeTab();
 
-<<<<<<< HEAD
-        $(document).on('click', '.js-get-page', function (event) {
-=======
     if (width <= 640) {
         $(document).on('click', '.js-get-page', function(event){
->>>>>>> c7afad57db48a770c557ab324321ea9720d25fed
             event.preventDefault();
 
             var tab = $(this).data('tab');
@@ -284,14 +280,6 @@ $(function () {
         });
     } else {
         initActions();
-<<<<<<< HEAD
-
-        $('.animate-number').each(function () {
-            var number = $(this).text();
-            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
-        });
-=======
->>>>>>> c7afad57db48a770c557ab324321ea9720d25fed
     }
 
     document.addEventListener('touchmove', function (event) {
