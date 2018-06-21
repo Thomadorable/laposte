@@ -15,7 +15,7 @@
 
 <div class="pattern no-desktop remove-padding pattern-gift"></div>
 
-<h2 class="typo1 center">Histoire</h2>
+<h2 class="typo1 center">Notre histoire</h2>
 
 <p class="typo2 margin-top-20">Au départ, on n'y connaissait rien. Petit à petit, on a remonté les filières dans toute l’Europe pour en comprendre les secrets. A force de prototypes et de tests, on a réussi à atteindre notre objectif : <a href="https://www.loom.fr/pages/projet" target="_BLANK">des vêtements qui durent</a>.</p>
 
@@ -38,7 +38,7 @@
 <p class="typo2">Pour vous remercier de vos efforts
 et parce que la communauté Paaper mérite qu’à son tour on prenne soin d’elle, on vous a concocté une boîte pleine de <a href="https://www.loom.fr/pages/secrets-qualite" target="_BLANK">surprises de qualité</a>, qui durent et garantie zéro déchets.</p>
 
-<a href="http://loom.fr" target="_BLANK" class="button1">On parle de Paaper</a>
+<a href="http://loom.fr" target="_BLANK" class="button1">En savoir plus</a>
 
 <div class="separator"></div>
 
@@ -49,4 +49,4 @@ Pour la team qui gagnera notre super défi, on a réservé le meilleur du meille
 
 <img src="images/superboite.png" alt="" class="superboite">
 
-<a href="http://loom.fr" target="_BLANK" class="button1">en savoir plus sur loom</a>
+<a href="http://loom.fr" target="_BLANK" class="button1">Plus d'infos sur loom</a>

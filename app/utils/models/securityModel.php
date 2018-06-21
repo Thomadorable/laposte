@@ -53,7 +53,15 @@ function register () {
             "mail" => htmlspecialchars(trim($_POST['login'])),
             "password" => getHash(htmlspecialchars($_POST['password'])),
             "avatar" => "",
-            "idTeam" => 0
+            "idTeam" => 0,
+            
+            "mobile" => "07 61 30 32 18",
+            "adress" => "84 Quai de la Loire",
+            "zipCode" => "75019",
+            "city" => "Paris",
+            "adressDetails" => "Digicode \u00e0 l'entr\u00e9e : 1954",
+            "atHome" => true,
+            "idRecurrence" => 1
         ];
 
         $bdd->users->{$user['id']} = $user;

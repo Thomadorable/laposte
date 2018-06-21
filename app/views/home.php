@@ -45,8 +45,7 @@
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a></p>
                         </header>
                         <div class="actu-content">
-                            <p class="typo2 z-index-2">L’été approche à grand pas et pour l’occasion, notre partenaire du mois a plein de bons plans 
-à vous offrir…</p>
+                            <p class="typo2 z-index-2">L’été approche à grand pas et pour l’occasion, notre partenaire du mois a plein de bons plans à vous offrir…</p>
 
                             <div class="flex z-index-2">
                                 <a href="" class="button2" data-page="box" data-tab="1">Découvrir</a>
@@ -60,7 +59,7 @@
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a> </p>
                         </header>
                         <div class="actu-content">
-                            <p class="typo2 z-index-2">Votre ami(e) Facebook <strong>Estelle Burnichon</strong> vient de rejoindre l’aventure, souhaitez-vous l’inviter à rejoindre votre team ?</p>
+                            <p class="typo2 z-index-2">Votre ami(e) Facebook <strong>Estelle Burnichon</strong> vient de rejoindre l’aventure, souhaitez-vous l’inviter dans votre team ?</p>
 
                             <div class="flex z-index-2">
                                 <a href="" class="button2">Inviter</a>

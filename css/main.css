@@ -107,7 +107,8 @@ body {
 
 .logo {
     position: absolute;
-    top: 18px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     width: 120px;
 }
@@ -228,6 +229,7 @@ h2 {
     font-weight: 600;
     letter-spacing: 0.1px;
     color: #373737;
+    line-height: 1.12;
 }
 
 .typo2 {
@@ -400,11 +402,12 @@ strong.typo2 {
     text-align: left;
     margin-bottom: .5rem;
 }
-.profile .min{
+
+.profile .min {
     font-size: 1.6rem
 }
 
-.profile p + p{
+.profile p+p {
     margin-top: 1rem
 }
 
@@ -425,6 +428,7 @@ strong.typo2 {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
     display: none;
 }
+
 .js-open-chat img {
     width: 35px;
     margin-top: 5px;
@@ -513,14 +517,14 @@ strong.typo2 {
     flex-direction: row-reverse;
 }
 
-.chat-wrapper.me  .chat-message {
+.chat-wrapper.me .chat-message {
     margin-right: 14px;
     margin-left: 30px;
     border-radius: 20px 20px 0 20px;
     background: #a5c8b4;
 }
 
-.chat-wrapper.me  .chat-message .typo2 {
+.chat-wrapper.me .chat-message .typo2 {
     color: white;
 }
 
@@ -624,31 +628,31 @@ strong.typo2 {
     position: absolute;
 }
 
-.profile-form > div{
+.profile-form>div {
     position: relative;
     width: calc(100% + 8rem);
     left: -4rem;
     padding: 4rem
 }
 
-.no-margin{
+.no-margin {
     margin-bottom: 0
 }
 
-.profile-form .half{
+.profile-form .half {
     width: 50%;
     display: inline-block;
 }
 
-
-.profile-form .half:nth-of-type(2n){
+.profile-form .half:nth-of-type(2n) {
     padding-left: 1rem;
 }
-.profile-form .half:nth-of-type(2n + 1){
+
+.profile-form .half:nth-of-type(2n+1) {
     padding-right: 1rem;
 }
 
-form .dark{
+form .dark {
     background-color: rgba(230, 230, 230, 0.3);
 }
 
@@ -834,7 +838,6 @@ form .dark{
     background: #e6a587;
 }
 
-
 /* PARTENAIRES */
 
 .header-gift img {
@@ -868,8 +871,8 @@ form .dark{
     background: #000000;
 }
 
-
 /* TIMELINE / BOX */
+
 .timeline-month {
     margin-top: -30px;
     border-radius: 10px;
@@ -904,7 +907,7 @@ form .dark{
     margin-top: 5px;
 }
 
-.event-icon  img {
+.event-icon img {
     position: absolute;
     left: 0;
     top: 0;
@@ -987,20 +990,18 @@ form .dark{
     font-size: 0;
 }
 
-
 .time-wrapper {
     width: 100%;
     flex: 1;
     margin-top: 40px;
     margin-bottom: 20px;
-    
 }
 
 .typo2.time-legend {
     font-size: 14px
 }
 
-.time-wrapper + .time-wrapper {
+.time-wrapper+.time-wrapper {
     margin-left: 13px;
 }
 
@@ -1141,6 +1142,7 @@ form .dark{
         display: inline-block;
         padding: 12px 0;
         width: auto;
+        transform: translate(0)
     }
     .logo img {
         height: 38px;
@@ -1194,23 +1196,19 @@ form .dark{
     .loader {
         position: fixed;
     }
-
     .button1 {
         font-size: 16px;
-        padding: 20px 15px; 
+        padding: 20px 15px;
     }
-
     .button1 .arrow {
         margin-left: 5px;
         width: 1.8rem;
     }
-
     .button2 {
         font-size: 16px;
         padding: 15px 15px;
     }
-
-    .button1 + .button1 {
+    .button1+.button1 {
         margin-top: 20px;
     }
 }
