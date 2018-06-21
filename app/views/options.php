@@ -19,7 +19,13 @@
                 31 ans, Paris
                 </p>
             <p class="opac50 min typo3">
-                Pas encore de team
+            <?php
+                if ($team) {
+                    echo 'Équipe : ' . $team->name;
+                } else {
+                    echo 'Pas encore d\'équipe';
+                }
+            ?>
             </p>
         </div>
         <button class="edit-profile edit-profile-sticky" type="submit">
@@ -60,7 +66,7 @@
         <input class="options-input no-margin" type="text" placeholder="Précision" value="<?= $user->adressDetails ?>" name="adressDetails" id="adressDetails">
     </div>
     <div class="dark">
-        <p class="options-label typo2">Je reçois ma boite...</p>
+        <p class="options-label typo2">Je reçois ma boîte...</p>
         <input class="options-input no-margin" type="radio" name="atHome" id="atHomeTrue" value="true" <?= ($user->atHome) ? 'checked':'' ?>><label for="atHomeTrue">chez moi</label>
         <input class="options-input no-margin" type="radio" name="atHome" id="atHomeFalse" value="false" <?= (!$user->atHome) ? 'checked':'' ?>><label for="atHomeFalse" >dans un bureau de poste</label>
 

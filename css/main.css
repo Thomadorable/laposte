@@ -395,7 +395,8 @@ strong.typo2 {
     display: inline-block;
     width: 8rem;
     height: 8rem;
-    vertical-align: middle
+    vertical-align: middle;
+    box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.14);
 }
 
 .team-header.profile {
@@ -439,20 +440,19 @@ strong.typo2 {
     text-align: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
     display: none;
-    animation: poop linear 1s 1s;
 }
 
 @keyframes poop {
     0% {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
     }
 
     50% {
-        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
-    }
-
-    100% {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+        transform: scale(1);
     }
 }
 
@@ -460,6 +460,10 @@ strong.typo2 {
     width: 35px;
     margin-top: 5px;
     transition: opacity 0s ease 0.8s;
+}
+
+body.item-menu-team .js-open-chat img {
+    animation: poop ease-in-out 2s 1s infinite;
 }
 
 .js-open-chat.active {
@@ -556,6 +560,10 @@ strong.typo2 {
     color: white;
 }
 
+.chat-wrapper.me .chat-message.small {
+    margin-left: 130px;
+}
+
 .chat-message {
     opacity: 0;
     position: relative;
@@ -570,7 +578,11 @@ strong.typo2 {
 }
 
 .chat-message.small {
-    margin-right: 140px;
+    margin-right: 130px;
+}
+
+.chat-message.big {
+    margin-right: 40px;
 }
 
 .team-form {
@@ -960,8 +972,9 @@ form .dark {
 }
 
 .event-2,
-.event-3 {
-    opacity: 0.4;
+.event-3,
+.timing {
+    opacity: 0.3;
 }
 
 .timeline.step2 .event-1,
@@ -971,7 +984,8 @@ form .dark {
 .timeline.step3 .event-1 .timeline-validate,
 .timeline.step3 .event-2,
 .timeline.step3 .event-2 .timeline-validate,
-.timeline.step3 .event-3 {
+.timeline.step3 .event-3,
+.timeline.step3 .timing {
     opacity: 1;
     transition: opacity ease 0.3s;
 }
@@ -979,7 +993,7 @@ form .dark {
 .timeline.step2 .event-1,
 .timeline.step3 .event-1,
 .timeline.step3 .event-2 {
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .timeline.step2 .event-1:after,
@@ -1007,8 +1021,8 @@ form .dark {
     top: 50px;
     left: 12px;
     height: calc(100% - 30px);
-    width: 1px;
-    background: #e6e6e6;
+    width: 2px;
+    background: #E6A587;
 }
 
 .event:after {
@@ -1046,6 +1060,7 @@ form .dark {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
     padding: 20px 0;
     border-radius: 5px;
+    font-family: Karmilla;
 }
 
 .maboite .button2 {
@@ -1255,6 +1270,10 @@ form .dark {
     }
     .button1+.button1 {
         margin-top: 20px;
+    }
+
+    .underlink:before {
+        display: none;
     }
 }
 

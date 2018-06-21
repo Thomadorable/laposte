@@ -18,6 +18,7 @@ function getTeamByUserID () {
 function getMemberByTeam ($idTeam) {
     $users = getBdd()->users;
 
+
     $members = [];
     foreach($users as $user){
         if($user->idTeam == $idTeam) $members[] = $user;

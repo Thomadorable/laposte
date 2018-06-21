@@ -8,6 +8,12 @@ $(function(){
         }
     }
 
+    function sendChaat(pseudo, avatar, message, me, size) {
+
+        $('.chat-messages').append('<div class="flex flex-row chat-wrapper ' + me + '"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/' + avatar + '" alt="Profil de ' + pseudo + '"></div><div class="chat-message visible ' + size + '"><strong class="typo2">' + pseudo + '</strong><p class="typo2">' + message + '</p></div></div>');
+        $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
+    }
+
     function initActions() {
         new Swiper('.swiper-container-team', {
             navigation: {
@@ -23,16 +29,24 @@ $(function(){
 
         $('.team-form').submit(function(event){
             event.preventDefault();
-            $('.new-chat').fadeOut();
+            $('.new-chat').slideUp();
             var message = $('.chat-text').val();
             var pseudo = $('.chat-pseudo').val();
             var avatar = $('.chat-avatar').val();
             $('.chat-text').val('');
 
             if (message.length > 0) {
-                $('.chat-messages').append('<div class="flex flex-row chat-wrapper me"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/' + avatar + '" alt="Profil de ' + pseudo + '"></div><div class="chat-message visible"><strong class="typo2">' + pseudo + '</strong><p class="typo2">' + message + '</p></div></div>');
+                sendChaat(pseudo, avatar, message, 'me', 'small');
                 
-                $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
+                setTimeout(function(){
+                    $('.chat-messages').append('<div class="flex flex-row chat-wrapper typing"><div class="chat-message visible"><p class="typo2 text-typing">Lucas est en train d\'écrire...</p></div></div>');
+                    $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
+
+                    setTimeout(function(){
+                        $('.typing').hide();
+                        sendChaat('Lucas', 'lucas.svg', "Bienvenue 😏", '', 'small');
+                    }, 2000);
+                }, 1000);
             }
         });
 
@@ -73,12 +87,22 @@ $(function(){
 
         $('.this-month').click(function(event){
             event.preventDefault();
+            $('html, body').stop().animate( { scrollTop: 300 }, 300 );
+
             $('.timeline').removeClass('step1').addClass('step2');
         });
        
         $('.boxready').click(function(event){
             event.preventDefault();
             $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
+            $('html, body').stop().animate( { scrollTop: 450 }, 500 );
+
+
+            var idUser = $(this).data('id');
+
+            $.post('app/views/updateBox.php', {"id": idUser}, function(data){
+                console.log(data);
+            });
         });
     }
 
@@ -101,7 +125,7 @@ $(function(){
 
     $('.js-open-chat').click(function(){
         $(this).toggleClass('active');
-        $('.item-menu-team').removeClass('item-menu-team');
+        $('body').removeClass('item-menu-team');
         $('body, .modal-chat').css('overflow', 'hidden');
 
         if($(this).hasClass('active')) {
@@ -247,6 +271,13 @@ $(function(){
             $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
         });
     }
+
+    document.addEventListener('touchmove', function(event) {
+        event = event.originalEvent || event;
+        if(event.scale > 1) {
+            event.preventDefault();
+        }
+    }, false);
 
 });
 

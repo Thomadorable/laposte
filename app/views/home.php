@@ -22,14 +22,31 @@
         <img src="images/avatars/<?=$loggedUser->avatar?>" alt="Avatar" class="home-avatar">
         <p class="typo1">Re-bonjour <?= $loggedUser->name ?> ! 👋</p>
 
-        <p class="typo2">
-            Depuis que vous nous avez rejoints, c’est <strong class="underlink"><span class="animate-number nb-box">13653</span> boîtes</strong> qui ont
-            été envoyées par la communauté Paaper, dont <strong class="underlink animate-number">16</strong> juste grâce
-            à vous !
-        </p>
-        <p class="typo2">
-            Après <strong class="underlink"><span class="animate-number">9</span> mois</strong> sans manquer un seul de nos rendez-vous, vous faites aussi partie de notre élite Paaperienne puisque c’est mieux que <strong class="underlink"><span class="animate-number">85</span>%</strong> de nos membres. Merci pour votre fidélité ! ✉️
-        </p>
+        <?php
+            if ($loggedUser->name === 'Vanessa') {
+                ?>
+                 <p class="typo2">
+                    Depuis que vous nous avez rejoints, c’est <strong class="underlink"><span class="animate-number nb-box">13653</span> boîtes</strong> qui ont
+                    été envoyées par la communauté Paaper, dont <strong class="underlink animate-number">16</strong> juste grâce
+                    à vous !
+                </p>
+                <p class="typo2">
+                    Après <strong class="underlink"><span class="animate-number">9</span> mois</strong> sans manquer un seul de nos rendez-vous, vous faites aussi partie de notre élite Paaperienne puisque c’est mieux que <strong class="underlink"><span class="animate-number">67</span>%</strong> de nos membres. Merci pour votre fidélité ! ✉️
+                </p>
+                <?php
+            }
+            else {
+                ?>
+                <p class="typo2">Depuis que vous nous avez rejoints, c’est <strong class="underlink"><span class="animate-number">23</span>&nbsp;boîtes</strong> qui ont
+                    été envoyées par la communauté Paaper !</p>
+                <p class="typo2">Votre boîte arrivera très rapidement pour que vous puissiez commencer l'aventure !</p>
+                <?php
+            }
+        ?>
+
+       
+
+        
 
         <a href="?page=box" class="js-get-page button1" data-page="box" data-tab="3"><span class="middle"> Ma boîte aux lettres</span> <?php include($path . 'images/arrow.svg') ?></a>
         </div>
@@ -37,11 +54,15 @@
 
     <div class="half home-half home-pattern">
         <div class="scrolling fadeOut">
-            <?php for ($i=0; $i < 5; $i++) { 
-                 if ($i === 2 ) { ?>
+            <?php 
+
+            $names = ['Estelle Burnichon', 'Amandine Didier', 'Pierre Pineau', 'Violaine Bodolec', 'Thomas Deroua'];
+            
+            for ($i=0; $i < 5; $i++) { 
+                 if ($i === 2 || $i === 4) { ?>
                     <div class="actu green">
                         <header>
-                            <p class="actu-title"><?php include($path . 'images/package.svg') ?> <span class="middle">Nouvel ami Facebook</span></p>
+                            <p class="actu-title"><?php include($path . 'images/package.svg') ?> <span class="middle">NOUVEAU PARTENAIRE</span></p>
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a></p>
                         </header>
                         <div class="actu-content">
@@ -59,7 +80,7 @@
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a> </p>
                         </header>
                         <div class="actu-content">
-                            <p class="typo2 z-index-2">Votre ami(e) Facebook <strong>Estelle Burnichon</strong> vient de rejoindre l’aventure, souhaitez-vous l’inviter dans votre team ?</p>
+                            <p class="typo2 z-index-2">Votre ami(e) Facebook <strong><?=$names[$i]?></strong> vient de s’inscrire, souhaitez-vous l’inviter à rejoindre votre team ?</p>
 
                             <div class="flex z-index-2">
                                 <a href="" class="button2">Inviter</a>
