@@ -67,8 +67,8 @@
     </div>
     <div class="dark">
         <p class="options-label typo2">Je reçois ma boîte...</p>
-        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeTrue" value="true" <?= ($user->atHome) ? 'checked':'' ?>><label for="atHomeTrue">chez moi</label>
-        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeFalse" value="false" <?= (!$user->atHome) ? 'checked':'' ?>><label for="atHomeFalse" >dans un bureau de poste</label>
+        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeTrue" value="1" <?= ($user->atHome) ? 'checked':'' ?>><label for="atHomeTrue">chez moi</label>
+        <input class="options-input no-margin" type="radio" name="atHome" id="atHomeFalse" value="0" <?= (!$user->atHome) ? 'checked':'' ?>><label for="atHomeFalse" >dans un bureau de poste</label>
 
         <p class="options-label typo2" for="recurrence">Date de renvoi de ma boîte</p>
         <p class="label-select">Tous les 5 du mois <?php include($path . 'images/chevron-down.svg') ?></p>

@@ -1,20 +1,19 @@
-$(function(){
+$(function () {
 
-    function animateScroll(position){
-		
-		$('html, body').animate({
-			scrollTop: position
-		}, 'slow');
-		return false; 
-	}
+    function animateScroll(position) {
+        $('html, body').animate({
+            scrollTop: position
+        }, 'slow');
+        return false;
+    }
 
-	$('a[href^="#"]').click(function () {
-		var the_id = $(this).attr("href");
-		if( the_id != '#'){
-			animateScroll( $(the_id).offset().top)
-			return false;
-		}
-	});
+    $('a[href^="#"]').click(function () {
+        var the_id = $(this).attr("href");
+        if (the_id != '#') {
+            animateScroll($(the_id).offset().top)
+            return false;
+        }
+    });
     function closeChat() {
         if ($('.js-open-chat').hasClass('active')) {
             $('.new-chat').fadeOut();
@@ -27,14 +26,14 @@ $(function(){
     function sendChaat(pseudo, avatar, message, me, size) {
 
         $('.chat-messages').append('<div class="flex flex-row chat-wrapper ' + me + '"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/' + avatar + '" alt="Profil de ' + pseudo + '"></div><div class="chat-message visible ' + size + '"><strong class="typo2">' + pseudo + '</strong><p class="typo2">' + message + '</p></div></div>');
-        $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
+        $('.chat-messages').stop().animate({ scrollTop: $('.chat-messages')[0].scrollHeight }, 500);
     }
 
     function initActions() {
         new Swiper('.swiper-container-team', {
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
             slidesPerView: 3,
             spaceBetween: 28,
@@ -43,7 +42,7 @@ $(function(){
             freeModeSticky: true
         });
 
-        $('.team-form').submit(function(event){
+        $('.team-form').submit(function (event) {
             event.preventDefault();
             $('.new-chat').slideUp();
             var message = $('.chat-text').val();
@@ -53,12 +52,12 @@ $(function(){
 
             if (message.length > 0) {
                 sendChaat(pseudo, avatar, message, 'me', 'small');
-                
-                setTimeout(function(){
-                    $('.chat-messages').append('<div class="flex flex-row chat-wrapper typing"><div class="chat-message visible"><p class="typo2 text-typing">Lucas est en train d\'écrire...</p></div></div>');
-                    $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
 
-                    setTimeout(function(){
+                setTimeout(function () {
+                    $('.chat-messages').append('<div class="flex flex-row chat-wrapper typing"><div class="chat-message visible"><p class="typo2 text-typing">Lucas est en train d\'écrire...</p></div></div>');
+                    $('.chat-messages').stop().animate({ scrollTop: $('.chat-messages')[0].scrollHeight }, 500);
+
+                    setTimeout(function () {
                         $('.typing').hide();
                         sendChaat('Lucas', 'lucas.svg', "Bienvenue 😏", '', 'small');
                     }, 2000);
@@ -66,15 +65,15 @@ $(function(){
             }
         });
 
-        $('.js-ajax-page').click(function(event){
+        $('.js-ajax-page').click(function (event) {
             event.preventDefault();
-    
+
             var tab = $(this).data('tab');
             var page = $(this).data('page');
             appAjax(page, tab);
         });
 
-        $('.profile-form').submit(function(event){
+        $('.profile-form').submit(function (event) {
             event.preventDefault();
             var datas = $(this).serialize();
 
@@ -82,33 +81,33 @@ $(function(){
 
             $('.loader').addClass('visible');
 
-            $.post('app/views/updateUser.php', datas, function(data){
+            $.post('app/views/updateUser.php', datas, function (data) {
                 if (data === '202') {
-                    setTimeout(function(){
+                    setTimeout(function () {
                         appAjax('profile', 5);
                     }, 500);
                 }
             });
         });
 
-        $('.close-actu').click(function(event){
+        $('.close-actu').click(function (event) {
             event.preventDefault();
             $(this).closest('.actu').slideUp();
         });
 
-        $('.js-video').click(function(){
+        $('.js-video').click(function () {
             $('.video').fadeIn();
             $('.video')[0].play();
         });
 
-        $('.this-month').click(function(event){
+        $('.this-month').click(function (event) {
             event.preventDefault();
-            $('html, body').stop().animate( { scrollTop: 300 }, 300 );
+            $('html, body').stop().animate({ scrollTop: 300 }, 300);
 
             $('.timeline').removeClass('step1').addClass('step2');
         });
-       
-        $('.boxready').click(function(event){
+
+        $('.boxready').click(function (event) {
             event.preventDefault();
             $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
             $('html, body').stop().animate( { scrollTop: 600 }, 500 );
@@ -116,7 +115,7 @@ $(function(){
 
             var idUser = $(this).data('id');
 
-            $.post('app/views/updateBox.php', {"id": idUser}, function(data){
+            $.post('app/views/updateBox.php', { "id": idUser }, function (data) {
                 console.log(data);
             });
         });
@@ -133,19 +132,19 @@ $(function(){
                 $('.topbar2').addClass('sticky');
             } else if (scrollTop > 50) {
                 $('.topbar2').removeClass('sticky');
-            } 
+            }
 
             currentPos = scrollTop;
         }
     }
 
-    $('.js-open-chat').click(function(){
+    $('.js-open-chat').click(function () {
         $(this).toggleClass('active');
         $('body').removeClass('item-menu-team');
         $('body, .modal-chat').css('overflow', 'hidden');
 
-        if($(this).hasClass('active')) {
-            $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages').height() }, 0 );
+        if ($(this).hasClass('active')) {
+            $('.chat-messages').stop().animate({ scrollTop: $('.chat-messages').height() }, 0);
 
             $('.chat-message').addClass('visible');
             $('.team-form').addClass('visible');
@@ -155,18 +154,18 @@ $(function(){
         }
     });
 
-    $('.chat-close').click(function(){
+    $('.chat-close').click(function () {
         closeChat();
     });
 
     function changeTab() {
-        $('.progress').each(function(time){
+        $('.progress').each(function (time) {
             setTimeout(() => {
                 $(this).addClass('anim' + $(this).data('level'));
             }, (time * 100))
         });
 
-        $('.animate-number').each(function(){
+        $('.animate-number').each(function () {
             var number = $(this).text();
             $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
         });
@@ -174,15 +173,15 @@ $(function(){
         var timeline = $('.timeline-month');
         if (timeline.length > 0) {
 
-            setInterval(function(){
+            setInterval(function () {
                 var sec = parseInt($('.secondes').text()) - 1;
-                
-                if(sec === -1) {
+
+                if (sec === -1) {
                     sec = 59;
 
                     var min = parseInt($('.minutes').text()) - 1;
 
-                    if(min === -1) {
+                    if (min === -1) {
                         min = 59;
                         var heures = parseInt($('.heures').text()) - 1;
                         $('.heures').text(heures);
@@ -190,19 +189,19 @@ $(function(){
 
                     $('.minutes').text(min);
                 }
-                
+
                 $('.secondes').text(sec);
             }, 1000)
         }
     }
 
-    $(document).scroll(function(){
+    $(document).scroll(function () {
         checkTopBar();
 
         var timeline = $('.timeline-month');
         if (timeline.length > 0) {
             var scrollTop = window.pageYOffset || document.body.scrollTop || $('.swiper-tabs-active').scrollTop();
-            
+
             var parallax = scrollTop / 3 + 30;
             if (parallax > 200) {
                 parallax = 200;
@@ -224,10 +223,10 @@ $(function(){
 
             if (tab === 3) {
                 $('.box-icon').addClass('boxed').attr('src', 'images/mailbox1.gif');
-            } else if($('.box-icon').hasClass('boxed')) {
+            } else if ($('.box-icon').hasClass('boxed')) {
                 $('.box-icon').removeClass('boxed').attr('src', 'images/mailbox2.gif');
-            }  
-        } 
+            }
+        }
 
         $('.application').css('opacity', 0);
         closeChat();
@@ -239,8 +238,8 @@ $(function(){
         } else {
             $('.content-page').removeClass('no-padding-bottom');
         }
-        
-        $.get('app/views/' + page + '.php', function(data){
+
+        $.get('app/views/' + page + '.php', function (data) {
             $('#loader').removeClass('visible');
 
             if (page === 'team') {
@@ -249,9 +248,9 @@ $(function(){
                 $('.js-open-chat').hide();
             }
 
-            setTimeout(function(){
+            setTimeout(function () {
                 $('.content-page').html(data);
-                $('html, body').stop().animate( { scrollTop: 0 }, 0 );
+                $('html, body').stop().animate({ scrollTop: 0 }, 0);
                 $('.application').css('opacity', 1);
                 initActions();
                 checkTopBar();
@@ -262,7 +261,7 @@ $(function(){
     }
 
     checkTopBar();
-    
+
     var width = $(window).width();
 
     initActions();
@@ -270,22 +269,34 @@ $(function(){
     $('#loader').removeClass('visible');
     changeTab();
 
+<<<<<<< HEAD
+        $(document).on('click', '.js-get-page', function (event) {
+=======
     if (width <= 640) {
         $(document).on('click', '.js-get-page', function(event){
+>>>>>>> c7afad57db48a770c557ab324321ea9720d25fed
             event.preventDefault();
-    
+
             var tab = $(this).data('tab');
             var page = $(this).data('page');
 
-            appAjax(page, tab);    
+            appAjax(page, tab);
         });
     } else {
         initActions();
+<<<<<<< HEAD
+
+        $('.animate-number').each(function () {
+            var number = $(this).text();
+            $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
+        });
+=======
+>>>>>>> c7afad57db48a770c557ab324321ea9720d25fed
     }
 
-    document.addEventListener('touchmove', function(event) {
+    document.addEventListener('touchmove', function (event) {
         event = event.originalEvent || event;
-        if(event.scale > 1) {
+        if (event.scale > 1) {
             event.preventDefault();
         }
     }, false);

@@ -25,10 +25,8 @@
     // type bool
     $tab = ['atHome'];
     foreach ($tab as $t) {
-        $data = (bool) htmlspecialchars($_POST[$t]);
-        if ($data) {
-            $user->$t = $data;
-        }
+        $data = (bool) ((integer) htmlspecialchars($_POST[$t]));
+        $user->$t = $data;
     }
 
     // type password

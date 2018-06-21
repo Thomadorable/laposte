@@ -6,11 +6,11 @@
     color: #e6a587
 }
 
-.left{
+.left {
     text-align: left
 }
 
-.right{
+.right {
     text-align: right
 }
 
@@ -36,7 +36,7 @@
     padding: 20px 70px
 }
 
-.visitor .button2:hover{
+.visitor .button2:hover {
     background-color: #FFFCFA;
     color: #e6a587
 }
@@ -92,9 +92,11 @@
     top: 0;
     left: 0;
 }
-.visitor section{
+
+.visitor section {
     position: relative;
 }
+
 /* MENU */
 
 header.visitor {
@@ -232,7 +234,8 @@ section.visitor {
     background-color: #f7f4f1;
     overflow: hidden;
 }
-.block03 video{
+
+.block03 video {
     position: absolute;
     top: 50%;
     left: -52%;
@@ -240,6 +243,7 @@ section.visitor {
     transform: translateY(-50%);
     max-height: 140%;
 }
+
 .landing-padding {
     padding: 120px 0
 }
@@ -267,14 +271,14 @@ section.visitor {
     margin-bottom: 50px
 }
 
-.block04 .confetti{
+.block04 .confetti {
     position: absolute;
     width: auto;
     max-width: 100%;
     max-height: none;
     top: 50px;
     left: 50%;
-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 /* MOBILE */
@@ -289,9 +293,12 @@ transform: translateX(-50%);
     .typo5 {
         font-size: 2rem
     }
-
-    .block01 {
-        justify-content: flex-start
+    .block01 img {
+        height: 100%;
+        max-width: none;
+        opacity: .2;
+        right: 50%;
+        transform: translateX(50%);
     }
     .block03 video {
         position: relative;
@@ -302,20 +309,19 @@ transform: translateX(-50%);
         left: -70%;
         margin-bottom: -30%;
     }
-    .visitor .half{
+    .visitor .half {
         width: 100%;
     }
-    .landing-padding{
+    .landing-padding {
         padding: 60px 0
     }
-    .col4{
+    .col4 {
         width: 50%;
     }
-    .visitor .actu{
+    .visitor .actu {
         padding: 2rem;
         padding-top: 4rem
     }
-
     /* 
     .block01::before,
     .block01::after {
