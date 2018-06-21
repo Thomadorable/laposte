@@ -14,6 +14,13 @@
     margin-top: 4rem
 }
 
+.col4 {
+    width: calc(100% / 4);
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 4rem
+}
+
 .visitor .button2 {
     width: auto;
     color: #A5C8B4;
@@ -29,6 +36,46 @@
     max-width: 1300px;
     width: calc(100% - 80px);
     margin: 0 auto;
+}
+
+.typo5 {
+    font-size: 36px;
+    margin-top: 100px;
+}
+
+.visitor .button1 {
+    font-size: 28px;
+    padding: 20px 70px;
+}
+
+.pattern-landing:after {
+    content: '';
+    background-image: linear-gradient(to bottom, rgba(255, 252, 250, 0), #fffcfa);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 50rem;
+}
+
+.pattern-landing {
+    position: relative;
+}
+
+.pattern-landing>* {
+    position: relative;
+    z-index: 1;
+}
+
+.pattern-landing::before {
+    position: absolute;
+    background: url('../images/gridbg.png') repeat;
+    background-size: 450px;
+    background-position: left -32px;
+    content: '';
+    width: 100%;
+    height: 50rem;
+    top: 0;
+    left: 0;
 }
 
 /* MENU */
@@ -55,15 +102,24 @@ header.visitor {
     background-color: rgba(165, 200, 180, 0.15);
 }
 
-.visitor .header-menu a:not(.no-hover)::after {
+.visitor .header-menu a:not(.no-hover)::after,
+footer {
     background-color: #A5C8B4;
+}
+
+footer {
+    padding: 3rem 0
+}
+
+footer .typo2 {
+    color: #fffcfa
 }
 
 /* SECTIONS */
 
 section.visitor,
 .h100\% {
-    height: 100%;
+    height: 99%;
 }
 
 section.visitor {
@@ -76,21 +132,38 @@ section.visitor {
 .block01::before,
 .block01::after {
     content: '';
-    background-color: transparent;
+    background-color: #fffcfa;
     bottom: 0;
-    width: calc(50% - 8rem);
-    height: 0rem;
+    width: calc(50% - 9.8rem);
+    height: 3.5rem;
     position: absolute;
-    border-bottom: 8rem solid #fffcfa;
+    z-index: 3;
+}
+
+.block01 img {
+    position: absolute;
+    max-width: 60%;
+    max-height: 100%;
+    bottom: 0;
+    right: 0;
+}
+
+.block01 svg {
+    position: absolute;
+    bottom: 0;
+    width: 20rem;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 35px;
+    fill: #fffcfa;
 }
 
 .block01::before {
-    border-right: 8rem solid transparent;
     left: 0;
 }
 
 .block01::after {
-    border-left: 8rem solid transparent;
     right: 0;
 }
 
@@ -125,6 +198,59 @@ section.visitor {
     text-align: center
 }
 
+.block02 img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.col3 p {
+    margin-top: 3rem
+}
+
+.visitor .half {
+    display: inline-block;
+}
+
+.block03 {
+    background-color: #f7f4f1;
+}
+
+.landing-padding {
+    padding: 120px 0
+}
+
+.landing-padding-bottom {
+    padding-bottom: 120px
+}
+
+.block04 img {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.visitor .actu {
+    padding: 6rem 12rem;
+    background-color: #fffcfa;
+    margin: 6rem auto;
+    max-width: 1000px;
+    position: relative;
+    z-index: 10;
+}
+
+.actu img {
+    margin-bottom: 50px
+}
+
+.block04 .confetti{
+    position: absolute;
+    width: auto;
+    max-width: 100%;
+    max-height: none;
+    top: 50px;
+    left: 50%;
+transform: translateX(-50%);
+}
+
 /* MOBILE */
 
 @media screen and (max-width:750px) {
@@ -132,7 +258,9 @@ section.visitor {
         width: 100%
     }
     .block01 .typo2,
-    .visitor .button2 {
+    .visitor .button2,
+    .visitor .button1,
+    .typo5 {
         font-size: 2rem
     }
     .block01::before,

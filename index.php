@@ -123,8 +123,7 @@
                 ?>
                     <header class="topbar sticky visitor">
                         <div class="boxed-wrapper flex padding-20">
-                            <h1><a href="" class="logo"><img src="images/logo-paaper.svg" alt="Logo Paaper"></a></h1>
-
+                            <h1><a href="" class="logo"><img src="images/logovert.svg" alt="Logo Paaper"></a></h1>
                             <ul class="header-menu">
                                 <li><a class="typo3" href="#">Accueil</a></li>
                                 <li><a class="typo3" href="#">Comment ça marche ?</a></li>
