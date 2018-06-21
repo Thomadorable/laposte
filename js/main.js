@@ -1,5 +1,7 @@
 $(function () {
 
+    var secInterval;
+
     function animateScroll(position) {
         $('html, body').animate({
             scrollTop: position
@@ -173,7 +175,11 @@ $(function () {
         var timeline = $('.timeline-month');
         if (timeline.length > 0) {
 
-            setInterval(function () {
+            if (secInterval) {
+                window.clearInterval(secInterval);
+            }
+
+            secInterval = setInterval(function () {
                 var sec = parseInt($('.secondes').text()) - 1;
 
                 if (sec === -1) {

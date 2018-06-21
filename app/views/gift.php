@@ -33,7 +33,7 @@
 
 <h2 class="typo1 center">Ce mois-ci</h2>
 
-<p class="typo2 margin-top-20">On est trop content de collaborer avec Paaper, ce mois-ci ! Comme nous, vous évitez de considérer la planète comme une poubelle et ça, c’est cool 👍</p>
+<p class="typo2 margin-top-20">On est trop contents de collaborer avec Paaper, ce mois-ci ! Comme nous, vous évitez de considérer la planète comme une poubelle et ça, c’est cool 👍</p>
 
 <p class="typo2">Pour vous remercier de vos efforts
 et parce que la communauté Paaper mérite qu’à son tour on prenne soin d’elle, on vous a concocté une boîte pleine de <a href="https://www.loom.fr/pages/secrets-qualite" target="_BLANK">surprises de qualité</a>, qui durent et garantie zéro déchets.</p>
