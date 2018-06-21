@@ -1,5 +1,25 @@
 $(function () {
 
+    $('#menu_toggle').bind('click',function () {
+        $(this).toggleClass('menuOpen');
+
+        if ($(this).hasClass('menuOpen')){
+
+            $('#nav_m').show().animate({'opacity': '1'}, 300, function () {
+                var lien_m = $('.lien_m');
+                lien_m.each(function (i) {
+                    var $this = $(this);
+                    setTimeout(function () {
+                        $this.css({'opacity':1, 'transform': 'translate(0, 0px)'});
+                    }, 200*i);
+
+                });
+            });
+
+        }else $('#nav_m').animate({'opacity': '0'}, 300, function () {
+            $(this).hide();
+        });
+    });
     function animateScroll(position) {
         $('html, body').animate({
             scrollTop: position
