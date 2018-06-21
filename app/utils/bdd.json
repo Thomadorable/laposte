@@ -15,7 +15,7 @@
             "adressDetails": "",
             "atHome": true,
             "idRecurrence": 1,
-            "step": "step1",
+            "step": "step0",
             "bars": [0, 0, 0],
             "progress": [0, 0, 0],
             "levels": [0, 0, 0]

@@ -976,6 +976,23 @@ form .dark {
     opacity: 0.3;
 }
 
+.timeline.step0 .event-1 {
+    opacity: 0.3;
+}
+
+.timeline.step0 .this-month {
+    display: none;
+}
+
+.timeline.step0 .first-box {
+    display: block;
+}
+
+.first-box {
+    display: none;
+}
+
+
 .timeline.step2 .event-1,
 .timeline.step2 .event-1 .timeline-validate,
 .timeline.step2 .event-2,
