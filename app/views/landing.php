@@ -8,13 +8,13 @@
             <p class="typo2">
             Paaper, c'est la boîte mensuelle qui s'en va remplie de papier recyclé et qui revient pleine de surprises et de bons plans partenaires.
             </p>
-            <a href="?page=login" class="button2">Découvrir</a>
+            <a href="#block02" class="button2">Découvrir</a>
         </div>
     </div>
     <img src="images/headerimage.png" alt="">
     <?php include('images/arrowmask.svg'); ?>
 </section>
-<section class="block02 landing-padding">
+<section id="block02" class="block02 landing-padding">
     <div class="maxWidth">
         <h2 class="typo1 color-green">
             C'est super simple.
@@ -39,7 +39,7 @@ A vos marques, prêts… recyclez ! </p>
     </div>
 </section>
 <section class="block03 landing-padding">
-    <video src="<?= base ?>images/videoiphone.mp4" autoPlay="true"></video>
+    <video src="<?= base ?>images/videoiphone.mp4" autoPlay="true" loop="true"></video>
     <div class="maxWidth right">
         <div class="half left">
             <h2 class="typo1 color-green">
