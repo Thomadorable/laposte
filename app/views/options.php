@@ -22,7 +22,7 @@
                 Pas encore de team
             </p>
         </div>
-        <button class="edit-profile" type="submit">
+        <button class="edit-profile edit-profile-sticky" type="submit">
             <?php include($path . 'images/check.svg') ?>
         </button>
     </header>

@@ -25,10 +25,10 @@
 
         <div class="flex flex-row chat-wrapper me">
             <div class="chavatar-wrapper">
-                <img class="chavatar" src="images/avatars/simon.svg" alt="Profil de Simon">    
+                <img class="chavatar" src="images/avatars/<?=$loggedUser->avatar?>" alt="Profil de <?=$loggedUser->name?>">    
             </div>
             <div class="chat-message">
-                <strong class="typo2">Simon</strong>
+                <strong class="typo2"><?=$loggedUser->name?></strong>
                 <p class="typo2">Hello la team ! Prêts à relever le défi du mois ? Jsuis op </p>
             </div> 
         </div>
@@ -49,7 +49,8 @@
 
     <form action="" class="team-form">
         <textarea class="chat-text" name="" id="" placeholder="Un message pour votre team ? 🙊"></textarea>
-        <input type="hidden" class="chat-pseudo" value="<?=$_SESSION['name']?>">
+        <input type="hidden" class="chat-pseudo" value="<?=$loggedUser->name?>">
+        <input type="hidden" class="chat-avatar" value="<?=$loggedUser->avatar?>">
         <button type="submit" class="send-message"><img src="images/chat-send.svg"  src="envoyer"/></button>
     </form>
 </div>

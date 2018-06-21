@@ -2,8 +2,6 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-
-    $teams = getTeams();
 ?>
 
 <header class="topbar topbar2 sticky">
@@ -12,7 +10,7 @@
     </div>
 </header>
 
-<div class="center">
+<div class="center padding-top-menu">
     <img src="images/box.svg" alt="Icone de la team" class="no-team-img">
     <h1 class="typo1">Pas de team ?</h1>
 
@@ -20,13 +18,4 @@
 </div>
 
 <a href="" class="button1">Créer une team</a>
-<a href="" class="button1">Rejoindre une team</a>
-
-
-
-<?php foreach ($teams as $team) { ?>
-    <div class="team">
-        <h2><?= $team->name ?></h2>
-        <a href="?page=team&team=<?= $team->id ?>">Rejoignez-nous</a>
-    </div>
-<?php } ?>
+<a href="" class="button1 js-get-page" data-page="teams" data-tab="4">Rejoindre une team</a>

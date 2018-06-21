@@ -1,9 +1,11 @@
 $(function(){
     function closeChat() {
-        $('.new-chat').fadeOut();
-        $('.js-open-chat').removeClass('active');
-        $('.chat-message').removeClass('visible');
-        $('body, .modal-chat').css('overflow', 'auto');
+        if ($('.js-open-chat').hasClass('active')) {
+            $('.new-chat').fadeOut();
+            $('.js-open-chat').removeClass('active');
+            $('.chat-message').removeClass('visible');
+            $('body, .modal-chat').css('overflow', 'auto');
+        }
     }
 
     function initActions() {
@@ -23,10 +25,12 @@ $(function(){
             event.preventDefault();
             $('.new-chat').fadeOut();
             var message = $('.chat-text').val();
+            var pseudo = $('.chat-pseudo').val();
+            var avatar = $('.chat-avatar').val();
             $('.chat-text').val('');
 
             if (message.length > 0) {
-                $('.chat-messages').append('<div class="flex flex-row chat-wrapper me"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/simon.svg" alt="Profil de Thomas"></div><div class="chat-message visible"><strong class="typo2">Simon</strong><p class="typo2">' + message + '</p></div></div>');
+                $('.chat-messages').append('<div class="flex flex-row chat-wrapper me"><div class="chavatar-wrapper"><img class="chavatar" src="images/avatars/' + avatar + '" alt="Profil de ' + pseudo + '"></div><div class="chat-message visible"><strong class="typo2">' + pseudo + '</strong><p class="typo2">' + message + '</p></div></div>');
                 
                 $('.chat-messages').stop().animate( { scrollTop: $('.chat-messages')[0].scrollHeight }, 500 );
             }
@@ -97,6 +101,7 @@ $(function(){
 
     $('.js-open-chat').click(function(){
         $(this).toggleClass('active');
+        $('.item-menu-team').removeClass('item-menu-team');
         $('body, .modal-chat').css('overflow', 'hidden');
 
         if($(this).hasClass('active')) {
@@ -189,7 +194,7 @@ $(function(){
 
         $('#loader').addClass('visible');
 
-        if (tab === 1) {
+        if (tab === 1 || page === 'teams' || page === 'options') {
             $('.content-page').addClass('no-padding-bottom');
         } else {
             $('.content-page').removeClass('no-padding-bottom');

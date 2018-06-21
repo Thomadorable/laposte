@@ -55,7 +55,12 @@
                     <?php
                         $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-                        $ishome = ($page === 'home') ? 'no-padding-bottom' : '';
+                        if (!file_exists('app/views/' . $page . '.php') || $page === 'login') {
+                            $page = 'home';
+
+                        }
+
+                        $ishome = ($page === 'home' || $page === 'teams' || $page === 'options') ? 'no-padding-bottom' : '';
                     ?>
                     <div class="loader visible" id="loader"></div>
                     <section class="boxed-wrapper application" >
@@ -66,7 +71,16 @@
                         </div>
                     </section>
 
-                    <?php if (getTeamByUserID()) include('./app/views/chaat.php'); ?>
+                    <?php 
+
+                    $classTeam = '';
+                    
+                    if (getTeamByUserID()) {
+                        include('./app/views/chaat.php');
+                        $classTeam = 'item-menu-team';
+                    } 
+                    
+                    ?>
 
                     <nav class="menu">
                             <ul>
@@ -81,7 +95,7 @@
                                         <img src="images/mailbox.gif" class="box-icon box-icon-inactive" alt="">
                                     </a></span>
                                 </li>
-                                <li class="item-menu js-get-page <?php if ($page === 'team') echo 'active'; ?>" data-page="team" data-tab="4">
+                                <li class="item-menu <?=$classTeam?> js-get-page <?php if ($page === 'team') echo 'active'; ?>" data-page="team" data-tab="4">
                                     <a href=""><?php include('images/award.svg'); ?> Équipe</a>
                                 </li>
                                 <li class="item-menu js-get-page <?php if ($page === 'profile') echo 'active'; ?>" data-page="profile" data-tab="5">
@@ -110,7 +124,7 @@
                                 <li><a class="typo3" href="#">Accueil</a></li>
                                 <li><a class="typo3" href="#">Comment ça marche ?</a></li>
                                 <li><a class="typo3" href="#">Contact</a></li>
-                                <li><a class="typo3 button1 no-hover" href="?page=login">Connexion</a></li>
+                                <li><a class="typo3 button1 landing-login no-hover" href="?page=login">Connexion</a></li>
                             </ul>
                         </div>
                     </header>

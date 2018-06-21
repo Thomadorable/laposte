@@ -34,6 +34,26 @@
     font-size: 2rem;
 }
 
+.item-menu {
+    position: relative;
+}
+
+.item-menu-team:before {
+    content: "1";
+    position: absolute;
+    right: 18px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background: #e6a587;
+    border-radius: 50%;
+    z-index: 2;
+    font-size: 10px;
+    font-family: Karmilla;
+    color: white;
+}
+
 .svg {
     fill: #373737;
     transition: all ease 0.2s;

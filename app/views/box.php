@@ -37,7 +37,7 @@
         </div>
         <div class="flex-1">
             <p class="typo2"><strong>Ma boîte</strong> <span class="italic">(du 5 au 20 juin)</span></p>
-            <p class="typo2">Vous avez choisi de renvoyer votre boîte <a href="">le 15 de chaque mois</a>. Elle est prête en avance ? Prévenez-nous !</p>
+            <p class="typo2">Vous avez choisi de renvoyer votre boîte <a href="" class="js-get-page" data-page="options" data-tab="5">le 15 de chaque mois</a>. Elle est prête en avance ? Prévenez-nous !</p>
 
             <div class="maboite">
                 <img src="images/maboite.png" alt="" >

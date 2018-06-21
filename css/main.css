@@ -159,6 +159,19 @@ body {
     }
 }
 
+.form-login {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 40px;
+}
+
+button.button1 {
+    line-height: 1;
+    margin-top: 10px;
+}
+
 .grid {
     position: fixed;
     top: 0;
@@ -427,6 +440,21 @@ strong.typo2 {
     text-align: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
     display: none;
+    animation: poop linear 1s 1s;
+}
+
+@keyframes poop {
+    0% {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    50% {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    }
 }
 
 .js-open-chat img {
@@ -490,6 +518,7 @@ strong.typo2 {
 
 .chavatar {
     width: 55px;
+    border-radius: 50%;
 }
 
 .chavatar-wrapper {
@@ -673,13 +702,18 @@ form .dark {
     transform: translateY(-50%);
     padding: 1.8rem;
     border: none;
-    background: none;
     z-index: 2;
     height: 6rem;
     width: 6rem;
-    background-color: rgba(255, 252, 250, .3);
+    background:#c1d9c9;
     border-radius: 1rem 0 0 1rem;
     cursor: pointer
+}
+
+.edit-profile-sticky {
+    position: fixed;
+    top: 30px;
+    transform: none;
 }
 
 .edit-profile .svg {
@@ -852,8 +886,9 @@ form .dark {
 }
 
 .header-gift img.logo-gift-paaper {
-    width: 120px;
+    width: 127px;
     margin-top: -5px;
+    margin-left: 6px;
 }
 
 .superboite {
@@ -1110,6 +1145,17 @@ form .dark {
     width: calc(100% + 80px);
     background: #e6e6e6;
     margin-top: 35px;
+}
+
+.list-teams .typo1 {
+    font-family: Karmilla;
+    font-size: 24px;
+}
+
+.list-teams.home-pattern {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    margin-top: 30px;
 }
 
 @keyframes appear-chat {
