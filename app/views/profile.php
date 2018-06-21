@@ -41,7 +41,7 @@
 <div data-level="80" class="progress margin-top-20 green orange">
     <p class="typo2 relative defi-text progress-legend">80/100 kg</p>
 </div>
-<p class="margin-top-20 typo2 text-progress">Ça en fait des kilos portés jusqu’à ta boîte aux lettres, vous pouvez être fière 💪</p>
+<p class="margin-top-20 typo2 text-progress">Ça en fait des kilos portés jusqu’à votre  boîte aux lettres, vous pouvez être fière 💪</p>
 
 <div class="separator"></div>
 
@@ -52,7 +52,7 @@
 <div data-level="0" class="progress margin-top-20 green orange">
     <p class="typo2 relative defi-text progress-legend">0</p>
 </div>
-<p class="margin-top-20 typo2 text-progress">Tu n’as pas encore de team, rejoins-en une pour compléter des défis et gagner des bonus. </p>
+<p class="margin-top-20 typo2 text-progress">Vous n’avez pas encore de team, rejoignez-en une pour compléter des défis et gagner des bonus. </p>
 
 
 <h2><a href="?logout" class="button1">Déconnexion</a></h2>

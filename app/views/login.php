@@ -4,7 +4,7 @@
     }
 
     if (isset($_SESSION['id'])) {
-        echo '<p class="error">Tu es déjà connecté.</p>';
+        echo '<p class="error">Vous êtes déjà connecté.</p>';
         exit();
     }
 ?>
@@ -28,7 +28,10 @@
     <label class="options-label typo2" for=""><strong class="required">*</strong> Mot de passe</label>
     <input class="options-input" type="password" name="password">
 
-    <button type="submit" class="button1">Login</button>
-    <br>
+    <button type="submit" class="button1">Se connecter</button>
     <a href="?page=register" class="button1">S'inscrire</a>
+
+    <p class="typo2 margin-top-20">
+        <a href="" >Mot de passe oublié ?</a>
+    </p>
 </form>

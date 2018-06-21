@@ -4,7 +4,7 @@
     }
 
     if (isset($_SESSION['id'])) {
-        echo '<p class="error">Tu es déjà connecté.</p>';
+        echo '<p class="error">Vous êtes déjà connecté.</p>';
         exit();
     }
 ?>

@@ -224,6 +224,7 @@ $(function(){
     checkTopBar();
     
     var width = $(window).width();
+
     if (width <= 640) {
         initActions();
         $('.application').css('opacity', 1);
@@ -246,5 +247,6 @@ $(function(){
             $(this).animateNumber({ number: number, numberStep: $.animateNumber.numberStepFactories.separator(' ') }, 3000);
         });
     }
+
 });
 

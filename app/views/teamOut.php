@@ -14,7 +14,7 @@
     <img src="images/box.svg" alt="Icone de la team" class="no-team-img">
     <h1 class="typo1">Pas de team ?</h1>
 
-    <p class="typo2 margin-top-10">Paaper, c’est encore mieux avec tes amis ! Débloque de nouveaux objectifs avec l’aide de ta team et gagnez ensemble des surprises inédites.</p>
+    <p class="typo2 margin-top-10">Paaper, c’est encore mieux entre amis ! Débloquez de nouveaux objectifs avec l’aide de votre team et gagnez ensemble des surprises inédites.</p>
 </div>
 
 <a href="" class="button1">Créer une team</a>

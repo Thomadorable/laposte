@@ -5,7 +5,7 @@ function getUserByMail($login) {
     $users = $bdd->users;
     $currentUser = null;
     foreach ($users as $user) {
-        if ($user->mail === $login) {
+        if (strtolower($user->mail) === strtolower($login)) {
             $currentUser = $user;
             break;
         }
