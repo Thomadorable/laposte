@@ -132,6 +132,14 @@
                             </ul>
                         </div>
                     </header>
+                    <header class="topbar no-desktop center">
+                        <h1><a href="index.php" class="logo"><img src="images/logo-paaper.png   " alt="Logo Paaper"></a></h1>
+                            <ul class="header-menu">
+                                <li><a class="typo3 no-hover" href="#">Accueil</a></li>
+                                <li><a class="typo3 no-hover" href="#">F.A.Q.</a></li>
+                                <li><a class="typo3 no-hover" href="?page=login">Connexion</a></li>
+                            </ul>
+                    </header>
                     <section class="boxed-wrapper visitor">
                         <?php
                             $allowedPages = ['landing', 'login', 'register'];

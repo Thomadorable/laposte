@@ -128,6 +128,7 @@ A vos marques, prêts… recyclez ! </p>
 
 <footer class="center">
     <p class="typo2">
+        <a href="#">Contactez-nous !</a><br>
     Tous droits réservés Paaper, 2018 ©
     </p>
 </footer>

@@ -322,6 +322,31 @@ section.visitor {
         padding: 2rem;
         padding-top: 4rem
     }
+    .visitor .button1 {
+        padding: 20px 15px;
+    }
+    .topbar.no-desktop{
+        display: block;
+        top:0;
+        position: absolute;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    
+    .topbar.no-desktop .header-menu{
+        align-items: center;
+        justify-content: center;
+    }
+    .topbar.no-desktop .header-menu a{
+        color: #fffcfa;
+        font-weight: 600;
+    padding: 0 2rem;
+    }
+    .topbar.no-desktop img{
+        height: 28px;
+        width: auto;
+        margin: 1rem;
+    }
     /* 
     .block01::before,
     .block01::after {
