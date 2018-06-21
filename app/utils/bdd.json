@@ -16,7 +16,7 @@
             "atHome": true,
             "idRecurrence": 1,
             "step": "step1",
-            "bars": [16, 0, 0],
+            "bars": [0, 0, 0],
             "progress": [0, 0, 0],
             "levels": [0, 0, 0]
         },
@@ -36,9 +36,9 @@
             "atHome": true,
             "idRecurrence": 1,
             "step": "step2",
-            "bars": [23, 80, 0],
+            "bars": [16, 80, 0],
             "progress": [30, 80, 0],
-            "levels": [1, 0, 0]
+            "levels": [2, 1, 0]
         },
         "3": {
             "id": 3,

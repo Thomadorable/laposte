@@ -52,9 +52,8 @@
     <span class="green">
         <?php
             for ($i=0; $i < 4; $i++) { 
-                $active = ($loggedUser->levels[2] > $i) ? 'active' : '';
-                $half = ($loggedUser->levels[2] === $i) ? 'half-puce' : '';
-                echo '<span class="puce ' . $active . ' ' . $half . '"></span>';
+                $active = ($loggedUser->levels[1] > $i) ? 'active' : '';
+                echo '<span class="puce ' . $active . '"></span>';
             }
         ?>
     </span>
@@ -71,9 +70,8 @@
     <span class="green">
         <?php
             for ($i=0; $i < 4; $i++) { 
-                $active = ($loggedUser->levels[1] > $i) ? 'active' : '';
-                $half = ($loggedUser->levels[1] === $i) ? 'half-puce' : '';
-                echo '<span class="puce ' . $active . ' ' . $half . '"></span>';
+                $active = ($loggedUser->levels[2] > $i) ? 'active' : '';
+                echo '<span class="puce ' . $active . '"></span>';
             }
         ?>
     </span>

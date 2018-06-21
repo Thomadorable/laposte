@@ -64,6 +64,7 @@
                         <header>
                             <p class="actu-title"><?php include($path . 'images/package.svg') ?> <span class="middle">NOUVEAU PARTENAIRE</span></p>
                             <p class="actu-date">aujourd'hui, à 16h54 <a href="" class="round-btn close-actu"><?php include($path . 'images/x.svg') ?></a></p>
+                            <!-- <p>Paaper a atteint les 50.000 utilisateurs ! Merci à tous pour vos contributions, continuez comme ça 😉</p> -->
                         </header>
                         <div class="actu-content">
                             <p class="typo2 z-index-2">L’été approche à grand pas et pour l’occasion, notre partenaire du mois a plein de bons plans à vous offrir…</p>

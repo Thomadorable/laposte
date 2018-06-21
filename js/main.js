@@ -95,7 +95,7 @@ $(function(){
         $('.boxready').click(function(event){
             event.preventDefault();
             $('.timeline').removeClass('step1').removeClass('step2').addClass('step3');
-            $('html, body').stop().animate( { scrollTop: 450 }, 500 );
+            $('html, body').stop().animate( { scrollTop: 600 }, 500 );
 
 
             var idUser = $(this).data('id');
@@ -249,12 +249,12 @@ $(function(){
     
     var width = $(window).width();
 
-    if (width <= 640) {
-        initActions();
-        $('.application').css('opacity', 1);
-        $('#loader').removeClass('visible');
-        changeTab();
+    initActions();
+    $('.application').css('opacity', 1);
+    $('#loader').removeClass('visible');
+    changeTab();
 
+    if (width <= 640) {
         $(document).on('click', '.js-get-page', function(event){
             event.preventDefault();
     
